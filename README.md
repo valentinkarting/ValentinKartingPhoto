@@ -1,2 +1,0 @@
-# ValentinKartingPhoto
-Photographie évènements sportifs
