@@ -1,0 +1,664 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background: url(./photoindex/fondindex.JPG) center/cover;  */
+    background-color: black;
+    min-height: 100vh;
+}                                       
+
+@font-face {
+    font-family: 'police navbar';
+    src: url(./font/PlayfairDisplay-Italic-VariableFont_wght.ttf) format(woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    color: #fff;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    flex-wrap: nowrap; /* Assure que les éléments restent sur une seule ligne */
+}
+
+.nav-left,
+.nav-middle,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown structure */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown button styling */
+.nav-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    font-family: 'police navbar';
+}
+
+.nav-btn:hover {
+    background-color: black;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Show dropdown menu when hovering over .dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown menu links */
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+}
+
+@media screen and (min-width: 541px) {
+    .separator {
+        display: block !important; /* Force l'affichage */
+    }
+}
+
+/* Separators */
+.separator {
+    width: 1px;
+    height: 20px;
+    background-color: #888;
+    margin: 0 10px;
+}
+
+/* Icons */
+.nav-middle .nav-icon {
+    margin: 0 10px;
+}
+
+.nav-middle .nav-icon img {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-middle .nav-icon img:hover {
+    opacity: 0.7;
+    width: 50px;
+    height: 50px;
+}
+
+.nav-right {
+    width: 300px;
+
+}
+
+/* Connexion a propos des photos */
+.login-btn {
+    width: 100%;
+    text-align: right;
+    background-color: transparent;
+    color: red;
+    padding: 8px 6px;
+    font-size: 14px;
+    font-style: italic;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: transparent;
+    letter-spacing: 1px;
+}
+
+/* Logo Valou dans la barre de navigation */
+.logo {
+    width: 60px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.logo:hover {
+    width: 70px;
+    height: 60px;
+}
+
+/* Media Queries pour rendre la page responsive */
+@media screen and (max-width: 1070px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-btn {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 35px;
+    }
+
+    .nav-middle .nav-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .login-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media screen and (max-width: 762px) {
+
+    body {
+      
+        background: url(./photoindex/fondindex.JPG) center/cover;
+        
+        min-height: 100vh;
+    }
+
+
+
+
+    .navbar {
+        padding: 10px 4px;
+      
+        /* flex-direction: column;  */
+        /* align-items: center;  */
+        /* justify-content: center;  */
+        /* height: auto;  */
+        /* width: 30%;  */
+        /* position: fixed;  */
+        /* top: 0;  */
+        /* left: 50%;  */
+        /* transform: translateX(-50%);  */
+        /* z-index: 1000;  */
+
+    }
+
+    .nav-left,
+    .nav-middle,
+    .nav-right {
+        display: flex;
+        /* flex-direction: column;  */
+        align-items: center; /* Centre les éléments horizontalement */
+        gap: 1px; /* Espacement entre les éléments de la même section */
+    }
+
+
+
+    .nav-btn {
+        font-size: 0.5rem;
+        padding: 6px 2px;
+    }
+
+    .logo {
+        width: 30px;
+        height: 20px;
+    }
+
+    .nav-middle .nav-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .login-btn {
+        font-size: 10px;
+        padding: 5px 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .navbar {
+        
+        padding: 0 5px; /* Un peu plus d'espacement pour les petits écrans */
+        flex-direction: column; /* Empile les éléments en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
+        justify-content: center; /* Centre les éléments verticalement */
+        height: auto; /* Permet d'ajuster la hauteur en fonction du contenu */
+        width: 45%;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        
+        
+        
+    }
+
+    .nav-left,
+    .nav-middle,
+    .nav-right {
+        display: flex;
+        flex-direction: column; /* Les éléments de chaque côté de la navbar se mettent en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
+        gap: 10px; /* Espacement entre les éléments de la même section */
+    }
+
+    .nav-right {
+        width: 99%;
+        padding: 6px 0px 6px 0px;
+        
+    }
+
+    /* Ajuster la taille des boutons et logos */
+    .nav-btn {
+        font-size: 10px;
+        
+        padding: 8px 12px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 30px;
+        margin-bottom: 10px; /* Ajoute un espacement entre le logo et les éléments de la navbar */
+    }
+
+    .nav-middle .nav-icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .login-btn {
+        font-size: 10px;
+        padding: 6px 1px;
+        text-align: center;
+    }
+}
+
+
+    /* Réduire l'espacement entre les éléments */
+    .nav-left,
+    .nav-middle,
+    .nav-right {
+        gap: 5px;
+    }
+    .separator {
+        display: none;
+    }
+
+ 
+
+.carousel-container {
+    width: 80%; /* Ajuster encore plus la largeur */
+    height: 110px; /* Réduire encore la hauteur */
+    /* top: -100px;  */
+    
+    
+
+    /* transform: translateY(100px);  */
+    /* Réduire le décalage vertical */
+}
+.carousel-controls {
+    bottom: 5px; /* Ajuster la position des bullets pour qu'elles ne chevauchent pas l'image */
+}
+.carousel-bullet {
+    width: 10px;  /* Réduire la taille des bullets */
+    height: 10px;
+} 
+.nav-left {
+    height: 150px;
+}
+
+
+
+
+
+
+/* --------------2eme partie CAROUSEL----------  */
+
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh;  */
+    /* margin: 0;  */
+}
+
+img {
+    -webkit-user-drag: none; /* Safari */
+    user-drag: none; /* Standard */
+}
+
+/* Conteneur du carrousel */
+.carousel-container {
+    position: relative;
+    bottom: 4px;
+    
+    transform: translateY(1px);
+    width: calc(100% - 0px);
+    height: calc(100vh - 130px);
+    
+    /* margin: 20px;   */
+    /* width: 45%;  */
+    /* max-width: 500px;  */
+    /* height: 200px;  */
+    border: 1px solid;
+    /* border-radius: 0 30px 0 30px;  */
+    overflow: hidden; /* Masquer les images non visibles */
+    /* transform: translateY(150px);  */
+    box-sizing: border-box;
+}
+
+/* Carrousel */
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Images du carrousel */
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Image individuelle dans le carrousel */
+.carousel-image {
+    
+    width: 100%;  /* Utilisation de pourcentage pour que l'image prenne toute la largeur du conteneur */
+    height: 100%;
+    flex-shrink: 0; /* Empêche l'image de se réduire */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Initialement, les images sont invisibles */
+    transition: opacity 2s ease-in-out; /* Effet de fondu */
+}
+
+/* Rendre l'image active visible */
+.carousel-image.active {
+    opacity: 1; /* Image active est visible */
+}
+
+/* Images */
+.carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contrôles (Bullets) */
+.carousel-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+/* Bullet Style */
+.carousel-bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Bullet actif */
+.carousel-bullet.active {
+    background-color: #333;
+}
+
+/* Media Queries pour la Responsivité */
+
+/* Pour les écrans plus petits (tablettes, mobiles) */
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        bottom: 80px;
+        width: 70%; /* Augmenter la largeur relative sur les petits écrans */
+        height: 170px; /* Réduire la hauteur pour les écrans plus petits */
+        bottom: 0px;
+        /* transform: translateY(120px);   */
+        /* Réduire le décalage vertical */
+        margin-top: 150px;
+    }
+
+    
+
+}
+
+/* Pour les écrans très petits (mobiles) */
+@media screen and (max-width: 420px) {
+    .carousel-container {
+        width: 60%; /* Ajuster encore plus la largeur */
+        height: 110px; /* Réduire encore la hauteur */
+        /* bottom: 8px;  */
+        /* margin-bottom: -45px;  */
+       
+        
+        
+    
+        /* transform: translateY(100px);  */
+        /* Réduire le décalage vertical */
+    }
+    .carousel-controls {
+        bottom: 5px; /* Ajuster la position des bullets pour qu'elles ne chevauchent pas l'image */
+    }
+    .carousel-bullet {
+        width: 10px;  /* Réduire la taille des bullets */
+        height: 10px;
+    }
+}
+
+/* -------3eme partie pied de page--------  */
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assure que le footer est visible */
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between; /* Répartit les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    /* flex-wrap: nowrap;   */
+    /* Évite les retours à la ligne */
+}
+
+.footer-logo {
+    width: 50px;
+    height: auto;
+}
+
+.footer-text {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.footer-email {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+.footer-email:hover {
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
+
+.footer-button {
+    color: white;
+    background-color: #555;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-button:hover {
+    background-color: #00aaff;
+    letter-spacing: 1px;
+}
+
+.footer-instagram img {
+    width: 35px; 
+    height: auto;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-instagram img:hover {
+    transform: scale(1.2);
+}
+
+.footer-phone {
+    font-size: 16px;  /* Vous pouvez ajuster la taille du numéro de téléphone */
+    margin: 5px 10px; /* Un peu d'espace autour du numéro */
+    text-align: center;  /* Pour centrer le numéro sous le texte */
+    color: #fff;  /* Si vous voulez que le texte soit en blanc */
+}
+
+
+.footer-phone a {
+    color: #00aaff; /* Couleur du lien */
+    text-decoration: none; /* Retirer la décoration du lien */
+}
+
+.footer-phone a:hover {
+    text-decoration: underline; /* Souligner le lien au survol */
+}
+
+/* Footer responsive styles */
+@media screen and (max-width: 481px) {
+    footer {
+        flex-wrap: wrap; /* Permet de passer les éléments sur plusieurs lignes si nécessaire */
+        text-align: center;
+        width: 100%;
+        
+        margin: 0 auto;
+        
+        
+    }
+
+    .footer-nav {
+        flex-direction: column; /* Arrange les éléments en colonne */
+        align-items: center;
+        gap: 10px; /* Ajoute de l'espace entre les éléments */
+        
+    
+    }
+
+    .footer-logo {
+        width: 40px; /* Réduit la taille du logo */
+    }
+
+    .footer-text {
+        font-size: 12px; /* Réduit la taille du texte */
+    }
+
+    .footer-email {
+        font-size: 12px; /* Réduit la taille du texte */
+    }
+
+    .footer-button {
+        font-size: 12px; /* Réduit la taille des boutons */
+        padding: 4px 8px; /* Ajuste les marges des boutons */
+    }
+
+    .footer-instagram img {
+        width: 30px; /* Ajuste la taille de l'icône Instagram */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        padding: 10px; /* Ajuste les marges pour les petits écrans */
+    }
+
+    .footer-nav {
+        gap: 1px; /* Réduit encore l'espacement entre les éléments */
+    }
+
+    .footer-button {
+        display: none;
+    }
+
+    .footer-logo {
+        width: 30px; /* Réduit encore la taille du logo */
+    }
+
+    .footer-text,
+    .footer-email,
+    .footer-button {
+        font-size: 10px; /* Réduit encore la taille des textes et des boutons */
+    }
+
+    .footer-instagram img {
+        width: 25px; /* Ajuste encore la taille de l'icône Instagram */
+        display: none;
+    }
+    .footer-phone {
+        font-size: 10px;
+    }
+}
+
