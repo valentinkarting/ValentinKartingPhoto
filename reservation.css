@@ -1,0 +1,548 @@
+/* Style général */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('./photoresrvation/1T4A9181.JPG'); 
+    background-size: cover; /* L'image couvre tout l'écran */
+    background-position: center; /* Centrer l'image */
+    background-attachment: fixed; /* L'image reste fixe lors du défilement */
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    height: 100vh; /* Utiliser toute la hauteur de la fenêtre */
+    
+}
+
+@font-face {
+    font-family: 'police navbar';
+    src: url(./font/PlayfairDisplay-Italic-VariableFont_wght.ttf) format(woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    color: #fff;
+    height: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* flex-wrap: nowrap;   */
+    /* Assure que les éléments restent sur une seule ligne */
+}
+
+.nav-left,
+.nav-middle,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown structure */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown button styling */
+.nav-btn {
+    
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0px 10px 15px 10px;
+    transition: background-color 0.3s ease;
+    font-family: 'police navbar';
+}
+
+.nav-btn:hover {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Show dropdown menu when hovering over .dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown menu links */
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+}
+
+/* @media screen and (min-width: 541px) {  */
+    /* .separator {  */
+        /* display: block !important;  */
+    /* }  */
+/* }  */
+
+/* Separators */
+.separator {
+    width: 1px;
+    height: 20px;
+    background-color: #888;
+    margin: 0 10px;
+}
+
+/* Icons */
+.nav-middle .nav-icon {
+    margin: 0 10px;
+    padding: 0 20px 0 0;
+}
+
+.nav-middle .nav-icon img {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-middle .nav-icon img:hover {
+    opacity: 0.7;
+    width: 40px;
+    height: 40px;
+}
+
+.nav-right {
+    width: 300px;
+
+}
+
+/* Connexion a propos des photos */
+.login-btn {
+    width: 100%;
+    text-align: right;
+    background-color: transparent;
+    color: red;
+    padding: 8px 6px;
+    font-size: 14px;
+    font-style: italic;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: transparent;
+    letter-spacing: 1px;
+}
+
+/* Logo Valou dans la barre de navigation */
+.logo {
+    width: 60px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.logo:hover {
+    width: 70px;
+    height: 60px;
+}
+
+
+
+/* ----------première fenêtre----------------- */
+/* Conteneur principal */
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Centrer verticalement */
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Fenêtre F1 */
+.f1 {
+    width: 33.33%; /* Un tiers de la largeur de l'écran */
+    height: 45%; /* Hauteur de F1 augmentée pour plus d'espace */
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    margin-left: 20px;
+    border: 1px solid black;
+    align-items: center; /* Centrer les éléments horizontalement */
+    gap: 20px; /* Espacement entre les éléments */
+    position: relative;
+    overflow: hidden; /* Empêcher les débordements */
+    justify-content: space-between; /* Créer de l'espace entre les éléments */
+}
+
+/* Zone de texte */
+.text-line {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Augmenter l'espacement entre chaque zone de texte */
+    flex-grow: 1; /* Permet aux zones de texte de remplir l'espace restant */
+}
+
+/* Section des cases à cocher */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement plus large entre les cases à cocher */
+    flex-grow: 1; /* Permet à la zone des cases à cocher de remplir l'espace */
+}
+
+/* Cases à cocher */
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.checkbox-group label {
+    font-size: 10px; /* Changez cette valeur selon vos besoins */
+    font-family: Arial, sans-serif;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Bouton Valider */
+button {
+    background-color: white;
+    color: blue;
+    border: 1px solid black;
+    padding: 12px 25px; /* Plus d'espace autour du texte */
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Pousse le bouton vers le bas */
+}
+    
+button:hover {
+    background-color: white;
+    color: black;
+    letter-spacing: 1px;
+}
+
+
+#output {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #555;
+    white-space: pre-wrap;
+}
+
+
+/* Fenêtre F2 (ajustée pour la même taille que F1) */
+.f2 {
+    width: 33.33%; /* Même largeur que F1 */
+    height: 45%; /* Même hauteur que F1 */
+    padding: 20px;
+    margin-top: 0;
+    background-color: white;
+    border: 1px solid black;
+    margin-left: 20px; /* Décalage similaire à F1 */
+    align-items: center; /* Centrer horizontalement */
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    gap: 20px; /* Espacement entre les éléments */
+    position: relative;
+    /* margin-top: 20px;  */
+}
+
+.f2 textarea {
+    width: 100%;
+    height: 20%;
+    margin-bottom: 10px;
+    resize: none; /* Empêche le redimensionnement */
+    overflow: hidden; /* Supprime les barres de défilement */
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Boutons côte à côte */
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Espacement entre les boutons */
+    gap: 10px; /* Espace entre les boutons */
+    width: 100%;
+}
+
+.button-group button {
+    background: white;
+    border: 1px solid black;
+    flex: 1; /* Les boutons prennent la même largeur */
+    padding: 10px;
+    font-size: 14px;
+    color: blue;
+    cursor: pointer;
+}
+
+/* Bouton Effacer */
+#btn-clear {
+    background-color: transparent;
+    color: black; /* Texte en blanc */
+    border: none;
+    text-align: right;
+    font-size: 14px; /* Taille de la police */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition pour l'animation */
+}
+/* ---------responsive navbar tablette-------- */
+
+@media screen and (max-width: 762px) {
+
+    .navbar {
+        padding: 10px 4px;
+      
+        
+    }
+
+    .nav-left,
+    .nav-middle,
+    .nav-right {
+        display: flex;
+        /* flex-direction: column;  */
+        align-items: center; /* Centre les éléments horizontalement */
+        gap: 1px; /* Espacement entre les éléments de la même section */
+    }
+
+    .nav-btn {
+        font-size: 0.6rem;
+        padding: 0px 2px 15px 2px;
+    }
+
+    .logo {
+        width: 30px;
+        height: 20px;
+    }
+
+    .nav-middle .nav-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .login-btn {
+        font-size: 10px;
+        padding: 5px 0;
+    }
+}
+/* --------responsive navbar téléphone------- */
+
+@media screen and (max-width: 540px) {
+    .navbar {
+        
+        padding: 0 5px; /* Un peu plus d'espacement pour les petits écrans */
+        flex-direction: column; /* Empile les éléments en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
+        justify-content: center; /* Centre les éléments verticalement */
+        height: auto; /* Permet d'ajuster la hauteur en fonction du contenu */
+        width: 45%;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .nav-left,
+    .nav-middle,
+    .nav-right {
+        display: flex;
+        flex-direction: column; /* Les éléments de chaque côté de la navbar se mettent en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
+        gap: 0px; /* Espacement entre les éléments de la même section */
+    }
+
+    .nav-right {
+        width: 99%;
+        padding: 6px 0px 6px 0px;
+        
+    }
+
+    /* Ajuster la taille des boutons et logos */
+    .nav-btn {
+        font-size: 10px;
+        padding: 8px 12px;
+        font-size: 0.6rem;
+     
+    }
+
+    .logo {
+        width: 40px;
+        height: 30px;
+        margin-bottom: 10px; /* Ajoute un espacement entre le logo et les éléments de la navbar */
+    }
+
+    .nav-middle .nav-icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .login-btn {
+        font-size: 10px;
+        padding: 6px 1px;
+        text-align: center;
+    }
+
+
+    /* -réduire fenêtre f1 et ses fenêtres intérieures */
+    .f1 {
+        width: 33.33%; /* Un tiers de la largeur de l'écran */
+        height: 35%; /* Hauteur de F1 augmentée pour plus d'espace */
+        top: 50px;
+        background-color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column; 
+        margin-left: 20px;
+        border: 1px solid black;
+        align-items: center; /* Centrer les éléments horizontalement */
+        gap: 20px; /* Espacement entre les éléments */
+        position: relative;
+        overflow: hidden; /* Empêcher les débordements */
+        justify-content: space-between; /* Créer de l'espace entre les éléments */
+        
+    }
+
+ .text-line {
+    padding: 8px; /* Réduit le padding à l'intérieur des zones de texte */
+    font-size: 12px; /* Diminue la taille de la police */
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 90%; /* Réduit la largeur des zones de texte */
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Réduit l'espacement entre chaque zone de texte */
+    flex-grow: 1; /* Permet aux zones de texte de remplir l'espace restant */
+}
+
+    /* Section des cases à cocher */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Réduit l'espacement entre les cases à cocher */
+    flex-grow: 1; /* Permet à la zone des cases à cocher de remplir l'espace */
+}
+
+/* Cases à cocher */
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-size: 8px; /* Réduit encore la taille de la police */
+}
+
+/* Boutons */
+button {
+    padding: 8px 15px; /* Réduit le padding autour du texte */
+    font-size: 12px; /* Diminue la taille de la police */
+}
+
+/* --Réduire fenêtre F2 et ses fenêtres intérieures   */
+
+    .f2 {
+            width: 33.33%; /* Même largeur que F1 */
+            height: 35%; /* Même hauteur que F1 */
+            top: 50px;
+            padding: 20px;
+            margin-top: 0;
+            background-color: white;
+            border: 1px solid black;
+            margin-left: 20px; /* Décalage similaire à F1 */
+            align-items: center; /* Centrer horizontalement */
+            display: flex;
+            flex-direction: column; 
+            justify-content: flex-start; 
+            gap: 20px; /* Espacement entre les éléments */
+            position: relative;
+            /* margin-top: 20px;  */
+        }
+        
+    /* Zone de texte */
+.f2 textarea {
+    width: 80%; /* Réduit légèrement la largeur */
+    height: 10%; /* Réduit la hauteur */
+    margin-bottom: 8px; /* Réduit l'espacement entre les zones de texte */
+    padding: 2px 0 0 0; /* Réduit le padding intérieur */
+    font-size: 12px; /* Diminue la taille de la police */
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+/* Boutons côte à côte */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px; /* Réduit l'espacement entre les boutons */
+    width: 100%;
+}
+
+.button-group button {
+    background: white;
+    border: 1px solid black;
+    flex: 1; /* Les boutons restent proportionnels */
+    padding: 6px; /* Réduit le padding autour du texte */
+    font-size: 12px; /* Diminue la taille de la police */
+    color: blue;
+    cursor: pointer;
+}
+
+/* Bouton Effacer */
+#btn-clear {
+    background-color: transparent;
+    color: black; /* Texte noir */
+    border: none;
+    text-align: right;
+    font-size: 12px; /* Diminue la taille de la police */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+} 
+
+}
