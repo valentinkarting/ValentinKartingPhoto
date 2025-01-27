@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire avec deux fenêtres</title>
+    <link rel="stylesheet" href="reservation.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <!-- <img src="./photos/logo final Valou.PNG" alt="logo" class="logo">  -->
+
+            <div class="dropdown">
+                <a href="./regional.html">
+                    <button class="nav-btn">RÉGIONALES</button>
+                </a>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="dropdown">
+                <a href="./National.html">
+                    <button class="nav-btn">NATIONALES</button>
+                </a>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="dropdown">
+                <a href="./International.html">
+                    <button class="nav-btn">INTERNATIONALES</button>
+                </a>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="dropdown">
+                <a href="./actualités.html">
+                    <button class="nav-btn">ACTUALITÉS</button>
+                </a>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="dropdown">
+                <a href="./portefolio.html">
+                    <button class="nav-btn">PORTE-FOLIO</button>
+                </a>
+            </div>
+
+
+        </div>
+
+        <div class="nav-right">
+            <a href="infosphotos.html" class="login-btn">INFOS-PHOTOS</a>
+        </div>
+
+
+        <div class="nav-middle">
+
+            <a href="https://www.instagram.com/vlphotos24?igsh=MWF5cHcOZmlycDR1YW==" target="_blank" class="nav-icon">
+                <img src="./photoresrvation/logo instagram blanc.png" alt="Instagram Icon">
+            </a>
+
+
+            <!-- <a href="./reserver.html" class="nav-icon">  -->
+            <!-- <img src="./photoindex/panier blanc fond noir.jpg" alt="Cart Icon"> -->
+            <!-- </a>  -->
+            <!-- </div>  -->
+            <!-- <div class="nav-right">  -->
+            <!-- <a href="infosphotos.html" class="login-btn">A propos des photos du site</a>  -->
+            <!-- </div>  -->
+
+
+    </nav>
+
+    <div class="container">
+        <!-- Fenêtre F1 -->
+        <div class="f1">
+            <form id="form-f1">
+                <input type="text" id="input1" placeholder="Nom et Prénom" class="text-line">
+                <input type="text" id="input2" placeholder="Catégorie et numéro" class="text-line">
+                <input type="text" id="input3" placeholder="Date et lieu du Meeting" class="text-line">
+                <input type="text" id="input4" placeholder="Adresse Email" class="text-line">
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="checkbox1"> <span>Pack 10 photos 50€ (photos au
+                            choix)</span></label>
+                    <label><input type="checkbox" id="checkbox2"> <span>Réels 45 ~ 75€ (15 ~ 30s)</span></label>
+                    <label><input type="checkbox" id="checkbox3"> <span>Pack réel + photo 80€ (10 photos au choix + réel
+                            de 15s)</span></label>
+                </div>
+
+                <button type="button" id="btn-validate">Valider</button>
+            </form>
+        </div>
+
+        <!-- Fenêtre F2 -->
+        <div class="f2">
+            <!-- Zones de texte pour afficher les données -->
+            <textarea id="output1" class="text-line" readonly></textarea>
+            <textarea id="output2" class="text-line" readonly></textarea>
+            <textarea id="output3" class="text-line" readonly></textarea>
+            <textarea id="output4" class="text-line" readonly></textarea>
+            <textarea id="output5" class="text-line" readonly></textarea>
+
+            <!-- Boutons supplémentaires -->
+            <div class="button-group">
+                <button type="button" id="btn-send">Envoyer Email</button>
+                <button type="button" id="btn-clear">Effacer</button>
+            </div>
+        </div>
+
+
+        <script src="reservation.js"></script>
+
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "6ZG_2TCVnIBPG7zuO",
+            });
+        })();
+    </script>
+
+
+</body>
+
+</html>
