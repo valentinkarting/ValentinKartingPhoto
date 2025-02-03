@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Commande</title>
+    <link rel="stylesheet" href="achat.css">
+
+    <!-- Inclusion d'EmailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!-- Inclusion du SDK PayPal (remplacez YOUR_CLIENT_ID par votre ID client) -->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AZoXoB1ASz1gljFyudEq2VQcUO8V8k5AS5mt3pe-cxJXrrF3qoncKlGChidCiJDS7-vbOhsI6jL76d2F&currency=EUR&disable-funding=card"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Fenêtre 1 : Saisie des informations -->
+        <div class="window" id="window1">
+            <textarea id="input1" placeholder="Adresse Email"></textarea>
+            <textarea id="input2" placeholder="Meeting"></textarea>
+            <textarea id="input3" placeholder="Nom des photos"></textarea>
+            <p class="info-text">Pack 10 photos 50 €.</p>
+            <button onclick="transferData()">Valider</button>
+        </div>
+
+        <!-- Fenêtre 2 : Récapitulatif et paiement -->
+        <div class="window" id="window2">
+            <h2>Récapitulatif de commande</h2>
+            <output id="output1"></output>
+            <output id="output2"></output>
+            <output id="output3"></output>
+            <p class="info-text">Total à régler 50 €.</p>
+
+            <!-- Conteneur pour le bouton SDK PayPal -->
+            <div id="paypal-button-container" style="display: none"></div>
+
+            <!-- L'image sous le bouton PayPal -->
+            <img id="custom-image" src="./photoachat1/logo CB.png" alt="Description de l'image"
+                style="display: none; width: 80px; height: auto; margin-top: 2px;" />
+        </div>
+    </div>
+
+    <!-- Inclusion de notre script JavaScript -->
+    <script src="achat.js"></script>
+
+    <!-- Initialisation d'EmailJS -->
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("UEQgbTpV4NaC6rHwU");
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,550 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('./photoachat/1T4A9181.JPG'); 
+    background-size: cover; /* L'image couvre tout l'écran */
+    background-position: center; /* Centrer l'image */
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* overflow: hidden;  */
+    
+}
+
+@font-face {
+    font-family: 'police navbar';
+    src: url(./font/PlayfairDisplay-Italic-VariableFont_wght.ttf) format(woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 10px;
+    color: #fff;
+    height: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+   
+}
+
+.nav-left,
+.nav-middle,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+/* Dropdown structure */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown button styling */
+.nav-btn {
+    
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0px 10px 0px 0px;
+    transition: background-color 0.3s ease;
+    font-family: 'police navbar';
+}
+
+.nav-btn:hover {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Show dropdown menu when hovering over .dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown menu links */
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+}
+
+
+/* Separators */
+.separator {
+    width: 1px;
+    height: 20px;
+    background-color: #888;
+    margin: 5px;
+}
+
+/* Icons */
+.nav-middle .nav-icon {
+    margin: 0 10px;
+    padding: 0 20px 0 0;
+}
+
+.nav-middle .nav-icon img {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-middle .nav-icon img:hover {
+    opacity: 0.7;
+    width: 40px;
+    height: 40px;
+}
+
+.nav-right {
+    width: 300px;
+
+}
+
+/* Connexion a propos des photos */
+.login-btn {
+    width: 100%;
+    text-align: right;
+    background-color: transparent;
+    color: red;
+    padding: 8px 6px;
+    font-size: 14px;
+    font-style: italic;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+
+}
+
+.login-btn:hover {
+    background-color: transparent;
+    letter-spacing: 1px;
+}
+
+/* Logo Valou dans la barre de navigation */
+.logo {
+    width: 60px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.logo:hover {
+    width: 70px;
+    height: 60px;
+}
+
+
+.container {
+    display: flex;
+    /* justify-content: space-between;  */
+    justify-content: space-evenly; /* Espacement égal à gauche, au centre, et à droite */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+.window {
+    width: 25%;
+    height: 20%;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.window h2 {
+    margin-top: 0;
+    padding: 1px;
+    text-align: center;
+    font-size: 12px;
+    
+}
+
+textarea#input1,
+textarea#input2 {
+    height: 20px;
+    padding: 0; /* Réduction de moitié */
+}
+
+textarea#input3,
+output#output3 {
+    height: 140px; /* Réduction */
+}
+
+textarea#input3 {
+    width: 70%;
+}
+
+.info-text {
+    font-size: 14px;
+    font-style: oblique;
+    letter-spacing: 1px;
+    color: green;
+    text-align: center;
+    text-decoration: underline;
+}
+    
+
+textarea, input[type="text"], output {
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    color: blue;
+    background-color: transparent;
+    border: 0px solid black;
+    /* border-radius: 4px;  */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    
+    letter-spacing: 1px;
+}
+
+output {
+    display: block;
+    background-color: #f9f9f9;
+}
+
+#input3 {
+    height: 200px; /* Ajustez en fonction du design souhaité */
+    overflow-y: auto; /* Empêche le défilement */
+    line-height: 1.5; /* Assure un espacement uniforme entre les lignes */
+    font-family: monospace; /* Optionnel, pour un affichage cohérent des caractères */
+    white-space: pre-wrap; /* Préserve les sauts de ligne */
+    width: 70px%;
+}
+
+#output3 {
+    height: 200px; /* Même hauteur que #input3 */
+    overflow-y: auto; /* Empêche le défilement */
+    line-height: 1.5; /* Assure un espacement uniforme entre les lignes */
+    font-family: monospace; /* Correspond à l'affichage des caractères */
+    white-space: pre-wrap; /* Préserve les sauts de ligne */
+    border: 1px solid black; /* Si vous voulez un bord identique */
+    width: 70%; /* Assurez-vous que la largeur est identique à #input3 */
+    padding: 10px; /* Même espacement intérieur */
+    font-size: 14px; /* Correspond à la taille du texte */
+    background-color: #f9f9f9; /* Fond similaire */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur/hauteur */
+}
+
+
+/* Appliquer du style au logos de paiement----- */
+a {
+    /* display: flex;    */
+     /* Utilisation de flexbox pour aligner les images horizontalement */
+    justify-content: center;     /* Centre les images horizontalement */
+    align-items: center;         /* Centre les images verticalement */
+    gap: 20px;                   /* Ajoute un espace de 20px entre les images */
+}
+
+/* Appliquer des styles à chaque image */
+a img {
+    width: 150px;                /* Largeur des logos */
+    height: auto;                /* Maintient la proportion des logos */
+}
+
+
+
+@media screen and (min-width: 1001px) {
+
+    .container {
+        display: flex;
+        /* justify-content: space-between;  */
+        justify-content: space-evenly; /* Espacement égal à gauche, au centre, et à droite */
+        align-items: center;
+        width: 100%;
+        height: 200vh;
+        padding: 20px;
+        box-sizing: border-box;
+        
+    }
+
+}
+   
+
+
+@media (max-width: 1000px) {
+    .separator {
+        display: none;
+    }
+
+    body {
+        overflow-y: scroll;
+    }
+
+    .container {
+        
+        
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+       
+        gap: 2px;
+        padding-bottom: 50px;
+        
+        
+    }
+
+    .window {
+        
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        height: auto;
+        gap: 2px;
+        
+    }
+
+    textarea, input[type="text"], output {
+        width: 95%;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid black;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+
+}
+
+
+
+
+@media (max-width: 900px) {
+
+    /* ---en premier la navbar-------------- */
+    
+    .navbar {
+        flex-direction: column;
+        padding: 1px;           /* Réduit l'espacement de la navbar */
+        height: auto;            /* Ajuste la hauteur en fonction du contenu */
+        width: 40%;
+        left: 30%;
+        justify-content: center;
+        /* align-items: center;  */
+        display: flex;
+        /* position: relative;  */
+        
+    }
+
+    /* Modifie la disposition de chaque section (gauche, centre, droite) */
+    .nav-left,
+    .nav-middle,
+    .nav-right {
+        width: 100%; /* Prend toute la largeur */
+        margin: 0 0 0 0; /* Ajoute un espace vertical entre les sections */
+        padding: 0 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    
+
+    /* Ajuste les boutons de la navbar */
+    .nav-btn {
+        padding: 8px;
+        font-size: 14px; /* Réduit la taille de la police */
+        width: 100%; /* Les boutons prennent toute la largeur */
+        margin: 0px 0; /* Ajoute un espacement vertical entre les boutons */
+        font-size: 10px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    /* Menu déroulant pour les petits écrans */
+    .dropdown {
+        display: flex; /* Flexbox pour le menu déroulant */
+        flex-direction: column; /* Aligne les éléments du dropdown en colonne */
+        width: 100%; /* Le dropdown prend toute la largeur de son parent */
+        position: relative;
+    }
+
+    .dropdown-btn {
+        width: 100%; /* Le bouton du dropdown prend toute la largeur */
+        /* padding: 8px 10px;  */
+        text-align: left; /* Aligne le texte à gauche dans le bouton */
+        
+    }
+
+    /* Affichage du menu dropdown */
+    .dropdown-menu {
+        display: none; /* Cacher le menu au départ */
+        position: absolute; /* Positionné sous le bouton */
+        top: 100%; /* Le menu s'affiche sous le bouton */
+        left: 0;
+        background-color: black;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        width: 100%; /* Prend toute la largeur du bouton parent */
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block; /* Affiche le menu lorsqu'on survole le bouton */
+    }
+
+    .dropdown-menu a {
+        display: block; /* Chaque lien prend une nouvelle ligne */
+        padding: 10px;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #555;
+    }
+   
+
+.nav-right {
+    width: 100%;
+    padding: 0;
+    
+}
+
+.nav-middle {
+    display: none;
+    width: 100%;
+}
+
+.login-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+}        
+
+.nav-icon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        margin-left: auto;
+        margin-right: auto;
+        
+}
+    
+    
+
+/* -----------fenêtre et container---------- */
+
+    body {
+        overflow-y: scroll;
+    }
+
+    .container {
+        margin-top: 300px;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        gap: 20px;
+        padding-bottom: 50px;
+        
+        
+    }
+
+    .window {
+        
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        height: auto;
+        gap: 10px;
+        
+    }
+
+    textarea, input[type="text"], output {
+        width: 95%;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid black;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    input::placeholder {
+        font-size: 10px; /* Remplacez par la taille désirée */
+        color: gray; /* Optionnel : change la couleur du placeholder */
+        font-style: italic; /* Optionnel : modifie le style du texte */
+    }
+    
+}
+
+@media screen and (orientation: landscape) {
+
+    .navbar {
+        display: none;
+    }
+
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Commande</title>
+    <link rel="stylesheet" href="achatbis.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Fenêtre 1 -->
+        <div class="window" id="window1">
+            <textarea id="input1" placeholder="Adresse Email"></textarea>
+            <textarea id="input2" placeholder="Meeting"></textarea>
+            <textarea id="input3" placeholder="Nom des photos"></textarea>
+
+            <!-- Zone pour afficher le nombre de lignes de input3 -->
+            <div id="lineCountDisplay"></div>
+
+            <!-- Prix unitaire de la photo (modifiable) -->
+            <span id="photoPrice" style="display:none;">6</span>
+
+            <p class="info-text">6€ / photo</p>
+            <button onclick="transferData()">Valider</button>
+        </div>
+
+        <!-- Fenêtre 2 -->
+        <div class="window" id="window2">
+            <h2>Récapitulatif de commande</h2>
+            <output id="output1" class="fixed-output"></output>
+            <output id="output2" class="fixed-output"></output>
+            <output id="output3" class="fixed-output"></output>
+
+            <div class="total-container">
+                <output id="outputLineCount" class="fixed-output"></output>
+                <span>€</span>
+            </div>
+
+            <p class="info-text">Total à régler</p>
+
+            <!-- Bouton PayPal -->
+
+
+            <div id="paypal-button-container" style="display: 
+            none; padding-top: 20px;"></div>
+
+            <!-- Bouton personnalisé -->
+            <button id="my-custom-button" style="display: none">
+                <img src="./photoachat1/logo CB.png" />
+            </button>
+
+
+
+        </div>
+    </div>
+
+    <!-- Inclusion du fichier JavaScript -->
+    <script src="achatbis.js"></script>
+
+    <!-- Script PayPal -->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AYZGbNAFdA0annG80jQkoaXkHchzlEnlSAqOE34gbGb1mPgpJJ0COfvL2dl4PjiWBuo5n_WPGufl4dhE&currency=EUR&disable-funding=card"></script>
+</body>
+
+</html>
