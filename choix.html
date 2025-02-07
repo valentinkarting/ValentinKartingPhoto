@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choix</title>
+    <link rel="stylesheet" href="choix.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="button-container">
+            <div class="window">
+                <a href="reservation.html" class="button-link">
+                    <button>Réservez vos médias</button>
+                </a>
+            </div>
+            <div class="window">
+                <!-- Bouton qui ouvrira le modal -->
+                <button id="achatBtn">Achetez vos photos</button>
+            </div>
+        </div>
+
+        <!-- Cube 3D (les images sur les faces restent affichées) -->
+        <div class="cube-window">
+            <a href="index.html" class="cube-link">
+                <div class="cube">
+                    <div class="face front">
+                        <img src="./photochoix/logo final Valou.PNG" alt="Front" />
+                    </div>
+                    <div class="face back">
+                        <img src="./photochoix/logo final Valou.PNG" alt="Back" />
+                    </div>
+                    <div class="face left">
+                        <img src="./photochoix/logo final Valou.PNG" alt="Left" />
+                    </div>
+                    <div class="face right">
+                        <img src="./photochoix/logo final Valou.PNG" alt="Right" />
+                    </div>
+                    <div class="face top">
+                        <img src="./photochoix/logo final Valou.PNG" alt="Top" />
+                    </div>
+                    <div class="face bottom">
+                        <img src="./photochoix/logo final Valou.PNG" alt="Bottom" />
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal (initialement caché) -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <p>Choisissez votre option :</p>
+            <div class="modal-buttons">
+                <a href="achat.html" class="modal-link">Pack 10 photos 50€</a>
+                <a href="achatbis.html" class="modal-link"> a l'unité 6€/photo</a>
+            </div>
+            <button id="closeModal" class="close-modal">Annuler</button>
+        </div>
+    </div>
+
+    <!-- script pour désactiver clic droit souris pas d'enregistrement photo  -->
+
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });   
+    </script>
+
+    <script src="choix.js"></script>
+</body>
+
+</html>
