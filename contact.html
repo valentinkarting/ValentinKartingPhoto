@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="contact.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("UEQgbTpV4NaC6rHwU");
+        })();
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <form id="contact-form">
+            <h2>Nom Prénom</h2>
+            <input type="text" id="name" name="name" placeholder="" required>
+
+            <h2>Adresse Mail</h2>
+            <input type="email" id="email" name="email" placeholder="" required>
+
+            <h2>Téléphone</h2>
+            <input type="text" id="phone" name="phone" placeholder="" required>
+
+            <h2>Objet</h2>
+            <textarea id="objet" name="objet" placeholder="" required></textarea>
+
+            <p class="info-text"> Pour toute réservation un tarif de prestation vous sera envoyé vous devrez le
+                retourner rempli daté et signé.
+            </p>
+
+            <button type="submit">Envoyer 📧</button>
+        </form>
+
+
+
+    </div>
+
+
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="contact.js"></script>
+</body>
+
+</html>
