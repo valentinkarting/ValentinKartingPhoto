@@ -1,0 +1,153 @@
+/* Style global du body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url(./photorbpl2025/insta1.JPG) no-repeat center center fixed;
+    background-size: cover;
+    overflow-y: auto;
+  }
+  
+  /* Conteneur principal avec hauteur adaptée pour deux rangées */
+  .container {
+    position: relative;
+    min-height: 600px;
+  }
+  
+  /* Style commun pour les fenêtres du haut */
+  .fenetre {
+    position: absolute;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Fenêtres du haut : cinq fenêtres réparties sur la largeur */
+  /* On part d'une marge de 2% à gauche et 2% à droite sur 96% de largeur totale.
+     Pour 5 fenêtres de même largeur et 4 espaces entre elles, on choisit une largeur de 18%
+     et un interstice d'environ 1.5% */
+  #fenetre1 { 
+    width: 18%; 
+    top: 20px; 
+    left: 2%; 
+    background: linear-gradient(to bottom, rgba(255,166,0,0.575) 0%, rgba(255,166,0,0.541) 30%, rgba(0,128,0,0.596), rgba(0,0,255,0.534));
+  }
+  #fenetre2 { 
+    width: 18%; 
+    top: 20px; 
+    left: 21.5%; 
+    background: linear-gradient(to bottom, rgba(255,166,0,0.575) 0%, rgba(255,166,0,0.541) 30%, rgba(0,128,0,0.596), rgba(0,0,255,0.534));
+  }
+  #fenetre3 { 
+    width: 18%; 
+    top: 20px; 
+    left: 41%; 
+    background: linear-gradient(to bottom, rgba(255,166,0,0.575) 0%, rgba(255,166,0,0.541) 30%, rgba(0,128,0,0.596), rgba(0,0,255,0.534));
+  }
+  #fenetre4 { 
+    width: 18%; 
+    top: 20px; 
+    left: 60.5%; 
+    background: linear-gradient(to bottom, rgba(255,166,0,0.575) 0%, rgba(255,166,0,0.541) 30%, rgba(0,128,0,0.596), rgba(0,0,255,0.534));
+  }
+  #fenetre5 { 
+    width: 18%; 
+    top: 20px; 
+    left: 80%; 
+    background: linear-gradient(to bottom, rgba(255,166,0,0.575) 0%, rgba(255,166,0,0.541) 30%, rgba(0,128,0,0.596), rgba(0,0,255,0.534));
+  }
+  
+  /* Style de la fenêtre du bas */
+  #fenetre6 {
+    position: absolute;
+    left: 2%;
+    right: 2%;
+    height: 50px;
+    bottom: 5px;
+    background-color: rgba(0,100,0,0.438);
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Une couche interne pour améliorer le rendu */
+  #fenetre6 .inner {
+    background-color: rgba(144,238,144,0.425);
+    height: 30px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+  }
+  
+  /* Styles pour le contenu des fenêtres */
+  .fenetre h1 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+    color: black;
+    user-select: none;
+  }
+  .fenetre img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 10px auto;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    user-select: none;
+  }
+  .fenetre p {
+    margin: 0;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+    user-select: none;
+    padding: 5px;
+  }
+  
+  /* Style du bouton */
+  .btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    text-decoration: underline;
+    border-radius: 5px;
+    font-style: italic;
+    text-align: center;
+    user-select: none;
+  }
+  .btn:hover {
+    letter-spacing: 2px;
+  }
+  
+  /* Adaptations responsives */
+  @media screen and (max-width: 955px) {
+    .fenetre img { width: 100px; height: 100px; }
+    .fenetre h1 { font-size: 1rem; }
+    .btn { font-size: 1rem; }
+    .fenetre p { font-size: 0.8rem; }
+  }
+  @media screen and (max-width: 800px) {
+    .fenetre img { width: 70px; height: 70px; }
+    .fenetre h1 { font-size: 0.8rem; }
+    .btn { font-size: 0.8rem; }
+    .fenetre p { font-size: 0.7rem; }
+    .inner p {font-size: 0.8rem;}
+  
