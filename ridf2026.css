@@ -41,27 +41,16 @@ body {
   #fenetre2 { 
     width: 18%; 
     top: 20px; 
-    left: 21.5%; 
+    left: 35.5%; 
     background: linear-gradient(to bottom, rgba(255,166,0,0.575) 0%, rgba(255,166,0,0.541) 30%, rgba(0,128,0,0.596), rgba(0,0,255,0.534));
   }
   #fenetre3 { 
     width: 18%; 
     top: 20px; 
-    left: 41%; 
+    left: 71%; 
     background: linear-gradient(to bottom, rgba(255,166,0,0.575) 0%, rgba(255,166,0,0.541) 30%, rgba(0,128,0,0.596), rgba(0,0,255,0.534));
   }
-  #fenetre4 { 
-    width: 18%; 
-    top: 20px; 
-    left: 60.5%; 
-    background: linear-gradient(to bottom, rgba(255,166,0,0.575) 0%, rgba(255,166,0,0.541) 30%, rgba(0,128,0,0.596), rgba(0,0,255,0.534));
-  }
-  #fenetre5 { 
-    width: 18%; 
-    top: 20px; 
-    left: 80%; 
-    background: linear-gradient(to bottom, rgba(255,166,0,0.575) 0%, rgba(255,166,0,0.541) 30%, rgba(0,128,0,0.596), rgba(0,0,255,0.534));
-  }
+  
   
   /* Style de la fenêtre du bas */
   #fenetre6 {
