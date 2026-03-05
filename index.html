@@ -384,21 +384,19 @@
             e.preventDefault();
         });
     </script>
+
     <script>
     if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-    .then(() => console.log("Service Worker installé"))
-    .catch((e) => console.error("Erreur Service Worker", e));
+    navigator.serviceWorker.register('/Valenti/service-worker.js')
 }
 </script>
 
       
 </script>
+
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-    .then(() => console.log("Service Worker installé"))
-    .catch((e) => console.error("Erreur Service Worker", e));
+  navigator.serviceWorker.register('/Valenti/service-worker.js')
 }
 </script>
 
