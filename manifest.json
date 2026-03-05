@@ -1,7 +1,7 @@
 {
   "name": "Valentin Karting Photo",
   "short_name": "Karting Photo",
-  "start_url": "./index.html",
+  "start_url": "/ValentinKartingPhoto/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
