@@ -7,6 +7,7 @@
     <title>Valentin Karting Photo</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000000">
+    <link rel="icon" href="icone192.png">
     <link rel="stylesheet" href="style.css">
     <script>
 
@@ -386,8 +387,10 @@
     </script>
 
     <script>
-    if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/Valenti/service-worker.js')
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log("Service Worker installé"))
+    .catch((e) => console.log("Erreur SW", e));
 }
 </script>
 
@@ -396,7 +399,9 @@
 
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Valenti/service-worker.js')
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log("Service Worker installé"))
+    .catch((e) => console.log("Erreur SW", e));
 }
 </script>
 
