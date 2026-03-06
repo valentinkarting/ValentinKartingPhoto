@@ -210,7 +210,7 @@ body {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 568px) {
 
     body {
       
@@ -1093,7 +1093,7 @@ img.photo-container5 {
 /* Media Queries pour la Responsivité */
 
 /* Pour les écrans plus petits (tablettes, mobiles) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 568px) {
     .photo-text-container0 {
         display: none;
     }
