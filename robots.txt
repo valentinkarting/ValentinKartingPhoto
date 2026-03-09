@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://valentinkarting.github.io/ValentinKartingPhoto/sitemap.xml
