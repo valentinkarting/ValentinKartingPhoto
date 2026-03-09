@@ -1,10 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-<url>
-<loc>https://valentinkarting.github.io/ValentinKartingPhoto/</loc>
-<lastmod>2026-03-09</lastmod>
-<priority>1.0</priority>
-</url>
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://valentinkarting.github.io/ValentinKartingPhoto/</loc>
+    <lastmod>2026-03-09</lastmod>
+    <priority>1.0</priority>
+    
+    <!-- Images principales de la page -->
+    <image:image>
+      <image:loc>https://valentinkarting.github.io/ValentinKartingPhoto/photoindex/0.JPG</image:loc>
+      <image:caption>Karting session – photo 0</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valentinkarting.github.io/ValentinKartingPhoto/photoindex/1.JPG</image:loc>
+      <image:caption>Karting session – photo 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valentinkarting.github.io/ValentinKartingPhoto/photoindex/1bis.JPG</image:loc>
+      <image:caption>Karting session – photo 1bis</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valentinkarting.github.io/ValentinKartingPhoto/photoindex/2.JPG</image:loc>
+      <image:caption>Karting session – photo 2</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valentinkarting.github.io/ValentinKartingPhoto/photoindex/3.JPG</image:loc>
+      <image:caption>Karting session – photo 3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valentinkarting.github.io/ValentinKartingPhoto/photoindex/4.JPG</image:loc>
+      <image:caption>Karting session – photo 4</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valentinkarting.github.io/ValentinKartingPhoto/photoindex/5.JPG</image:loc>
+      <image:caption>Karting session – photo 5</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valentinkarting.github.io/ValentinKartingPhoto/photoindex/6.JPG</image:loc>
+      <image:caption>Karting session – photo 6</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valentinkarting.github.io/ValentinKartingPhoto/photoindex/7.JPG</image:loc>
+      <image:caption>Karting session – photo 7</image:caption>
+    </image:image>
+    
+  </url>
 
 </urlset>
