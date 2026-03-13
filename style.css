@@ -574,6 +574,20 @@ h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.1);
 }
 
+@media screen and (max-width: 1000px) {
+
+h1{
+font-size: 25px;
+}
+
+}
+@media screen and (max-width: 620px) {
+
+h1{
+font-size: 15px;
+}
+
+}
 
 
 
@@ -1140,6 +1154,7 @@ img.photo-container5 {
     .logos-container7 {
         display: none;
     } 
+   
 
     .carousel-container {
         bottom: 80px;
