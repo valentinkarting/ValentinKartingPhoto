@@ -577,6 +577,7 @@ h1 {
 @media screen and (max-width: 1000px) {
 
 h1{
+margin-top: 20px;  
 font-size: 25px;
 }
 
@@ -585,6 +586,14 @@ font-size: 25px;
 
 h1{
 font-size: 15px;
+}
+
+}
+@media screen and (max-width: 568px) {
+
+h1{
+font-size: 15px;
+color: rgb(132, 130, 238)
 }
 
 }
