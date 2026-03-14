@@ -1330,7 +1330,7 @@ footer {
     text-decoration: underline; /* Souligner le lien au survol */
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1000px) {
     footer {
        position: relative;
        margin-top: 2350px;
