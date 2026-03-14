@@ -474,6 +474,7 @@ img {
     width: 100%;
     height: 100%;
     position: relative;
+    
 }
 
 /* Images du carrousel */
@@ -568,8 +569,8 @@ h1 {
 }
 h1 {
     position: relative;
-    top: 45px;
-    font-size: 45px;
+    top: 25px;
+    font-size: 35px;
     letter-spacing:4px;
     font-family: 'Great Vibes', cursive;
     /*font-style: italic;*/
@@ -610,7 +611,7 @@ color: rgb(132, 130, 238)
     display: flex;      
     width: calc(100% - 100px);
     left: 50px;
-    top: calc(90px + (100vh - 120px));
+    top: calc(115px + (100vh - 120px));
 }
   
 
@@ -637,7 +638,7 @@ color: rgb(132, 130, 238)
     /* gap: 2%;  */
     /* margin-right: 2%;  */
     left: 50px;
-    top: calc(105px + (100vh - 120px));
+    top: calc(130px + (100vh - 120px));
 }
   
 .photo-container1 {
@@ -692,7 +693,7 @@ color: rgb(132, 130, 238)
     width: calc(100% - 100px);
     align-items: center;     
     left: 50px;
-    top: calc(415px + (100vh - 120px));
+    top: calc(440px + (100vh - 120px));
     
 }
   
@@ -787,7 +788,7 @@ color: rgb(132, 130, 238)
     width: calc(100% - 100px);
     align-items: center;     
     left: 50px;
-    top: calc(725px + (100vh - 120px));
+    top: calc(750px + (100vh - 120px));
 }
   
 .photo-container2 {
@@ -834,7 +835,7 @@ color: rgb(132, 130, 238)
     width: calc(100% - 100px);
     align-items: center;
     left: 50px;
-    top: calc(1035px + (100vh - 120px));
+    top: calc(1060px + (100vh - 120px));
 }
 .video-container3 {
     
@@ -893,7 +894,7 @@ color: rgb(132, 130, 238)
     width: calc(100% - 100px);
     align-items: center;     /* Aligne verticalement au centre */
     left: 50px;
-    top: calc(1345px + (100vh - 120px));
+    top: calc(1370px + (100vh - 120px));
 }
   
 .photo-container4 {
@@ -927,7 +928,7 @@ color: rgb(132, 130, 238)
     align-items: center;     /* Aligne verticalement au centre */
     text-align: center;
     left: 50px;
-    top: calc(1655px + (100vh - 120px));
+    top: calc(1680px + (100vh - 120px));
     
 }
   
@@ -979,7 +980,7 @@ img.photo-container5 {
     width: calc(100% - 100px);
     align-items: center;     /* Aligne verticalement au centre */
     left: 50px;
-    top: calc(1965px + (100vh - 120px));
+    top: calc(1990px + (100vh - 120px));
     
 }
   
@@ -1062,7 +1063,7 @@ img.photo-container5 {
     align-items: center;     /* Aligne verticalement au centre */
     left: 50px;
     /* top: 1190px;  */
-    top: calc(2275px + (100vh - 120px));
+    top: calc(2300px + (100vh - 120px));
     
 }
 .logos-container7 {
@@ -1335,7 +1336,7 @@ footer {
 @media screen and (max-width: 1000px) {
     footer {
        position: relative;
-       margin-top: 2350px;
+       margin-top: 2380px;
         
     }
 }
