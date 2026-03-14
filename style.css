@@ -580,10 +580,7 @@ h1{
 margin-top: 20px;  
 font-size: 25px;
 }
-footer {
-    position: relative;
-    bottom: 0;
-}
+
 
 }
 @media screen and (max-width: 620px) {
@@ -1333,6 +1330,12 @@ footer {
     text-decoration: underline; /* Souligner le lien au survol */
 }
 
+
+@media screen and (max-width: 650px) {
+    footer {
+        bottom: 0px;
+    }
+}
 /* Footer responsive styles */
 @media screen and (max-width: 500px) {
     footer {
@@ -1401,4 +1404,3 @@ footer {
         font-size: 8px;
     }
 }
-
