@@ -1,3 +1,12 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const images = document.querySelectorAll(".clickable-image");
+  console.log("images trouvées :", images.length);
+
+});
+
+
 // Sélectionner les images et les bullets
 const images = document.querySelectorAll('.carousel-image');
 const bullets = document.querySelectorAll('.carousel-bullet');
@@ -44,3 +53,42 @@ toggleButton.addEventListener('click', function() {
     toggleButton.textContent = 'Afficher le texte';
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const closeBtn = document.querySelector(".close");
+  const modalBox = document.querySelector(".modal-box");
+
+  // sélectionner toutes les images cliquables
+  const images = document.querySelectorAll(".clickable-image");
+  console.log("images trouvées :", images.length);
+
+  // ouvrir la modale au clic sur une image
+  images.forEach(img => {
+    img.addEventListener("click", function() {
+      modal.classList.add("active");
+      modalImg.src = this.src;
+    });
+  });
+
+  // fermer la modale avec la croix
+  closeBtn.addEventListener("click", function() {
+    modal.classList.remove("active");
+  });
+
+  // clic sur le fond → ferme
+  modal.addEventListener("click", function() {
+    modal.classList.remove("active");
+  });
+  // clic sur l'image → ne ferme pas
+ modalImg.addEventListener("click", function(e) {
+  e.stopPropagation();
+});
+
+});
+  
+
+

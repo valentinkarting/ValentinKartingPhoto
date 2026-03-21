@@ -18,12 +18,13 @@ body, html {
 h1 {
     text-align: center;
     font-style: italic;
-    color: yellowgreen
+    /*color: rgb(50, 112, 205)*/
+    color: black
 }
 h3 {
     text-align: center;
     font-style: italic;
-    color: yellowgreen;
+    color: rgb(50, 60, 205);
     font-size: 30px;
 }
 
