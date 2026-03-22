@@ -16,11 +16,24 @@ body, html {
 }
 
 h1 {
-    text-align: center;
-    font-style: italic;
-    /*color: rgb(50, 112, 205)*/
-    color: black
+    /*text-align: center;*/
+    /*font-style: italic;*/
+    /*color: black;*/
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* optionnel, pour l'alignement */
 }
+h1 {
+    position: relative;
+    top: 20px;
+    font-size: 35px;
+    letter-spacing:4px;
+    font-family: 'Great Vibes', cursive;
+    /*font-style: italic;*/
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.1);
+}
+
 h3 {
     text-align: center;
     font-style: italic;
