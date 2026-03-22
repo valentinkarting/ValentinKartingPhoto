@@ -104,12 +104,12 @@ h1 {
 /* Styles pour les images des boutons */
 .dropdown-img {
     width: 100%; /* L'image prend toute la largeur du bouton */
-    border: 3px solid black;
+    border: 2px solid black;
     
     aspect-ratio: 3 / 1.5; /* Maintient un ratio 3:2 (largeur:hauteur) */
     object-fit: cover; /* Adapte l'image pour couvrir l'espace disponible */
     margin-bottom: 10px; /* Ajoute un espace entre l'image et le bouton */
-    
+    padding: 3px;
 }
 
 
