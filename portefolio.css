@@ -10,9 +10,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 2px;
-    /* row-gap: 0;  */
-    /* padding:2px;  */
     column-gap: 5px;
+
     
 }
 
@@ -22,13 +21,14 @@ body {
     height: 150px;
     object-fit: cover;
     cursor: pointer;
-    border: 2px solid white;
+    border: 2px solid black;
         
 }
 
 img {
     -webkit-user-drag: none; /* Safari */
     user-drag: none; /* Standard */
+    padding: 2px;
 }
 
 /* Modale */
