@@ -22,8 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 Obectif 150/600<br>
                 et Macro 100mm<br>
                 téléconvertisseur X2`,
-      "A10": "Politique de cookie"          
-    },            
+      "A10": "Politique de cookie",
+       "A11": "Calendrier", 
+       "A12": "Veuillez noter que toutes les photos sont en (basse résolution) afin de permettre un affichage optimal suivant le type de connexion, les photos originales sont en (HD)",
+       "welcome-btn": "Continuer"
+    },       
+
     en: {
       "A1": "REGIONAL",
       "A2": "NATIONAL",
@@ -44,8 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 150-600mm lens<br>
                 and 100mm macro lens<br>
                 2x teleconverter`,
-      "A10": "Cookie Policy"
+      "A10": "Cookie Policy",
+      "A11": "Calendar",
+      "A12": "Please note that all photos are in (low resolution) to allow for optimal display depending on the type of connection; the original photos are in (HD).",
+      "welcome-btn": "Continue"
     },  
+
     it: {
       "A1": "REGIONALI",
       "A2": "NAZIONALI",
@@ -66,8 +74,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 Obiettivo 150/600<br>
                 e Macro 100mm<br>
                 teleconvertitore X2`,
-      "A10": "Informativa sui cookie"
+      "A10": "Informativa sui cookie",
+      "A11": "Calendario",
+      "A12": "Si prega di notare che tutte le foto sono in bassa risoluzione per consentire una visualizzazione ottimale a seconda del tipo di connessione; le foto originali sono in alta definizione (HD).",
+      "welcome-btn": "Continuare"
     },
+
     es: {
       "A1": "REGIONALES",
       "A2": "NACIONALES",
@@ -88,8 +100,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 Objetivo 150/600<br>
                 y macro 100 mm<br>
                 Teleconvertidor X2`,
-      "A10": "Política de cookies"
+      "A10": "Política de cookies",
+      "A11": "Calendario",
+      "A12": "Tenga en cuenta que todas las fotos están en baja resolución para permitir una visualización óptima según el tipo de conexión; las fotos originales están en alta definición (HD).",
+      "welcome-btn": "Continuar"
     },
+
     al: {
       "A1": "REGIONALES",
       "A2": "NATIONALES",
@@ -110,7 +126,10 @@ document.addEventListener("DOMContentLoaded", function () {
                150-600-mm-Objektiv<br>
                und 100-mm-Makroobjektiv<br>
                2x-Telekonverter`,
-      "A10": "Cookie-Richtlinie"
+      "A10": "Cookie-Richtlinie",
+      "A11": "Kalender",
+      "A12": "Bitte beachten Sie, dass alle Fotos in niedriger Auflösung vorliegen, um eine optimale Darstellung je nach Verbindungsart zu ermöglichen; die Originalfotos liegen in HD-Qualität vor.",
+      "welcome-btn": "Weitermachen"
     }
   };
 
