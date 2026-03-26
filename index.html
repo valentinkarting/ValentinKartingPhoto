@@ -36,7 +36,7 @@
 
             <div class="dropdown">
                 <a href="./regional.html">
-                    <button class="nav-btn">RÉGIONALES</button>
+                    <button id="A1" class="nav-btn">RÉGIONALES</button>
                 </a>
             </div>
 
@@ -44,7 +44,7 @@
 
             <div class="dropdown">
                 <a href="./National.html">
-                    <button class="nav-btn">NATIONALES</button>
+                    <button id="A2" class="nav-btn">NATIONALES</button>
                 </a>
             </div>
 
@@ -52,7 +52,7 @@
 
             <div class="dropdown">
                 <a href="./International.html">
-                    <button class="nav-btn">INTERNATIONALES</button>
+                    <button id="A3" class="nav-btn">INTERNATIONALES</button>
                 </a>
             </div>
 
@@ -60,7 +60,7 @@
 
             <div class="dropdown">
                 <a href="./actualités.html">
-                    <button class="nav-btn">ACTUALITÉS</button>
+                    <button id="A4" class="nav-btn">ACTUALITÉS</button>
                 </a>
             </div>
 
@@ -68,9 +68,36 @@
 
             <div class="dropdown">
                 <a href="./portefolio.html">
-                    <button class="nav-btn">PORTE-FOLIO</button>
+                    <button id="A5" class="nav-btn">PORTE-FOLIO</button>
                 </a>
             </div>
+            <!--Nouvelle partie pour changement de langue-->
+
+            <div class="lang-switch">
+
+    <span class="flag-wrapper" data-lang="Français">
+        <img src="./photodrapeaux/flagfr.png" id="lang-fr" class="flag">
+    </span>
+
+    <span class="flag-wrapper" data-lang="English">
+        <img src="./photodrapeaux/flageng.jpeg" id="lang-en" class="flag">
+    </span>
+
+    <span class="flag-wrapper" data-lang="Italiano">
+        <img src="./photodrapeaux/flagit.png" id="lang-it" class="flag">
+    </span>
+
+    <span class="flag-wrapper" data-lang="Español">
+        <img src="./photodrapeaux/flagesp.png" id="lang-es" class="flag">
+    </span>
+
+    <span class="flag-wrapper" data-lang="Deutsch">
+        <img src="./photodrapeaux/flagall.jpg" id="lang-al" class="flag">
+    </span>
+
+</div>
+
+
 
 
         </div>
@@ -95,7 +122,7 @@
 
     </nav>
 
-    <H1>Photographe professionnel de karting de compétition</H1>
+    <H1 id="A7">Photographe professionnel de karting de compétition</H1>
 
     <!-- ------------ 2eme partie CAROUSEL -------- -->
 
@@ -134,7 +161,7 @@
 
 
             <div class="scrolling-text-container">
-                <p class="scrolling-text">🏁 Bonjour et bienvenue 🏁 - Découvrez vos photos de karting ! 🤩
+                <p id="A6" class="scrolling-text">🏁 Bonjour et bienvenue 🏁 - Découvrez vos photos de karting ! 🤩
                     Pour réserver
                     acheter ou commander des photos ou vidéos cliquez sur le panier et laissez-vous guider 🏎️
                     ou bien laissez un message je vous répondrais le plus vite possible🏁
@@ -181,8 +208,8 @@
         </div>
         <div class="text-container1">
             
-            <h2>Shooting photos</h2>
-            <p>Vos photos en HD.<br>
+            <h2 id="A8">Shooting photos</h2>
+            <p id="A9" >Vos photos en HD.<br>
                 Taille 8688px / 5792px<br>
                 De 9 à 15 Mo<br>
                 Idéal pour tirage papier<br>
@@ -359,7 +386,7 @@
 
             <a href="mailto:contact@valentinkartingphoto.com" class="footer-email">valentinlonguet4@gmail.com</a>
             <a href="./rgpd.html" class="footer-button">R.G.P.D</a>
-            <a href="./cookies.html" class="footer-button">Politique de cookie</a>
+            <a href="./cookies.html" id="A10" class="footer-button">Politique de cookie</a>
             <a href="https://www.instagram.com/vlphotos24?igsh=MWF5cHcOZmlycDR1YW==" target="_blank"
                 class="footer-instagram">
                 <img src="./photoindex/logo instagram blanc.png" alt="Instagram Logo">
@@ -405,6 +432,11 @@ if ('serviceWorker' in navigator) {
     <img class="modal-content" id="modal-img">
   </div>
 </div>
+
+
+<!-- Nouvelle partie pour changement de langue -->
+<script src="lang.js"></script>
+<!----------------------------------------------->
 
 </body>
 

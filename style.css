@@ -183,6 +183,88 @@ body {
     height: 60px;
 }
 
+/*----Nouvelle partie pour changement de langue--------*/
+/* conteneur des drapeaux */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    overflow: visible; /* important pour la bulle */
+}
+
+/* wrapper (nouveau) */
+.flag-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* style des drapeaux */
+.flag {
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+    margin-left: 6px;
+    border-radius: 3px;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+/* effet au survol */
+.flag:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* option : drapeau actif */
+.flag.active {
+    outline: 2px solid white;
+}
+
+/* 🔥 bulle personnalisée */
+.flag-wrapper::after {
+    content: attr(data-lang);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background: black;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+/* 🔥 petite flèche */
+.flag-wrapper::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* 🔥 affichage au survol */
+.flag-wrapper:hover::after,
+.flag-wrapper:hover::before {
+    opacity: 1;
+}
+
+/*-----------------------------------------------------*/
+
+
 /* Media Queries pour rendre la page responsive */
 @media screen and (max-width: 1070px) {
     .navbar {
@@ -271,6 +353,74 @@ body {
     }
 }
 
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        padding: 10px 4px;
+    }
+
+    .nav-left,
+    .nav-middle,
+    .nav-right {
+        gap: 1px;
+    }
+    .nav-btn {
+        /*font-size: 0.4rem;*/
+        font-size: 10px;
+        padding: 6px 2px;
+    }
+
+    .logo {
+        width: 30px;
+        height: 20px;
+    }
+
+    .nav-middle .nav-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .login-btn {
+        font-size: 10px;
+        padding: 5px 0;
+    }
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        padding: 10px 4px;
+    }
+
+    .nav-left,
+    .nav-middle,
+    .nav-right {
+        gap: 1px;
+    }
+    .nav-btn {
+        /*font-size: 0.4rem;*/
+        font-size: 8px;
+        padding: 6px 2px;
+    }
+
+    .logo {
+        width: 30px;
+        height: 20px;
+    }
+
+    .nav-middle .nav-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .login-btn {
+        font-size: 10px;
+        padding: 5px 0;
+    }
+}
+
 @media screen and (max-width: 540px) {
     .navbar {
         
@@ -330,6 +480,9 @@ body {
         padding: 6px 1px;
         text-align: center;
     }
+    .lang-switch {
+    display: none;
+}
 }
 
 
@@ -597,7 +750,7 @@ font-size: 15px;
 
 h1{
 font-size: 15px;
-color: rgb(132, 130, 238)
+color: black;
 }
 
 }
