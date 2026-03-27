@@ -36,6 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
        "A17": "Choisissez votre option",
        "closeModal": "Annuler",
        "A18": "Choisissez votre option",
+       "A19": "Nom Prénom",
+       "A20": "Adresse Mail",
+       "A21": "Téléphone",
+       "A22": "Objet",
+       "24": "Pour toute réservation un tarif de prestation vous sera envoyé vous devrez le retourner rempli daté et signé.",
+       "A23": "Envoyer"
 
 
     },       
@@ -73,7 +79,13 @@ document.addEventListener("DOMContentLoaded", function () {
        "closeModalReservation": "Cancel",
        "A17": "Choose your option",
        "closeModal": "Cancel",
-       "A18": "Choose your option"
+       "A18": "Choose your option",
+       "A19": "name surname",
+       "A20": "Email Address",
+       "A21": "Phone",
+       "A22": "Object",
+       "24": "For all bookings, a service price list will be sent to you; you must return it completed, dated and signed.",
+       "A23": "Send"
 
     },  
 
@@ -110,7 +122,13 @@ document.addEventListener("DOMContentLoaded", function () {
        "closeModalReservation": "Cancellare",
        "A17": "Scegli la tua opzione",
        "closeModal": "Cancellare",
-       "A18": "Scegli la tua opzione"
+       "A18": "Scegli la tua opzione",
+       "A19": "nome cognome",
+       "A20": "Indirizzo e-mail",
+       "A21": "Telefono",
+       "A22": "Oggetto",
+       "24": "Per tutte le prenotazioni, vi verrà inviato un listino prezzi dei servizi; dovrete restituirlo compilato, datato e firmato.",
+       "A23": "Inviare"
 
 
 
@@ -149,7 +167,13 @@ document.addEventListener("DOMContentLoaded", function () {
        "closeModalReservation": "Cancelar",
        "A17": "Elige tu opción",
        "closeModal": "Cancelar",
-       "A18": "Elige tu opción"
+       "A18": "Elige tu opción",
+       "A19": "nombre apellido",
+       "A20": "Dirección de correo electrónico",
+       "A21": "Teléfono",
+       "A22": "Objeto",
+       "24": "Para todas las reservas, se le enviará una lista de precios de los servicios; deberá devolverla cumplimentada, fechada y firmada.",
+       "A23": "Enviar"
 
 
     },
@@ -187,7 +211,13 @@ document.addEventListener("DOMContentLoaded", function () {
        "closeModalReservation": "Stornieren",
        "A17": "Wählen Sie Ihre Option",
        "closeModal": "Stornieren",
-       "A18": "Wählen Sie Ihre Option"
+       "A18": "Wählen Sie Ihre Option",
+       "A19": "Vorname Nachname",
+       "A20": "E-Mail-Adresse",
+       "A21": "Telefon",
+       "A22": "Objekt",
+       "24": "Für jede Buchung erhalten Sie eine Preisliste der angebotenen Dienstleistungen; diese muss ausgefüllt, datiert und unterschrieben zurückgesendet werden.",
+       "A23": "Schicken"
     }
   };
 
