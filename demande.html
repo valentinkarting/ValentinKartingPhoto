@@ -18,15 +18,15 @@
 
     <div class="container">
         <div class="window window1">
-            <input type="text" class="text-zone" placeholder="Nom et Prénom / Entreprise / Comité d'entreprise">
-            <input type="text" class="text-zone" placeholder="Date et lieu de l'évènement">
-            <input type="text" class="text-zone" placeholder="Adresse Email">
-            <textarea class="text-zone" placeholder="Précisez votre demande"></textarea>
+            <input id="A34" type="text" class="text-zone" placeholder="Nom et Prénom / Entreprise / Comité d'entreprise">
+            <input id="A35" type="text" class="text-zone" placeholder="Date et lieu de l'évènement">
+            <input id="A36" type="text" class="text-zone" placeholder="Adresse Email">
+            <textarea id="A37" class="text-zone" placeholder="Précisez votre demande"></textarea>
             <!-- <input type="text" class="text-zone" placeholder="Préciser votre demande">  -->
 
 
 
-            <button class="validate-btn" onclick="validate()">Valider</button>
+            <button id="A38" class="validate-btn" onclick="validate()">Valider</button>
         </div>
         <div class="window window2">
             <input type="text" class="text-zone" id="output1" placeholder="" readonly>
@@ -36,13 +36,13 @@
             <textarea class="text-zone" id="output4" placeholder="" readonly></textarea>
             <!-- <input type="text" class="text-zone" id="output5" placeholder="">  -->
 
-            <p class="info-text">Merci pour votre demande je vous réponds rapidement.</p>
-            <p class="info-text"> Un tarif de prestation sera envoyé vous devrez le retourner rempli daté et signé.</p>
-            <p class="info-text">30% à la commande et solde lors de l'évènement.</p>
-            <p class="info-text1">"BON ROULAGE"</p>
+            <p id="A39" class="info-text">Merci pour votre demande je vous réponds rapidement.</p>
+            <p id="A40" class="info-text"> Un tarif de prestation sera envoyé vous devrez le retourner rempli daté et signé.</p>
+            <p id="A41" class="info-text">30% à la commande et solde lors de l'évènement.</p>
+            <p id="A42" class="info-text1">"BON ROULAGE"</p>
 
 
-            <button class="send-btn" onclick="send()">Envoyer</button>
+            <button id="A43" class="send-btn" onclick="send()">Envoyer</button>
         </div>
 
     </div>
@@ -68,6 +68,12 @@
             });
         })();
     </script>
+
+
+    <!-- Nouvelle partie pour changement de langue -->
+<script src="lang.js"></script>
+<!----------------------------------------------->
+
 
 </body>
 

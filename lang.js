@@ -51,9 +51,18 @@ document.addEventListener("DOMContentLoaded", function () {
        "A30": "Pack réel + photos 80€ (10 photos au choix + réel 15s).",
        "A31": "Valider",
        "A32": "PAIEMENT LORS DE L'ÉVÈNEMENT.",
-       "A33": "Envoyer"
-
-
+       "A33": "Envoyer",
+       "A34": "Nom Prénom / Entreprise / Comité d'entreprise.",
+       "A35": "Date et lieu de l'évènement.",
+       "A36": "Adresse Mail",
+       "A37": "Précisez votre demande",
+       "A38": "Valider",
+       "A39":"Merci pour votre demande je vous réponds rapidement.",
+       "A40": "Un tarif de prestation sera envoyé vous devrez le retourner rempli daté et signé.",
+       "A41": "30% à la commande et solde lors de l'évènement.",
+       "A42": "BON ROULAGE",
+       "A43": "Envoyer"
+       
     },       
 
     en: {
@@ -105,7 +114,17 @@ document.addEventListener("DOMContentLoaded", function () {
        "A30": "Real + Photos Package 80€ (10 photos of your choice + 15 seconds real)",
        "A31": "Submit",
        "A32": "PAYMENT AT THE EVENT",
-      "A33": "Submit"
+      "A33": "Submit",
+      "A34": "First Name Last Name / Company / Works Council.",
+      "A35": "Date and location of the event.",
+      "A36": "Email Address",
+      "A37": "Specify your request",
+      "A38": "Submit",
+      "A39": "Thank you for your request, I will respond quickly.",
+      "A40": "A service price list will be sent; you must return it completed, dated, and signed.",
+      "A41": "30% upon ordering and balance at the event.",
+      "A42": "Have a good trip",
+      "A43": "Submit"
 
     },  
 
@@ -158,7 +177,17 @@ document.addEventListener("DOMContentLoaded", function () {
        "A30": "Servizio reale + Pacchetto foto €80 (10 foto a scelta + 15 secondi di servizio reale)",
        "A31": "Invia",
        "A32": "PAGAMENTO ALL'EVENTO",
-       "A33": "Invia"
+       "A33": "Invia",
+       "A34": "Nome Cognome / Azienda / Consiglio di fabbrica.",
+       "A35": "Data e luogo dell'evento.",
+       "A36": "Indirizzo e-mail",
+       "A37": "Specificare la richiesta",
+       "A38": "Invia",
+       "A39": "Grazie per la sua richiesta, le risponderò al più presto.",
+       "A40": "Le verrà inviato un listino prezzi; la preghiamo di restituirlo compilato, datato e firmato.",
+       "A41": "30% al momento dell'ordine e saldo all'evento.",
+       "A42": "Buon viaggio",
+       "A43": "Invia"
 
 
 
@@ -213,7 +242,17 @@ document.addEventListener("DOMContentLoaded", function () {
        "A30": "Paquete de vídeo + fotos: 80 € (10 fotos a elegir + vídeo de 15 segundos)",
        "A31": "Enviar",
        "A32": "Pago en el evento",
-       "A33": "Enviar"
+       "A33": "Enviar",
+       "A34": "Nombre Apellido / Empresa / Comité de Empresa.",
+       "A35": "Fecha y lugar del evento.",
+       "A36": "Correo electrónico",
+       "A37": "Especifique su solicitud",
+       "A38": "Enviar",
+       "A39": "Gracias por su solicitud, le responderé a la brevedad.",
+       "A40": "Se le enviará una lista de precios del servicio; deberá devolverla completa, fechada y firmada.",
+       "A41": "30% al realizar el pedido y el resto en el evento.",
+       "A42": "Que tenga un buen viaje",
+       "A43": "Enviar"
 
 
     },
@@ -267,7 +306,17 @@ document.addEventListener("DOMContentLoaded", function () {
        "A30": "Echter Auftritt + Fotos 80 € (10 Fotos nach Wahl + 15 Sekunden echter Auftritt)",
        "A31": "Absenden",
        "A32": "Zahlung bei der Veranstaltung",
-       "A33": "Absenden"
+       "A33": "Absenden",
+       "A34": "Vorname Nachname / Firma / Betriebsrat.",
+       "A35": "Datum und Ort der Veranstaltung.",
+       "A36": "E-Mail-Adresse",
+       "A37": "Geben Sie Ihre Anfrage an.",
+       "A38": "Absenden.",
+       "A39": "Vielen Dank für Ihre Anfrage. Ich werde Ihnen umgehend antworten.",
+       "A40": "Sie erhalten eine Preisliste. Bitte senden Sie diese ausgefüllt, datiert und unterschrieben zurück.",
+       "A41": "30 % bei Bestellung, Restzahlung bei der Veranstaltung.",
+       "A42": "Gute Reise.",
+       "A43": "Absenden"
     }
   };
 
