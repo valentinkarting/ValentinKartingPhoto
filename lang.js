@@ -40,8 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "Adresse Mail",
        "A21": "Téléphone",
        "A22": "Objet",
-       "24": "Pour toute réservation un tarif de prestation vous sera envoyé vous devrez le retourner rempli daté et signé.",
-       "A23": "Envoyer"
+       "A24": "Pour toute réservation un tarif de prestation vous sera envoyé vous devrez le retourner rempli daté et signé.",
+       "A23": "Envoyer",
+       "A24": "Nom Prénom",
+       "A25": "Catégorie et numéro",
+       "A26": "Date et lieu du meeting",
+       "A27": "Adresse Mail",
+       "A28": "Pack 10 photos 50€ ( au choix).",
+       "A29": "Réel 40 à 75€ (15 à 30s).",
+       "A30": "Pack réel + photos 80€ (10 photos au choix + réel 15s).",
+       "A31": "Valider",
+       "A32": "PAIEMENT LORS DE L'ÉVÈNEMENT.",
+       "A33": "Envoyer"
 
 
     },       
@@ -84,8 +94,18 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "Email Address",
        "A21": "Phone",
        "A22": "Object",
-       "24": "For all bookings, a service price list will be sent to you; you must return it completed, dated and signed.",
-       "A23": "Send"
+       "A24": "For all bookings, a service price list will be sent to you; you must return it completed, dated and signed.",
+       "A23": "Send",
+       "A24": "First Name Last Name",
+       "A25": "Category and Number",
+       "A26": "Date and Location of Meeting",
+       "A27": "Email Address",
+       "A28": "Package of 10 photos 50€ (your choice)",
+       "A29": "Real 40 to 75€ (15 to 30 seconds)",
+       "A30": "Real + Photos Package 80€ (10 photos of your choice + 15 seconds real)",
+       "A31": "Submit",
+       "A32": "PAYMENT AT THE EVENT",
+      "A33": "Submit"
 
     },  
 
@@ -127,8 +147,18 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "Indirizzo e-mail",
        "A21": "Telefono",
        "A22": "Oggetto",
-       "24": "Per tutte le prenotazioni, vi verrà inviato un listino prezzi dei servizi; dovrete restituirlo compilato, datato e firmato.",
-       "A23": "Inviare"
+       "A24": "Per tutte le prenotazioni, vi verrà inviato un listino prezzi dei servizi; dovrete restituirlo compilato, datato e firmato.",
+       "A23": "Inviare",
+       "A24": "Nome Cognome",
+       "A25": "Categoria e numero",
+       "A26": "Data e luogo dell'incontro",
+       "A27": "Indirizzo email",
+       "A28": "Pacchetto 10 foto €50 (a scelta)",
+       "A29": "Servizio reale da 40 a 75 € (da 15 a 30 secondi)",
+       "A30": "Servizio reale + Pacchetto foto €80 (10 foto a scelta + 15 secondi di servizio reale)",
+       "A31": "Invia",
+       "A32": "PAGAMENTO ALL'EVENTO",
+       "A33": "Invia"
 
 
 
@@ -172,8 +202,18 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "Dirección de correo electrónico",
        "A21": "Teléfono",
        "A22": "Objeto",
-       "24": "Para todas las reservas, se le enviará una lista de precios de los servicios; deberá devolverla cumplimentada, fechada y firmada.",
-       "A23": "Enviar"
+       "A24": "Para todas las reservas, se le enviará una lista de precios de los servicios; deberá devolverla cumplimentada, fechada y firmada.",
+       "A23": "Enviar",
+       "A24": "Nombre y Apellidos",
+       "A25": "Categoría y Número",
+       "A26": "Fecha y Lugar de la Reunión",
+       "A27": "Correo Electrónico",
+       "A28": "Paquete de 10 fotos: 50 € (a elegir)",
+       "A29": "Vídeo: 40-75 € (15-30 segundos)",
+       "A30": "Paquete de vídeo + fotos: 80 € (10 fotos a elegir + vídeo de 15 segundos)",
+       "A31": "Enviar",
+       "A32": "Pago en el evento",
+       "A33": "Enviar"
 
 
     },
@@ -216,27 +256,55 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "E-Mail-Adresse",
        "A21": "Telefon",
        "A22": "Objekt",
-       "24": "Für jede Buchung erhalten Sie eine Preisliste der angebotenen Dienstleistungen; diese muss ausgefüllt, datiert und unterschrieben zurückgesendet werden.",
-       "A23": "Schicken"
+       "A24": "Für jede Buchung erhalten Sie eine Preisliste der angebotenen Dienstleistungen; diese muss ausgefüllt, datiert und unterschrieben zurückgesendet werden.",
+       "A23": "Schicken",
+       "A24": "Vorname Nachname",
+       "A25": "Kategorie und Nummer",
+       "A26": "Datum und Ort des Treffens",
+       "A27": "E-Mail-Adresse",
+       "A28": "10 Fotos 50 € (nach Wahl)",
+       "A29": "Echter Auftritt 40 bis 75 € (15 bis 30 Sekunden)",
+       "A30": "Echter Auftritt + Fotos 80 € (10 Fotos nach Wahl + 15 Sekunden echter Auftritt)",
+       "A31": "Absenden",
+       "A32": "Zahlung bei der Veranstaltung",
+       "A33": "Absenden"
     }
   };
 
-  // 🔹 Fonction qui applique la langue
+  // 🔹 Fonction de traduction
   function setLanguage(lang) {
     localStorage.setItem("lang", lang);
 
-    // ✅ On ne traduit QUE les éléments définis dans translations
     Object.keys(translations[lang]).forEach(key => {
       const el = document.getElementById(key);
       if (el) {
-        el.innerHTML = translations[lang][key]; // ✅ important pour <br>
+
+        // 🔥 INPUT → placeholder
+        if (el.tagName === "INPUT") {
+          el.placeholder = translations[lang][key];
+        }
+
+        // 🔥 LABEL → garder le radio
+        else if (el.tagName === "LABEL") {
+          const input = el.querySelector("input");
+          el.innerHTML = "";
+          if (input) {
+            el.appendChild(input);
+          }
+          el.append(" " + translations[lang][key]);
+        }
+
+        // 🔥 AUTRES
+        else {
+          el.innerHTML = translations[lang][key];
+        }
       }
     });
 
-    // 🔹 Mise à jour de la langue HTML (SEO)
+    // 🔹 SEO
     document.documentElement.lang = lang;
 
-    // 🔹 Gestion du drapeau actif
+    // 🔹 Drapeau actif
     document.querySelectorAll(".flag").forEach(flag => {
       flag.classList.remove("active");
     });
@@ -247,11 +315,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 🔹 Langue sauvegardée ou défaut
+  // 🔹 Langue sauvegardée
   const savedLang = localStorage.getItem("lang") || "fr";
   setLanguage(savedLang);
 
-  // 🔹 Clic sur les drapeaux
+  // 🔹 Events drapeaux
   document.getElementById("lang-fr").addEventListener("click", () => setLanguage("fr"));
   document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
   document.getElementById("lang-it").addEventListener("click", () => setLanguage("it"));
