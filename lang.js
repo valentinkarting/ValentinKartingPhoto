@@ -25,7 +25,19 @@ document.addEventListener("DOMContentLoaded", function () {
       "A10": "Politique de cookie",
        "A11": "Calendrier", 
        "A12": "Veuillez noter que toutes les photos sont en (basse résolution) afin de permettre un affichage optimal suivant le type de connexion, les photos originales sont en (HD)",
-       "welcome-btn": "Continuer"
+       "welcome-btn": "Continuer",
+       "reservationBtn": "Réservez vos médias",
+       "achatBtn": "Achetez vos photos",
+       "A13": "Pack 10 photos",
+       "A14": "A l'unité 6€/photo",
+       "A15": "Photos / Vidéos",
+       "A16": "Demandes particulières",
+       "closeModalReservation": "Annuler",
+       "A17": "Choisissez votre option",
+       "closeModal": "Annuler",
+       "A18": "Choisissez votre option",
+
+
     },       
 
     en: {
@@ -51,7 +63,18 @@ document.addEventListener("DOMContentLoaded", function () {
       "A10": "Cookie Policy",
       "A11": "Calendar",
       "A12": "Please note that all photos are in (low resolution) to allow for optimal display depending on the type of connection; the original photos are in (HD).",
-      "welcome-btn": "Continue"
+      "welcome-btn": "Continue",
+       "reservationBtn": "Reserve your media",
+       "achatBtn": "Buy your photos",
+       "A13": "Pack of 10 photos",
+       "A14": "Photo 6€ each",
+       "A15": "Photos / Videos",
+       "A16": "Special requests",
+       "closeModalReservation": "Cancel",
+       "A17": "Choose your option",
+       "closeModal": "Cancel",
+       "A18": "Choose your option"
+
     },  
 
     it: {
@@ -77,7 +100,20 @@ document.addEventListener("DOMContentLoaded", function () {
       "A10": "Informativa sui cookie",
       "A11": "Calendario",
       "A12": "Si prega di notare che tutte le foto sono in bassa risoluzione per consentire una visualizzazione ottimale a seconda del tipo di connessione; le foto originali sono in alta definizione (HD).",
-      "welcome-btn": "Continuare"
+      "welcome-btn": "Continuare",
+       "reservationBtn": "Prenota i tuoi contenuti multimediali",
+       "achatBtn": "Acquista le tue foto",
+       "A13": "Pacchetto di 10 foto",
+       "A14": "6€ a foto",
+       "A15": "Foto / Video",
+       "A16": "Richieste speciali",
+       "closeModalReservation": "Cancellare",
+       "A17": "Scegli la tua opzione",
+       "closeModal": "Cancellare",
+       "A18": "Scegli la tua opzione"
+
+
+
     },
 
     es: {
@@ -103,7 +139,19 @@ document.addEventListener("DOMContentLoaded", function () {
       "A10": "Política de cookies",
       "A11": "Calendario",
       "A12": "Tenga en cuenta que todas las fotos están en baja resolución para permitir una visualización óptima según el tipo de conexión; las fotos originales están en alta definición (HD).",
-      "welcome-btn": "Continuar"
+      "welcome-btn": "Continuar",
+       "reservationBtn": "Reserva tu medio",
+       "achatBtn": "Compra tus fotos",
+       "A13": "Paquete de 10 fotos",
+       "A14": "6€ por foto",
+       "A15": "Fotos / Vídeos",
+       "A16": "Peticiones especiales",
+       "closeModalReservation": "Cancelar",
+       "A17": "Elige tu opción",
+       "closeModal": "Cancelar",
+       "A18": "Elige tu opción"
+
+
     },
 
     al: {
@@ -129,7 +177,17 @@ document.addEventListener("DOMContentLoaded", function () {
       "A10": "Cookie-Richtlinie",
       "A11": "Kalender",
       "A12": "Bitte beachten Sie, dass alle Fotos in niedriger Auflösung vorliegen, um eine optimale Darstellung je nach Verbindungsart zu ermöglichen; die Originalfotos liegen in HD-Qualität vor.",
-      "welcome-btn": "Weitermachen"
+      "welcome-btn": "Weitermachen",
+       "reservationBtn": "Reservieren Sie Ihre Medien",
+       "achatBtn": "Kaufen Sie Ihre Fotos",
+       "A13": "10er-Pack Fotos",
+       "A14": "6 € pro Foto",
+       "A15": "Fotos / Videos",
+       "A16": "Sonderwünsche",
+       "closeModalReservation": "Stornieren",
+       "A17": "Wählen Sie Ihre Option",
+       "closeModal": "Stornieren",
+       "A18": "Wählen Sie Ihre Option"
     }
   };
 
