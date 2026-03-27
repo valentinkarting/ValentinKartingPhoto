@@ -190,6 +190,7 @@ body {
     align-items: center;
     margin-left: 10px;
     overflow: visible; /* important pour la bulle */
+    gap: 8px; /* 👈 espace entre les drapeaux */
 }
 
 /* wrapper (nouveau) */
@@ -203,7 +204,7 @@ body {
     width: 25px;
     height: auto;
     cursor: pointer;
-    margin-left: 6px;
+    /*margin-left: 6px;*/
     border-radius: 3px;
     transition: transform 0.2s, opacity 0.2s;
 }

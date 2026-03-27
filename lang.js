@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "A3": "INTERNATIONALES",
       "A4": "NACHRICHT",
       "A5": "PORTAFOLIO",
-      "A6": "🏁 Hallo und herzlich willkommen 🏁 – Schaut euch eure Kartfotos an! Um Fotos oder Videos zu buchen, zu kaufen oder zu bestellen, klickt einfach auf den Warenkorb und folgt den Anweisungen. Alternativ könnt ihr mir auch eine Nachricht hinterlassen, und ich melde mich schnellstmöglich bei euch. 🏁",
+      "A6": "🏁 Hallo und herzlich willkommen 🏁 Schaut euch eure Kartfotos an! Um Fotos oder Videos zu buchen, zu kaufen oder zu bestellen, klickt einfach auf den Warenkorb und folgt den Anweisungen. Alternativ könnt ihr mir auch eine Nachricht hinterlassen, und ich melde mich schnellstmöglich bei euch. 🏁",
       "toggleText": "Stoppen Sie den Text",
       "A7": "Professioneller Fotograf im Rennkartsport",
       "A8": "Fotos schießen",
