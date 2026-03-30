@@ -37,13 +37,13 @@
             <!-- Prix unitaire de la photo (modifiable) -->
             <span id="photoPrice" style="display:none;">6</span>
 
-            <p class="info-text">6€ / photo</p>
-            <button onclick="transferData()">Valider</button>
+            <p id="A48" class="info-text">6€ / photo</p>
+            <button id="A49" onclick="transferData()">Valider</button>
         </div>
 
         <!-- Fenêtre 2 -->
         <div class="window" id="window2">
-            <h2>Récapitulatif de commande</h2>
+            <h2 id="A50">Récapitulatif de commande</h2>
             <output id="output1" class="fixed-output"></output>
             <output id="output2" class="fixed-output"></output>
             <!-- Nouvel output4 pour recevoir la valeur de input4 -->
@@ -55,7 +55,7 @@
                 <span>€</span>
             </div>
 
-            <p class="info-text">Total à régler</p>
+            <p id="A51" class="info-text">Total à régler</p>
 
             <!-- Bouton PayPal -->
             <div id="paypal-button-container" style="display: none; padding-top: 20px;"></div>
@@ -81,6 +81,12 @@
     <!-- Script PayPal -->
     <script
         src="https://www.paypal.com/sdk/js?client-id=AYZGbNAFdA0annG80jQkoaXkHchzlEnlSAqOE34gbGb1mPgpJJ0COfvL2dl4PjiWBuo5n_WPGufl4dhE&currency=EUR&disable-funding=card"></script>
+
+    <!-- Nouvelle partie pour changement de langue -->
+<script src="lang1.js"></script>
+<!----------------------------------------------->
+
+
 </body>
 
 </html>

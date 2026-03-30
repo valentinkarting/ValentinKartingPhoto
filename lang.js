@@ -61,8 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
        "A40": "Un tarif de prestation sera envoyé vous devrez le retourner rempli daté et signé.",
        "A41": "30% à la commande et solde lors de l'évènement.",
        "A42": "BON ROULAGE",
-       "A43": "Envoyer"
-       
+       "A43": "Envoyer",
+       "input1": "Adresse Mail",
+       "input2": "Meeting",
+       "input4": "Nom et Prénom",
+       "input3": "Nom des photos",
+       "A44": "Pack 10 photos 50€",
+       "A45": "Valider",
+       "A46": "Récapitulatif de commande",
+       "A47": "Total à régler 50€"       
     },       
 
     en: {
@@ -124,7 +131,15 @@ document.addEventListener("DOMContentLoaded", function () {
       "A40": "A service price list will be sent; you must return it completed, dated, and signed.",
       "A41": "30% upon ordering and balance at the event.",
       "A42": "Have a good trip",
-      "A43": "Submit"
+      "A43": "Submit",
+      "input1": "Email Address",
+      "input2": "Meeting",
+      "input4": "First and Last Name",
+      "input3": "Photo Names",
+      "A44": "Pack of 10 photos €50",
+      "A45": "Confirm",
+      "A46": "Order Summary",
+      "A47": "Total to Pay €50"
 
     },  
 
@@ -187,7 +202,16 @@ document.addEventListener("DOMContentLoaded", function () {
        "A40": "Le verrà inviato un listino prezzi; la preghiamo di restituirlo compilato, datato e firmato.",
        "A41": "30% al momento dell'ordine e saldo all'evento.",
        "A42": "Buon viaggio",
-       "A43": "Invia"
+       "A43": "Invia",
+       "input1": "Indirizzo email",
+       "input2": "Riunione",
+       "input4": "Nome e cognome",
+       "input3": "Nomi delle foto",
+       "A44": "Pacchetto di 10 foto €50",
+       "A45": "Conferma",
+       "A46": "Riepilogo ordine",
+       "A47": "Totale da pagare €50"
+
 
 
 
@@ -252,7 +276,15 @@ document.addEventListener("DOMContentLoaded", function () {
        "A40": "Se le enviará una lista de precios del servicio; deberá devolverla completa, fechada y firmada.",
        "A41": "30% al realizar el pedido y el resto en el evento.",
        "A42": "Que tenga un buen viaje",
-       "A43": "Enviar"
+       "A43": "Enviar",
+       "input1": "Correo electrónico",
+       "input2": "Reunión",
+       "input4": "Nombre y apellidos",
+       "input3": "Nombres de las fotos",
+       "A44": "Paquete de 10 fotos 50 €",  
+       "A45": "Confirmar",
+       "A46": "Resumen del pedido",
+       "A47": "Total a pagar 50 €"
 
 
     },
@@ -316,7 +348,15 @@ document.addEventListener("DOMContentLoaded", function () {
        "A40": "Sie erhalten eine Preisliste. Bitte senden Sie diese ausgefüllt, datiert und unterschrieben zurück.",
        "A41": "30 % bei Bestellung, Restzahlung bei der Veranstaltung.",
        "A42": "Gute Reise.",
-       "A43": "Absenden"
+       "A43": "Absenden",
+       "input1": "E-Mail-Adresse",
+       "input2": "Termin",
+       "input4": "Vor- und Nachname",
+       "input3": "Namen der Fotos",
+       "A44": "10 Fotos, 50 €",
+       "A45": "Bestätigen",
+       "A46": "Bestellübersicht",
+       "A47": "Gesamtbetrag: 50 €"
     }
   };
 
