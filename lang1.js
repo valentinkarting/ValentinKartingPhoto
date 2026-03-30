@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "A51": "Total à régler"
     },       
 
-
     en: {
         "input1": "Email Address",
         "input2": "Meeting",
@@ -34,9 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
        "A49": "Conferma",
        "A50": "Riepilogo ordine",
        "A51": "Totale dovuto" 
-
-
-
 
     },
 
