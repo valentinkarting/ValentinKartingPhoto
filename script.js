@@ -6,6 +6,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// 🔥 PRÉCHARGEMENT DES DRAPEAUX (fix affichage lent)
+  const flags = [
+    "./photodrapeaux/flagfr.png",
+    "./photodrapeaux/flageng.jpeg",
+    "./photodrapeaux/flagit.png",
+    "./photodrapeaux/flagesp.png",
+    "./photodrapeaux/flagall.jpg"
+  ];
+
+  flags.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
+
+
 
 // Sélectionner les images et les bullets
 const images = document.querySelectorAll('.carousel-image');
