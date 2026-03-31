@@ -259,17 +259,18 @@ body {
 }
 
 /* 🔥 affichage au survol desktop */
-.flag-wrapper:hover::after,
-.flag-wrapper:hover::before {
-    opacity: 1;
+@media (hover: hover) {
+    .flag-wrapper:hover::after,
+    .flag-wrapper:hover::before {
+        opacity: 1;
+    }
 }
 
-/* 🔥 affichage sur mobile via classe active */
-.flag-wrapper.active::after,
-.flag-wrapper.active::before {
+/* 🔥 affichage au clic (mobile) via classe show-tooltip */
+.flag-wrapper.show-tooltip::after,
+.flag-wrapper.show-tooltip::before {
     opacity: 1;
 }
-
 /* Media Queries pour rendre la page responsive */
 @media screen and (max-width: 1070px) {
     .navbar {
