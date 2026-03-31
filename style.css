@@ -183,6 +183,8 @@ body {
     height: 60px;
 }
 
+
+/*-----------------------------------------------------*/
 /*----Nouvelle partie pour changement de langue--------*/
 /* conteneur des drapeaux */
 .lang-switch {
@@ -190,7 +192,7 @@ body {
     align-items: center;
     margin-left: 10px;
     overflow: visible; /* important pour la bulle */
-    gap: 8px; /* 👈 espace entre les drapeaux */
+    gap: 8px; /* espace entre les drapeaux */
 }
 
 /* wrapper (nouveau) */
@@ -204,18 +206,17 @@ body {
     width: 25px;
     height: auto;
     cursor: pointer;
-    /*margin-left: 6px;*/
     border-radius: 3px;
     transition: transform 0.2s, opacity 0.2s;
 }
 
-/* effet au survol */
+/* effet au survol desktop */
 .flag:hover {
     transform: scale(1.1);
     opacity: 0.8;
 }
 
-/* option : drapeau actif */
+/* drapeau actif */
 .flag.active {
     outline: 2px solid white;
 }
@@ -257,14 +258,17 @@ body {
     transition: opacity 0.2s ease;
 }
 
-/* 🔥 affichage au survol */
+/* 🔥 affichage au survol desktop */
 .flag-wrapper:hover::after,
 .flag-wrapper:hover::before {
     opacity: 1;
 }
 
-/*-----------------------------------------------------*/
-
+/* 🔥 affichage sur mobile via classe active */
+.flag-wrapper.active::after,
+.flag-wrapper.active::before {
+    opacity: 1;
+}
 
 /* Media Queries pour rendre la page responsive */
 @media screen and (max-width: 1070px) {

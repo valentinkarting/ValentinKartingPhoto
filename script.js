@@ -106,4 +106,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
   
+const flagWrappers = document.querySelectorAll('.flag-wrapper');
+
+flagWrappers.forEach(wrapper => {
+  wrapper.addEventListener('click', () => {
+    // Supprime la classe active de tous les drapeaux
+    flagWrappers.forEach(w => w.classList.remove('active'));
+
+    // Ajoute la classe active au drapeau tapé
+    wrapper.classList.add('active');
+
+    // Supprime automatiquement la bulle après 1,5s
+    setTimeout(() => {
+      wrapper.classList.remove('active');
+    }, 1500);
+  });
+});
 
