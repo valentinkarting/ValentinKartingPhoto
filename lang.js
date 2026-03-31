@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // 🔹 Traductions des éléments par ID
-  const translations = {
+  window.translations = {
     fr: {
       "A1": "RÉGIONALES",
       "A2": "NATIONALES",
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "A5": "PORTE-FOLIO",
       "A6": "🏁 Bonjour et bienvenue 🏁 - Découvrez vos photos de karting ! Pour réserver acheter ou commander des photos ou vidéos cliquez sur le panier et laissez-vous guider ou bien laissez un message je vous répondrais le plus vite possible🏁",
       "toggleText": "Arrêter le texte",
+      "toggleTextPlay": "Afficher le texte",
       "A7": "Photographe professionnel de karting de compétition",
       "A8": "Shooting photos",
       "A9": `Vos photos en HD.<br>
@@ -40,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "Adresse Mail",
        "A21": "Téléphone",
        "A22": "Objet",
-       "A24": "Pour toute réservation un tarif de prestation vous sera envoyé vous devrez le retourner rempli daté et signé.",
        "A23": "Envoyer",
        "A24": "Nom Prénom",
        "A25": "Catégorie et numéro",
@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "A5": "PORTFOLIO",
       "A6": "🏁 Hello and welcome 🏁 - Discover your karting photos! To book, buy or order photos or videos, click on the shopping cart and follow the instructions, or leave a message and I will reply as soon as possible 🏁",
       "toggleText": "Stop the text",
+      "toggleTextPlay": "Show the text", 
       "A7": "Professional competitive karting photographer",
       "A8": "Shooting photos",
       "A9": `Your photos in HD.<br>
@@ -110,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "Email Address",
        "A21": "Phone",
        "A22": "Object",
-       "A24": "For all bookings, a service price list will be sent to you; you must return it completed, dated and signed.",
        "A23": "Send",
        "A24": "First Name Last Name",
        "A25": "Category and Number",
@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "A5": "PORTFOLIO",
       "A6":"🏁 Ciao e benvenuto 🏁 - Dai un'occhiata alle tue foto di karting! Per prenotare, acquistare o ordinare foto o video, clicca sul carrello e segui le istruzioni, oppure lascia un messaggio e ti risponderò il prima possibile. 🏁",
       "toggleText": "Stop il testo",
+      "toggleTextPlay": "Mostra il testo",
       "A7": "Fotografo professionista di karting agonistico",
       "A8": "foto scattata",
       "A9": `Le tue foto in HD.<br>
@@ -181,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "Indirizzo e-mail",
        "A21": "Telefono",
        "A22": "Oggetto",
-       "A24": "Per tutte le prenotazioni, vi verrà inviato un listino prezzi dei servizi; dovrete restituirlo compilato, datato e firmato.",
        "A23": "Inviare",
        "A24": "Nome Cognome",
        "A25": "Categoria e numero",
@@ -225,6 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "A5": "PORTAFOLIO",
       "A6": "🏁 ¡Hola y bienvenidos! 🏁 ¡Miren sus fotos de karting! Para reservar, comprar o encargar fotos o videos, hagan clic en el carrito de compras y sigan las instrucciones, o dejen un mensaje y les responderé lo antes posible. 🏁",
       "toggleText": "Detener el texto",
+      "toggleTextPlay": "Mostrar el texto",
       "A7": "Fotógrafo profesional de karting de competición",
       "A8": "fotografía de tiro",
       "A9": `Tus fotos en HD.<br>
@@ -255,7 +256,6 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "Dirección de correo electrónico",
        "A21": "Teléfono",
        "A22": "Objeto",
-       "A24": "Para todas las reservas, se le enviará una lista de precios de los servicios; deberá devolverla cumplimentada, fechada y firmada.",
        "A23": "Enviar",
        "A24": "Nombre y Apellidos",
        "A25": "Categoría y Número",
@@ -296,7 +296,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "A4": "NACHRICHT",
       "A5": "PORTAFOLIO",
       "A6": "🏁 Hallo und herzlich willkommen 🏁 Schaut euch eure Kartfotos an! Um Fotos oder Videos zu buchen, zu kaufen oder zu bestellen, klickt einfach auf den Warenkorb und folgt den Anweisungen. Alternativ könnt ihr mir auch eine Nachricht hinterlassen, und ich melde mich schnellstmöglich bei euch. 🏁",
-      "toggleText": "Stoppen Sie den Text",
+      "toggleText": "Stoppen Sie den Text.",
+      "toggleTextPlay": "Text anzeigen",
       "A7": "Professioneller Fotograf im Rennkartsport",
       "A8": "Fotos schießen",
       "A9": `Ihre Fotos in HD.<br>
@@ -327,7 +328,6 @@ document.addEventListener("DOMContentLoaded", function () {
        "A20": "E-Mail-Adresse",
        "A21": "Telefon",
        "A22": "Objekt",
-       "A24": "Für jede Buchung erhalten Sie eine Preisliste der angebotenen Dienstleistungen; diese muss ausgefüllt, datiert und unterschrieben zurückgesendet werden.",
        "A23": "Schicken",
        "A24": "Vorname Nachname",
        "A25": "Kategorie und Nummer",

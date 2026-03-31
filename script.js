@@ -35,23 +35,39 @@ bullets.forEach((bullet, index) => {
     });
 });
 
-
 // bouton pour fermer le texte qui défile 
 // Sélectionne le bouton et l'élément du texte défilant
 const toggleButton = document.getElementById('toggleText');
 const scrollingText = document.querySelector('.scrolling-text');
 
 toggleButton.addEventListener('click', function() {
+
+  // 🔹 récupère la langue actuelle
+  const lang = localStorage.getItem("lang") || "fr";
+
+  // 🔹 sécurise l'accès aux traductions
+  const t = (window.translations && window.translations[lang]) 
+            ? window.translations[lang] 
+            : {};
+
   // Vérifie si le texte a déjà la classe 'paused'
   if (scrollingText.classList.contains('paused')) {
-    // Relance l'animation en retirant la classe 'paused'
+
+    // Relance l'animation
     scrollingText.classList.remove('paused');
-    toggleButton.textContent = 'Arrêter le texte';
+
+    // 🔥 texte traduit (avec fallback)
+    toggleButton.textContent = t["toggleText"] || "Arrêter le texte";
+
   } else {
-    // Met l'animation en pause en ajoutant la classe 'paused'
+
+    // Met en pause
     scrollingText.classList.add('paused');
-    toggleButton.textContent = 'Afficher le texte';
+
+    // 🔥 texte traduit (avec fallback)
+    toggleButton.textContent = t["toggleTextPlay"] || "Afficher le texte";
   }
+
 });
 
 
