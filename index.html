@@ -9,13 +9,7 @@
     <meta name="theme-color" content="#000000">
     <link rel="icon" href="icone192.png">
     <link rel="stylesheet" href="style.css">
-    <script>
-    if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-    .then(() => console.log("Service Worker installé"))
-    .catch((e) => console.error("SW erreur", e));
-}
-</script>
+    
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -138,31 +132,31 @@
         <div class="carousel">
             <div class="carousel-images">
                 <div class="carousel-image">
-                    <img src="./photoindex/1.JPG" alt="Image 1">
+                    <img src="./photoindex/1.JPG" loading="eager" alt="Image 1">
                 </div>
                 <div class="carousel-image">
-                    <img src="./photoindex/2.JPG" alt="Image 2">
+                    <img src="./photoindex/2.JPG" loading="lazy" alt="Image 2">
                 </div>
                 <div class="carousel-image">
-                    <img src="./photoindex/3.JPG" alt="Image 3">
+                    <img src="./photoindex/3.JPG" loading="lazy" alt="Image 3">
                 </div>
                 <div class="carousel-image">
-                    <img src="./photoindex/4.JPG" alt="Image 4">
+                    <img src="./photoindex/4.JPG" loading="lazy" alt="Image 4">
                 </div>
                 <div class="carousel-image">
-                    <img src="./photoindex/5.JPG" alt="Image 4">
+                    <img src="./photoindex/5.JPG" loading="lazy" alt="Image 4">
                 </div>
                 <div class="carousel-image">
-                    <img src="./photoindex/6.JPG" alt="Image 4">
+                    <img src="./photoindex/6.JPG" loading="lazy" alt="Image 4">
                 </div>
                 <div class="carousel-image">
-                    <img src="./photoindex/7.JPG" alt="Image 4">
+                    <img src="./photoindex/7.JPG" loading="lazy" alt="Image 4">
                 </div>
                 <div class="carousel-image">
-                    <img src="./photoindex/8.JPG" alt="Image 4">
+                    <img src="./photoindex/8.JPG" loading="lazy" alt="Image 4">
                 </div>
                 <div class="carousel-image">
-                    <img src="./photoindex/9.JPG" alt="Image 4">
+                    <img src="./photoindex/9.JPG" loading="lazy" alt="Image 4">
                 </div>
             </div>
 
@@ -413,14 +407,6 @@
             e.preventDefault();
         });
     </script>
-
-    <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-    .then(() => console.log("Service Worker installé"))
-    .catch((e) => console.log("Erreur SW", e));
-}
-</script>
 
       
 </script>
