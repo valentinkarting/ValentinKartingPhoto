@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
 // Sélectionner les images et les bullets
 const images = document.querySelectorAll('.carousel-image');
 const bullets = document.querySelectorAll('.carousel-bullet');

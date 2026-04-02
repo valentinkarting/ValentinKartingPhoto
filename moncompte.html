@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Compte</title>
+<link rel="stylesheet" href="moncompte.css">
+</head>
+
+<body>
+
+<div class="user-container"> <!-- Ajout du conteneur principal -->
+
+<h1>Mon Compte</h1>
+
+<!-- Informations utilisateur -->
+<div id="user-info">
+    <p><strong>Nom :</strong> <span id="user-lastname"></span></p>
+    <p><strong>Prénom :</strong> <span id="user-firstname"></span></p>
+    <p><strong>Email :</strong> <span id="user-email"></span></p>
+</div>
+
+<h2>Historique des achats</h2>
+<div id="purchase-history">
+    <!-- Les achats seront ajoutés ici -->
+</div>
+
+<div class="user-actions">
+    <!-- Bouton déconnexion -->
+    <button id="logoutBtn">Se déconnecter</button>
+    <button id="deleteAccountBtn">Supprimer mon compte</button>
+</div>
+
+</div> <!-- fin user-container -->
+
+<!-- Script -->
+<script type="module">
+import { auth, db } from "./auth.js";
+import { signOut, onAuthStateChanged, deleteUser, EmailAuthProvider, reauthenticateWithCredential } 
+    from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { doc, getDoc, collection, getDocs, deleteDoc } 
+    from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 🔹 Éléments DOM
+    const lastnameEl = document.getElementById("user-lastname");
+    const firstnameEl = document.getElementById("user-firstname");
+    const emailEl = document.getElementById("user-email");
+    const historyDiv = document.getElementById("purchase-history");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const deleteBtn = document.getElementById("deleteAccountBtn");
+
+    // 🔹 Vérifie si l'utilisateur est connecté
+    onAuthStateChanged(auth, async (user) => {
+        if (!user) {
+            window.location.href = "compte.html"; // pas connecté → page connexion
+            return;
+        }
+
+        // Affiche email
+        emailEl.textContent = user.email;
+
+        // Récupère Nom et Prénom depuis Firestore
+        try {
+            const userDoc = await getDoc(doc(db, "users", user.uid));
+            if (userDoc.exists()) {
+                const data = userDoc.data();
+                firstnameEl.textContent = data.firstName || "";
+                lastnameEl.textContent = data.lastName || "";
+            }
+        } catch (err) {
+            console.error("Erreur récupération user :", err);
+        }
+
+        // Récupère historique des achats
+        try {
+            const purchasesSnapshot = await getDocs(collection(db, "users", user.uid, "purchases"));
+            if (purchasesSnapshot.empty) {
+                historyDiv.textContent = "Aucun achat pour le moment.";
+            } else {
+                purchasesSnapshot.forEach(docSnap => {
+                    const purchase = docSnap.data();
+                    const p = document.createElement("p");
+                    p.textContent = `Produit : ${purchase.item}, Date : ${purchase.date}, Prix : ${purchase.price}€`;
+                    historyDiv.appendChild(p);
+                });
+            }
+        } catch (err) {
+            console.error("Erreur récupération achats :", err);
+        }
+    });
+
+    // 🔹 Déconnexion
+    logoutBtn.addEventListener("click", async () => {
+        try {
+            await signOut(auth);
+            window.location.href = "index.html";
+        } catch (err) {
+            console.error("Erreur déconnexion :", err);
+        }
+    });
+
+    // 🔹 Suppression de compte
+    if (deleteBtn) {
+        deleteBtn.addEventListener("click", async () => {
+            const user = auth.currentUser;
+            if (!user) {
+                alert("Aucun utilisateur connecté.");
+                return;
+            }
+
+            if (!confirm("⚠️ Voulez-vous vraiment supprimer votre compte ?")) return;
+
+            try {
+                // Supprime Firestore
+                await deleteDoc(doc(db, "users", user.uid));
+                // Supprime Auth
+                await deleteUser(user);
+                alert("Compte supprimé !");
+                window.location.href = "index.html";
+            } catch (error) {
+                if (error.code === "auth/requires-recent-login") {
+                    const password = prompt("Pour des raisons de sécurité, entrez votre mot de passe :");
+                    if (!password) return;
+
+                    try {
+                        const credential = EmailAuthProvider.credential(user.email, password);
+                        await reauthenticateWithCredential(user, credential);
+
+                        await deleteDoc(doc(db, "users", user.uid));
+                        await deleteUser(user);
+
+                        alert("Compte supprimé !");
+                        window.location.href = "index.html";
+                    } catch (err) {
+                        console.error(err);
+                        alert("Mot de passe incorrect ou erreur.");
+                    }
+                } else {
+                    console.error(error);
+                    alert("Erreur lors de la suppression du compte.");
+                }
+            }
+        });
+    }
+
+});
+</script>
+
+</body>
+</html>

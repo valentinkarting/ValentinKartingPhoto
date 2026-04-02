@@ -1,0 +1,113 @@
+/* moncompte.css */
+
+/* Corps de page */
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur principal */
+.user-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Titres */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Infos utilisateur */
+#user-info p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+/* Historique des achats */
+#purchase-history p {
+    background: gray;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+#purchase-history {
+    background-color: green; /* couleur de fond souhaitée */
+    padding: 15px;             /* espace intérieur */
+    border-radius: 8px;        /* coins arrondis */
+    margin-top: 10px;          /* espace au-dessus */
+}
+
+/* Boutons */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #ff0000;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #cc0000;
+}
+
+/* Messages erreur */
+.error-message {
+    color: #ff4d4d;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Message succès */
+.success-message {
+    color: #00ff88;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Bloc boutons déconnexion / suppression */
+.user-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Bloc utilisateur connecté / info utilisateur */
+#welcome-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#welcome-message h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Responsive mobile */
+@media (max-width: 500px) {
+    .user-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
