@@ -280,8 +280,8 @@ body {
 }
 
 #accountBtn img {
-    width: 18px;   /* largeur de l'icône */
-    height: 18px;  /* hauteur de l'icône */
+    width: 25px;   /* largeur de l'icône */
+    height: 25px;  /* hauteur de l'icône */
     object-fit: contain; /* pour que l'image garde ses proportions */
     transition: transform 0.3s; /* pour un petit effet si tu veux */
 }
@@ -1669,7 +1669,10 @@ color: black;
     .photo-container7 {
         display: none;
     }
-   
+    #accountBtn img {
+        display: none;
+}
+
 
     .carousel-container {
         bottom: 80px;
