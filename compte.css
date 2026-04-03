@@ -1,19 +1,46 @@
 body {
     font-family: Arial, sans-serif;
+<<<<<<< HEAD
     background: #111;
+=======
+>>>>>>> a2a08ef279767840597073e2667a436d1e8d0612
     color: white;
     margin: 0;
     padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+/* 🔥 fond fixe universel */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./photoindex/4F8A7065.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
+>>>>>>> a2a08ef279767840597073e2667a436d1e8d0612
 /* Conteneur principal */
 .account-container {
     max-width: 400px;
     margin: 50px auto;
+<<<<<<< HEAD
     background: #1c1c1c;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
+=======
+    /*background: #1c1c1c;*/
+    background-color: transparent;
+    padding: 30px;
+    /*border-radius: 12px;*/
+    /*box-shadow: 0 0 15px rgba(0,0,0,0.5);*/
+>>>>>>> a2a08ef279767840597073e2667a436d1e8d0612
 }
 
 /* Titres */
@@ -25,6 +52,10 @@ h1 {
 h2 {
     margin-top: 20px;
     font-size: 18px;
+<<<<<<< HEAD
+=======
+    color: black;
+>>>>>>> a2a08ef279767840597073e2667a436d1e8d0612
 }
 
 /* Inputs */
