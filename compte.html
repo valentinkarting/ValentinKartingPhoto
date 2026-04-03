@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compte</title>
+<link rel="stylesheet" href="compte.css">
+</head>
+
+<body>
+
+<div class="account-container">
+
+    <h2>Connexion</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Mot de passe">
+    <label>
+        <input type="checkbox" id="showLoginPassword"> Afficher le mot de passe
+    </label>
+    <button id="loginBtn">Se connecter</button>
+
+    <h2>Créer un compte</h2>
+    <input type="text" id="firstName" placeholder="Prénom">
+    <input type="text" id="lastName" placeholder="Nom">
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Mot de passe">
+    <label>
+        <input type="checkbox" id="showSignupPassword"> Afficher le mot de passe
+    </label>
+    <button id="signupBtn">Créer compte</button>
+
+    <p id="message"></p>
+
+</div>
+
+<script type="module" src="compte.js"></script>
+
+</body>
+</html>

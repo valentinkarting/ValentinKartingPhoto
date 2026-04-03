@@ -203,7 +203,7 @@ body {
 
 /* style des drapeaux */
 .flag {
-    width: 25px;
+    width: 20px;
     height: auto;
     cursor: pointer;
     border-radius: 3px;
@@ -271,6 +271,74 @@ body {
 .flag-wrapper.show-tooltip::before {
     opacity: 1;
 }
+
+/* bulle survol bouton Connexion*/
+.account-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#accountBtn img {
+    width: 18px;   /* largeur de l'icône */
+    height: 18px;  /* hauteur de l'icône */
+    object-fit: contain; /* pour que l'image garde ses proportions */
+    transition: transform 0.3s; /* pour un petit effet si tu veux */
+}
+
+/* 🔥 bulle */
+.account-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: black;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+/* flèche */
+.account-icon::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* affichage desktop */
+.account-icon:hover::after,
+.account-icon:hover::before {
+    opacity: 1;
+}
+
+/* affichage mobile */
+.account-icon.active::after,
+.account-icon.active::before {
+    opacity: 1;
+}
+
+
+
+
+
 /* Media Queries pour rendre la page responsive */
 @media screen and (max-width: 1070px) {
     .navbar {
