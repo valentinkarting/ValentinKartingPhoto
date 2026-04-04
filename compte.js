@@ -26,7 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("✅ script chargé");
 
-    // 🔥 ANTI-BOUCLE RETOUR MOBILE
+    // 🔥 ANTI BOUCLE RETOUR MOBILE
+    if (performance.getEntriesByType("navigation")[0]?.type === "back_forward") {
+    console.log("⛔ retour arrière détecté → on bloque le script");
+    return;
+}
+
+
+
     let isFirstLoad = true;
 
     onAuthStateChanged(auth, (user) => {
