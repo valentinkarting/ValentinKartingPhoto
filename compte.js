@@ -2,7 +2,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
 import { 
     getAuth, 
     createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword 
+    signInWithEmailAndPassword,
+    onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
@@ -24,6 +25,20 @@ const db = getFirestore(app);
 document.addEventListener("DOMContentLoaded", () => {
 
     console.log("✅ script chargé");
+
+    // 🔥 ANTI-BOUCLE RETOUR MOBILE
+    let isFirstLoad = true;
+
+    onAuthStateChanged(auth, (user) => {
+
+        // 👉 empêche redirection quand on revient en arrière
+        if (!isFirstLoad) return;
+        isFirstLoad = false;
+
+        if (user) {
+            window.location.replace("moncompte.html");
+        }
+    });
 
     const signupBtn = document.getElementById("signupBtn");
     const loginBtn = document.getElementById("loginBtn");
@@ -69,8 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             message.textContent = "Connexion réussie !";
 
             setTimeout(() => {
-                // ✅ IMPORTANT : évite boucle retour mobile
-                window.location.replace("index.html");
+                window.location.replace("index.html"); // ✅ évite boucle
             }, 1500);
 
         } catch (error) {
@@ -126,8 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
             message.textContent = "Compte créé avec succès !";
 
             setTimeout(() => {
-                // ✅ IMPORTANT : évite boucle retour mobile
-                window.location.replace("index.html");
+                window.location.replace("index.html"); // ✅ évite boucle
             }, 1500);
 
         } catch (error) {
