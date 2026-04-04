@@ -2,30 +2,24 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
-// 🔥 CONFIG FIREBASE
 const firebaseConfig = {
-    apiKey: "AIzaSyAcbpOvXZJ61WRINj865CE1zByBKIvKFo8",
-    authDomain: "valentinkarting-c3780.firebaseapp.com",
-    projectId: "valentinkarting-c3780",
-    storageBucket: "valentinkarting-c3780.firebasestorage.app",
-    messagingSenderId: "266468820952",
-    appId: "1:266468820952:web:166113aa147ed4b86c94ad"
+    apiKey: "XXX",
+    authDomain: "XXX",
+    projectId: "XXX",
+    storageBucket: "XXX",
+    messagingSenderId: "XXX",
+    appId: "XXX"
 };
 
-// 🔥 Initialisation Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-// 🔥 STOP boucle mobile
-const currentPage = window.location.pathname;
+// 🔥 STOP TOTAL SUR PAGES LOGIN / COMPTE
+const path = window.location.pathname;
 
-// 👉 IMPORTANT : ne rien faire sur pages sensibles
-if (
-    currentPage.includes("compte.html") ||
-    currentPage.includes("moncompte.html")
-) {
-    console.log("⛔ auth.js désactivé sur cette page");
+if (path.includes("compte.html") || path.includes("moncompte.html")) {
+    console.log("⛔ auth.js OFF sur cette page");
 } else {
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -33,38 +27,22 @@ if (
         const accountBtn = document.getElementById("accountBtn");
         if (!accountBtn) return;
 
+        let targetPage = "compte.html"; // par défaut
+
         onAuthStateChanged(auth, (user) => {
-
             if (user) {
-                accountBtn.setAttribute("data-tooltip", "Mon compte");
-
-                accountBtn.onclick = () => {
-                    window.location.href = "moncompte.html";
-                };
-
+                targetPage = "moncompte.html";
             } else {
-                accountBtn.setAttribute("data-tooltip", "Connexion");
-
-                accountBtn.onclick = () => {
-                    window.location.href = "compte.html";
-                };
+                targetPage = "compte.html";
             }
         });
 
-        // 🔹 animation mobile
+        // 🔥 UN SEUL gestionnaire de clic propre
         accountBtn.addEventListener("click", (e) => {
-            e.preventDefault();
+            e.preventDefault(); // 🔥 TRÈS IMPORTANT (stop le href)
 
-            accountBtn.classList.add("active");
-
-            setTimeout(() => {
-                accountBtn.classList.remove("active");
-
-                if (accountBtn.onclick) {
-                    accountBtn.onclick();
-                }
-
-            }, 1500);
+            // 🔥 navigation propre (évite boucle historique)
+            window.location.replace(targetPage);
         });
 
     });

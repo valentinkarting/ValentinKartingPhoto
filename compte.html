@@ -33,10 +33,20 @@
 
 </div>
 
+<!-- 🔥 CORRECTION ULTIME ANTI BOUCLE MOBILE -->
 <script>
 window.addEventListener("pageshow", function(event) {
+
+    // 👉 Si la page revient du cache (bouton retour mobile)
     if (event.persisted) {
-        window.location.reload();
+        console.log("♻️ page restaurée depuis cache → neutralisation");
+
+        // 🔥 on ne recharge PAS → on casse la boucle
+        window.stop();
+
+        // 🔥 optionnel : vider le message pour éviter confusion
+        const msg = document.getElementById("message");
+        if (msg) msg.textContent = "";
     }
 });
 </script>
