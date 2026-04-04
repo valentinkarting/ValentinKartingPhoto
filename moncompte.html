@@ -6,34 +6,27 @@
 <title>Mon Compte</title>
 <link rel="stylesheet" href="moncompte.css">
 </head>
-
 <body>
 
-<div class="user-container"> <!-- Ajout du conteneur principal -->
+<div class="user-container">
+    <h1>Mon Compte</h1>
 
-<h1>Mon Compte</h1>
+    <div id="user-info">
+        <p><strong>Nom :</strong> <span id="user-lastname"></span></p>
+        <p><strong>Prénom :</strong> <span id="user-firstname"></span></p>
+        <p><strong>Email :</strong> <span id="user-email"></span></p>
+    </div>
 
-<!-- Informations utilisateur -->
-<div id="user-info">
-    <p><strong>Nom :</strong> <span id="user-lastname"></span></p>
-    <p><strong>Prénom :</strong> <span id="user-firstname"></span></p>
-    <p><strong>Email :</strong> <span id="user-email"></span></p>
+    <h2>Historique des achats</h2>
+    <div id="purchase-history">Chargement...</div>
+
+    <div class="user-actions">
+        <button id="logoutBtn">Se déconnecter</button>
+        <button id="deleteAccountBtn">Supprimer mon compte</button>
+        <button class="quit-btn" onclick="window.location.href='index.html'">Quitter</button>
+    </div>
 </div>
 
-<h2>Historique des achats</h2>
-<div id="purchase-history">
-    <!-- Les achats seront ajoutés ici -->
-</div>
-
-<div class="user-actions">
-    <!-- Bouton déconnexion -->
-    <button id="logoutBtn">Se déconnecter</button>
-    <button id="deleteAccountBtn">Supprimer mon compte</button>
-</div>
-
-</div> <!-- fin user-container -->
-
-<!-- Script -->
 <script type="module">
 import { auth, db } from "./auth.js";
 import { signOut, onAuthStateChanged, deleteUser, EmailAuthProvider, reauthenticateWithCredential } 
@@ -42,8 +35,6 @@ import { doc, getDoc, collection, getDocs, deleteDoc }
     from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    // 🔹 Éléments DOM
     const lastnameEl = document.getElementById("user-lastname");
     const firstnameEl = document.getElementById("user-firstname");
     const emailEl = document.getElementById("user-email");
@@ -51,109 +42,63 @@ document.addEventListener("DOMContentLoaded", () => {
     const logoutBtn = document.getElementById("logoutBtn");
     const deleteBtn = document.getElementById("deleteAccountBtn");
 
-    // 🔹 Vérifie si l'utilisateur est connecté
-
-    
-
     onAuthStateChanged(auth, async (user) => {
+        if (!user) return window.location.replace("compte.html");
+        emailEl.textContent = user.email;
 
-    // 🔥 ANTI BOUCLE RETOUR MOBILE
-    if (performance.navigation.type === 2) {
-        console.log("⛔ retour arrière détecté → pas de redirection");
-        return;
-    }
+        try {
+            const userDoc = await getDoc(doc(db, "users", user.uid));
+            if (userDoc.exists()) {
+                const data = userDoc.data();
+                firstnameEl.textContent = data.firstName || "";
+                lastnameEl.textContent = data.lastName || "";
+            }
+        } catch (err) { console.error(err); }
 
-    if (!user) {
-        window.location.replace("compte.html");
-        return;
-    }
-
-    // Affiche email
-    emailEl.textContent = user.email;
-
-    try {
-        const userDoc = await getDoc(doc(db, "users", user.uid));
-        if (userDoc.exists()) {
-            const data = userDoc.data();
-            firstnameEl.textContent = data.firstName || "";
-            lastnameEl.textContent = data.lastName || "";
-        }
-    } catch (err) {
-        console.error("Erreur récupération user :", err);
-    }
-
-    try {
-        const purchasesSnapshot = await getDocs(collection(db, "users", user.uid, "purchases"));
-        if (purchasesSnapshot.empty) {
-            historyDiv.textContent = "Aucun achat pour le moment.";
-        } else {
-            purchasesSnapshot.forEach(docSnap => {
-                const purchase = docSnap.data();
+        try {
+            const purchasesSnapshot = await getDocs(collection(db, "users", user.uid, "purchases"));
+            if (purchasesSnapshot.empty) historyDiv.textContent = "Aucun achat.";
+            else purchasesSnapshot.forEach(docSnap => {
                 const p = document.createElement("p");
-                p.textContent = `Produit : ${purchase.item}, Date : ${purchase.date}, Prix : ${purchase.price}€`;
+                const purchase = docSnap.data();
+                p.textContent = `Produit: ${purchase.item}, Date: ${purchase.date}, Prix: ${purchase.price}€`;
                 historyDiv.appendChild(p);
             });
-        }
-    } catch (err) {
-        console.error("Erreur récupération achats :", err);
-    }
-});
-    //------------------------------------------------------------------
-
-    // 🔹 Déconnexion
-    logoutBtn.addEventListener("click", async () => {
-        try {
-            await signOut(auth);
-            window.location.href = "index.html";
-        } catch (err) {
-            console.error("Erreur déconnexion :", err);
-        }
+        } catch (err) { console.error(err); }
     });
 
-    // 🔹 Suppression de compte
+    logoutBtn.addEventListener("click", async () => {
+        await signOut(auth);
+        window.location.href = "index.html";
+    });
+
     if (deleteBtn) {
         deleteBtn.addEventListener("click", async () => {
             const user = auth.currentUser;
-            if (!user) {
-                alert("Aucun utilisateur connecté.");
-                return;
-            }
-
-            if (!confirm("⚠️ Voulez-vous vraiment supprimer votre compte ?")) return;
+            if (!user) return alert("Aucun utilisateur connecté.");
+            if (!confirm("⚠️ Supprimer votre compte ?")) return;
 
             try {
-                // Supprime Firestore
                 await deleteDoc(doc(db, "users", user.uid));
-                // Supprime Auth
                 await deleteUser(user);
                 alert("Compte supprimé !");
                 window.location.href = "index.html";
             } catch (error) {
                 if (error.code === "auth/requires-recent-login") {
-                    const password = prompt("Pour des raisons de sécurité, entrez votre mot de passe :");
+                    const password = prompt("Re-saisissez votre mot de passe :");
                     if (!password) return;
-
                     try {
                         const credential = EmailAuthProvider.credential(user.email, password);
                         await reauthenticateWithCredential(user, credential);
-
                         await deleteDoc(doc(db, "users", user.uid));
                         await deleteUser(user);
-
                         alert("Compte supprimé !");
                         window.location.href = "index.html";
-                    } catch (err) {
-                        console.error(err);
-                        alert("Mot de passe incorrect ou erreur.");
-                    }
-                } else {
-                    console.error(error);
-                    alert("Erreur lors de la suppression du compte.");
-                }
+                    } catch (err) { alert("Erreur mot de passe ou suppression."); }
+                } else { alert("Erreur suppression compte."); }
             }
         });
     }
-
 });
 </script>
 

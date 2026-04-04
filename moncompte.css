@@ -45,7 +45,7 @@ h2 {
 
 /* Historique */
 #purchase-history {
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.514);
     padding: 15px;
     border-radius: 8px;
     margin-top: 10px;
@@ -58,6 +58,14 @@ h2 {
     margin-bottom: 5px;
 }
 
+.quit-btn {
+    background: rgba(255, 0, 0, 0.568); /* gris */
+}
+
+.quit-btn:hover {
+    background: red;
+}
+
 /* Boutons */
 button {
     width: 100%;
@@ -65,7 +73,7 @@ button {
     margin-top: 10px;
     border-radius: 6px;
     border: none;
-    background: #ff0000;
+    background: rgba(0, 0, 255, 0.363);
     color: white;
     cursor: pointer;
 }

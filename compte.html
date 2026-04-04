@@ -6,17 +6,13 @@
 <title>Compte</title>
 <link rel="stylesheet" href="compte.css">
 </head>
-
 <body>
 
 <div class="account-container">
-
     <h2>Connexion</h2>
     <input type="email" id="email" placeholder="Email">
     <input type="password" id="password" placeholder="Mot de passe">
-    <label>
-        <input type="checkbox" id="showLoginPassword"> Afficher le mot de passe
-    </label>
+    <label><input type="checkbox" id="showLoginPassword"> Afficher le mot de passe</label>
     <button id="loginBtn">Se connecter</button>
 
     <h2>Créer un compte</h2>
@@ -24,32 +20,12 @@
     <input type="text" id="lastName" placeholder="Nom">
     <input type="email" id="signupEmail" placeholder="Email">
     <input type="password" id="signupPassword" placeholder="Mot de passe">
-    <label>
-        <input type="checkbox" id="showSignupPassword"> Afficher le mot de passe
-    </label>
+    <label><input type="checkbox" id="showSignupPassword"> Afficher le mot de passe</label>
     <button id="signupBtn">Créer compte</button>
 
     <p id="message"></p>
-
+    <button class="quit-btn" onclick="window.location.href='index.html'">Quitter</button>
 </div>
-
-<!-- 🔥 CORRECTION ULTIME ANTI BOUCLE MOBILE -->
-<script>
-window.addEventListener("pageshow", function(event) {
-
-    // 👉 Si la page revient du cache (bouton retour mobile)
-    if (event.persisted) {
-        console.log("♻️ page restaurée depuis cache → neutralisation");
-
-        // 🔥 on ne recharge PAS → on casse la boucle
-        window.stop();
-
-        // 🔥 optionnel : vider le message pour éviter confusion
-        const msg = document.getElementById("message");
-        if (msg) msg.textContent = "";
-    }
-});
-</script>
 
 <script type="module" src="compte.js"></script>
 
