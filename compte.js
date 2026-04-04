@@ -84,8 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
             message.textContent = "Connexion réussie !";
 
             setTimeout(() => {
-                window.location.replace("index.html"); // ✅ évite boucle
-            }, 1500);
+           sessionStorage.setItem("redirectAfterLogin", "true");
+           window.location.href = "index.html";
+           }, 1500);
 
         } catch (error) {
 
@@ -140,7 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
             message.textContent = "Compte créé avec succès !";
 
             setTimeout(() => {
-                window.location.replace("index.html"); // ✅ évite boucle
+            sessionStorage.setItem("redirectAfterLogin", "true");
+            window.location.href = "index.html";
             }, 1500);
 
         } catch (error) {

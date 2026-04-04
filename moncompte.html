@@ -57,21 +57,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     onAuthStateChanged(auth, async (user) => {
 
-    // 🔥 Empêche boucle mobile (attente Firebase)
-    if (user === undefined) return;
+    const fromRedirect = sessionStorage.getItem("redirectAfterLogin");
 
-    if (!user) {
-        console.log("❌ pas connecté → redirection compte");
-        window.location.replace("compte.html"); // ✅ important : replace
+    // 🔥 CAS 1 : retour arrière navigateur → on bloque
+    if (!user && !fromRedirect) {
+        console.log("⛔ retour arrière détecté → pas de redirection");
         return;
     }
 
-    console.log("✅ utilisateur connecté :", user.email);
+    // 🔥 CAS 2 : pas connecté normalement → redirection OK
+    if (!user && fromRedirect) {
+        sessionStorage.removeItem("redirectAfterLogin");
+        window.location.href = "compte.html";
+        return;
+    }
+
+    // 🔥 CAS 3 : connecté → affichage normal
+    sessionStorage.removeItem("redirectAfterLogin");
 
     // Affiche email
     emailEl.textContent = user.email;
 
-    // 🔹 Récupère Nom et Prénom
+    // 🔹 Firestore user
     try {
         const userDoc = await getDoc(doc(db, "users", user.uid));
         if (userDoc.exists()) {
@@ -99,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (err) {
         console.error("Erreur récupération achats :", err);
     }
+
 });
     //------------------------------------------------------------------
 
