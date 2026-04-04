@@ -54,15 +54,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🔹 Vérifie si l'utilisateur est connecté
     onAuthStateChanged(auth, async (user) => {
 
+    // 🔥 Empêche boucle mobile (attente Firebase)
+    if (user === undefined) return;
+
     if (!user) {
-        console.log("🔒 non connecté → redirection vers compte");
-        window.location.replace("compte.html"); // ✅ replace = pas de boucle retour
+        console.log("❌ pas connecté → redirection compte");
+        window.location.replace("compte.html"); // ✅ important : replace
         return;
     }
 
     console.log("✅ utilisateur connecté :", user.email);
 
-    // 🔹 Affiche email
+    // Affiche email
     emailEl.textContent = user.email;
 
     // 🔹 Récupère Nom et Prénom
@@ -77,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Erreur récupération user :", err);
     }
 
-    // 🔹 Historique achats
+    // 🔹 Historique
     try {
         const purchasesSnapshot = await getDocs(collection(db, "users", user.uid, "purchases"));
         if (purchasesSnapshot.empty) {
@@ -94,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Erreur récupération achats :", err);
     }
 });
-
     //------------------------------------------------------------------
 
     // 🔹 Déconnexion

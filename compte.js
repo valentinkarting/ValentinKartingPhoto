@@ -48,12 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
     showLoginPassword.addEventListener("change", () => {
         password.type = showLoginPassword.checked ? "text" : "password";
     });
+
     showSignupPassword.addEventListener("change", () => {
         signupPassword.type = showSignupPassword.checked ? "text" : "password";
     });
 
-    // 🔥 Connexion
+    // 🔥 CONNEXION
     loginBtn.addEventListener("click", async () => {
+
         if (!email.value || !password.value) {
             message.style.color = "red";
             message.textContent = "Merci de remplir tous les champs de connexion.";
@@ -62,13 +64,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             await signInWithEmailAndPassword(auth, email.value, password.value);
+
             message.style.color = "green";
             message.textContent = "Connexion réussie !";
+
             setTimeout(() => {
-                window.location.href = "index.html";
+                // ✅ IMPORTANT : évite boucle retour mobile
+                window.location.replace("index.html");
             }, 1500);
+
         } catch (error) {
+
             message.style.color = "red";
+
             if (error.code === "auth/user-not-found") {
                 message.textContent = "Utilisateur non trouvé.";
             } else if (error.code === "auth/wrong-password") {
@@ -76,11 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 message.textContent = error.message;
             }
+
             console.error("❌ erreur connexion :", error);
         }
     });
 
-    // 🔥 Création de compte
+    // 🔥 CRÉATION DE COMPTE
     signupBtn.addEventListener("click", async () => {
 
         console.log("🟢 clic sur créer compte");
@@ -93,31 +102,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             console.log("🟡 création Firebase...");
+
             const userCredential = await createUserWithEmailAndPassword(
                 auth, 
                 signupEmail.value, 
                 signupPassword.value
             );
+
             const user = userCredential.user;
+
             console.log("🟢 utilisateur créé :", user.uid);
 
-            // 🔹 Enregistrement dans Firestore
+            // 🔹 Enregistrement Firestore
             await setDoc(doc(db, "users", user.uid), {
                 firstName: firstName.value,
                 lastName: lastName.value,
                 email: signupEmail.value
             });
+
             console.log("🟢 Firestore OK");
 
             message.style.color = "green";
             message.textContent = "Compte créé avec succès !";
 
             setTimeout(() => {
-                window.location.href = "index.html"; // redirection vers accueil
+                // ✅ IMPORTANT : évite boucle retour mobile
+                window.location.replace("index.html");
             }, 1500);
 
         } catch (error) {
+
             console.error("❌ erreur création compte :", error);
+
             message.style.color = "red";
 
             if (error.code === "auth/email-already-in-use") {
