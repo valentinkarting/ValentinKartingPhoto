@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
         }
     });
-
+    // bulle
     // 🔹 bulle mobile (1,5s)
     accountBtn.addEventListener("click", (e) => {
         e.preventDefault(); // empêche navigation immédiate
