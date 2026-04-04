@@ -2,36 +2,31 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
 import { 
     getAuth, 
     createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword 
+    signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 // 🔹 CONFIG FIREBASE
 const firebaseConfig = {
-    apiKey: "AIzaSyAcbpOvXZJ61WRINj865CE1zByBKIvKFo8",
-    authDomain: "valentinkarting-c3780.firebaseapp.com",
-    projectId: "valentinkarting-c3780",
-    storageBucket: "valentinkarting-c3780.firebasestorage.app",
-    messagingSenderId: "266468820952",
-    appId: "1:266468820952:web:166113aa147ed4b86c94ad"
+    apiKey: "XXX",
+    authDomain: "XXX",
+    projectId: "XXX",
+    storageBucket: "XXX",
+    messagingSenderId: "XXX",
+    appId: "XXX"
 };
 
-// 🔹 INITIALISATION
+// 🔹 INIT
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("✅ script chargé");
+    console.log("✅ compte.js chargé");
 
     const signupBtn = document.getElementById("signupBtn");
     const loginBtn = document.getElementById("loginBtn");
-
-    if (!signupBtn || !loginBtn) {
-        console.error("❌ Boutons introuvables");
-        return;
-    }
 
     const email = document.getElementById("email");
     const password = document.getElementById("password");
@@ -44,91 +39,72 @@ document.addEventListener("DOMContentLoaded", () => {
     const showLoginPassword = document.getElementById("showLoginPassword");
     const showSignupPassword = document.getElementById("showSignupPassword");
 
-    // 🔹 Afficher / masquer les mots de passe
+    // 👁️ afficher mdp
     showLoginPassword.addEventListener("change", () => {
         password.type = showLoginPassword.checked ? "text" : "password";
     });
+
     showSignupPassword.addEventListener("change", () => {
         signupPassword.type = showSignupPassword.checked ? "text" : "password";
     });
 
-    // 🔥 Connexion
+    // 🔥 LOGIN
     loginBtn.addEventListener("click", async () => {
+
         if (!email.value || !password.value) {
+            message.textContent = "Remplis tous les champs";
             message.style.color = "red";
-            message.textContent = "Merci de remplir tous les champs de connexion.";
             return;
         }
 
         try {
             await signInWithEmailAndPassword(auth, email.value, password.value);
+
+            message.textContent = "Connexion OK";
             message.style.color = "green";
-            message.textContent = "Connexion réussie !";
+
             setTimeout(() => {
-                window.location.href = "index.html";
-            }, 1500);
+                window.location.href = "index.html"; // PAS replace
+            }, 1000);
+
         } catch (error) {
+            message.textContent = error.message;
             message.style.color = "red";
-            if (error.code === "auth/user-not-found") {
-                message.textContent = "Utilisateur non trouvé.";
-            } else if (error.code === "auth/wrong-password") {
-                message.textContent = "Mot de passe incorrect.";
-            } else {
-                message.textContent = error.message;
-            }
-            console.error("❌ erreur connexion :", error);
         }
     });
 
-    // 🔥 Création de compte
+    // 🔥 SIGNUP
     signupBtn.addEventListener("click", async () => {
 
-        console.log("🟢 clic sur créer compte");
-
         if (!signupEmail.value || !signupPassword.value || !firstName.value || !lastName.value) {
+            message.textContent = "Remplis tout";
             message.style.color = "red";
-            message.textContent = "Merci de remplir tous les champs pour créer un compte.";
             return;
         }
 
         try {
-            console.log("🟡 création Firebase...");
             const userCredential = await createUserWithEmailAndPassword(
-                auth, 
-                signupEmail.value, 
+                auth,
+                signupEmail.value,
                 signupPassword.value
             );
-            const user = userCredential.user;
-            console.log("🟢 utilisateur créé :", user.uid);
 
-            // 🔹 Enregistrement dans Firestore
-            await setDoc(doc(db, "users", user.uid), {
+            await setDoc(doc(db, "users", userCredential.user.uid), {
                 firstName: firstName.value,
                 lastName: lastName.value,
                 email: signupEmail.value
             });
-            console.log("🟢 Firestore OK");
 
+            message.textContent = "Compte créé";
             message.style.color = "green";
-            message.textContent = "Compte créé avec succès !";
 
             setTimeout(() => {
-                window.location.href = "index.html"; // redirection vers accueil
-            }, 1500);
+                window.location.href = "index.html";
+            }, 1000);
 
         } catch (error) {
-            console.error("❌ erreur création compte :", error);
+            message.textContent = error.message;
             message.style.color = "red";
-
-            if (error.code === "auth/email-already-in-use") {
-                message.textContent = "Cette adresse email est déjà utilisée.";
-            } else if (error.code === "auth/invalid-email") {
-                message.textContent = "Adresse email invalide.";
-            } else if (error.code === "auth/weak-password") {
-                message.textContent = "Le mot de passe est trop faible (min. 6 caractères).";
-            } else {
-                message.textContent = error.message;
-            }
         }
     });
 

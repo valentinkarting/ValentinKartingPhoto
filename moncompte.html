@@ -52,44 +52,53 @@ document.addEventListener("DOMContentLoaded", () => {
     const deleteBtn = document.getElementById("deleteAccountBtn");
 
     // 🔹 Vérifie si l'utilisateur est connecté
+
+    
+
     onAuthStateChanged(auth, async (user) => {
-        if (!user) {
-            window.location.href = "compte.html"; // pas connecté → page connexion
-            return;
-        }
 
-        // Affiche email
-        emailEl.textContent = user.email;
+    // 🔥 ANTI BOUCLE RETOUR MOBILE
+    if (performance.navigation.type === 2) {
+        console.log("⛔ retour arrière détecté → pas de redirection");
+        return;
+    }
 
-        // Récupère Nom et Prénom depuis Firestore
-        try {
-            const userDoc = await getDoc(doc(db, "users", user.uid));
-            if (userDoc.exists()) {
-                const data = userDoc.data();
-                firstnameEl.textContent = data.firstName || "";
-                lastnameEl.textContent = data.lastName || "";
-            }
-        } catch (err) {
-            console.error("Erreur récupération user :", err);
-        }
+    if (!user) {
+        window.location.replace("compte.html");
+        return;
+    }
 
-        // Récupère historique des achats
-        try {
-            const purchasesSnapshot = await getDocs(collection(db, "users", user.uid, "purchases"));
-            if (purchasesSnapshot.empty) {
-                historyDiv.textContent = "Aucun achat pour le moment.";
-            } else {
-                purchasesSnapshot.forEach(docSnap => {
-                    const purchase = docSnap.data();
-                    const p = document.createElement("p");
-                    p.textContent = `Produit : ${purchase.item}, Date : ${purchase.date}, Prix : ${purchase.price}€`;
-                    historyDiv.appendChild(p);
-                });
-            }
-        } catch (err) {
-            console.error("Erreur récupération achats :", err);
+    // Affiche email
+    emailEl.textContent = user.email;
+
+    try {
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+            const data = userDoc.data();
+            firstnameEl.textContent = data.firstName || "";
+            lastnameEl.textContent = data.lastName || "";
         }
-    });
+    } catch (err) {
+        console.error("Erreur récupération user :", err);
+    }
+
+    try {
+        const purchasesSnapshot = await getDocs(collection(db, "users", user.uid, "purchases"));
+        if (purchasesSnapshot.empty) {
+            historyDiv.textContent = "Aucun achat pour le moment.";
+        } else {
+            purchasesSnapshot.forEach(docSnap => {
+                const purchase = docSnap.data();
+                const p = document.createElement("p");
+                p.textContent = `Produit : ${purchase.item}, Date : ${purchase.date}, Prix : ${purchase.price}€`;
+                historyDiv.appendChild(p);
+            });
+        }
+    } catch (err) {
+        console.error("Erreur récupération achats :", err);
+    }
+});
+    //------------------------------------------------------------------
 
     // 🔹 Déconnexion
     logoutBtn.addEventListener("click", async () => {
