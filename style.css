@@ -272,6 +272,8 @@ body {
     opacity: 1;
 }
 
+/*--Partie connexion ou creation de compte----------*/
+
 /* bulle survol bouton Connexion*/
 .account-icon {
     position: relative;
@@ -1680,8 +1682,11 @@ color: black;
         display: none;
     }
     #accountBtn img {
-        display: none;
-}
+        display: none !important;
+    }
+    #accountEmail {
+        display: none !important;
+    }
 
 
     .carousel-container {
