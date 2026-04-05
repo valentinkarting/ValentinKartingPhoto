@@ -9,21 +9,21 @@
 <body>
 
 <div class="user-container">
-    <h1>Mon Compte</h1>
+    <h1 id="A55">Mon Compte</h1>
 
     <div id="user-info">
-        <p><strong>Nom :</strong> <span id="user-lastname"></span></p>
-        <p><strong>Prénom :</strong> <span id="user-firstname"></span></p>
-        <p><strong>Email :</strong> <span id="user-email"></span></p>
+        <p><strong id="label-lastname">Nom :</strong> <span id="user-lastname"></span></p>
+        <p><strong id="label-firstname">Prénom :</strong> <span id="user-firstname"></span></p>
+        <p><strong id="label-email">Email :</strong> <span id="user-email"></span></p>
     </div>
 
-    <h2>Historique des achats</h2>
+    <h2 id="A56">Historique des achats</h2>
     <div id="purchase-history">Chargement...</div>
 
     <div class="user-actions">
         <button id="logoutBtn">Se déconnecter</button>
         <button id="deleteAccountBtn">Supprimer mon compte</button>
-        <button class="quit-btn" onclick="window.location.href='index.html'">Quitter</button>
+        <button id="A57" class="quit-btn" onclick="window.location.href='index.html'">Quitter</button>
     </div>
 </div>
 
@@ -101,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 </script>
+
+<script src="lang.js" defer></script>
 
 </body>
 </html>

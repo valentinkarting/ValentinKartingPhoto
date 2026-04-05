@@ -9,25 +9,28 @@
 <body>
 
 <div class="account-container">
-    <h2>Connexion</h2>
+    <h2 id="A52">Connexion</h2>
     <input type="email" id="email" placeholder="Email">
     <input type="password" id="password" placeholder="Mot de passe">
-    <label><input type="checkbox" id="showLoginPassword"> Afficher le mot de passe</label>
+    <label id="showLoginPasswordLabel"><input type="checkbox" id="showLoginPassword"> Afficher le mot de passe</label>
     <button id="loginBtn">Se connecter</button>
 
-    <h2>Créer un compte</h2>
+    <h2 id="A53">Créer un compte</h2>
     <input type="text" id="firstName" placeholder="Prénom">
     <input type="text" id="lastName" placeholder="Nom">
     <input type="email" id="signupEmail" placeholder="Email">
     <input type="password" id="signupPassword" placeholder="Mot de passe">
-    <label><input type="checkbox" id="showSignupPassword"> Afficher le mot de passe</label>
+    <label id="showSignupPasswordLabel"><input type="checkbox" id="showSignupPassword"> Afficher le mot de passe</label>
     <button id="signupBtn">Créer compte</button>
 
     <p id="message"></p>
-    <button class="quit-btn" onclick="window.location.href='index.html'">Quitter</button>
+    <button id="A54" class="quit-btn" onclick="window.location.href='index.html'">Quitter</button>
 </div>
 
+
+<script src="lang.js" defer></script>
 <script type="module" src="compte.js"></script>
+
 
 </body>
 </html>

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // 🔥 afficher email
             if (accountEmail) {
                 accountEmail.style.display = "inline";
-                accountEmail.textContent = user.email.split("@")[0]; // 👈 plus propre
+                accountEmail.textContent = user.email.split("@")[0];
             }
 
             // 🔥 cacher icône
@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 accountIcon.style.display = "none";
             }
 
-            accountBtn.setAttribute("data-tooltip", "Mon compte");
+            // 🔥 tooltip toujours en anglais
+            accountBtn.setAttribute("data-tooltip", "My Account");
+
             accountBtn.href = "moncompte.html";
 
         } else {
@@ -53,10 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 accountEmail.style.display = "none";
             }
 
-            accountBtn.setAttribute("data-tooltip", "Connexion");
+            // 🔥 tooltip toujours en anglais
+            accountBtn.setAttribute("data-tooltip", "Login");
+
             accountBtn.href = "compte.html";
         }
-
     });
 
     // 🔹 animation mobile (inchangée)

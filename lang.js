@@ -69,7 +69,33 @@ document.addEventListener("DOMContentLoaded", function () {
        "A44": "Pack 10 photos 50€",
        "A45": "Valider",
        "A46": "Récapitulatif de commande",
-       "A47": "Total à régler 50€"       
+       "A47": "Total à régler 50€",
+       // page compte.html
+       "A52": "Connexion",
+       "email": "Email",
+       "password": "Mot de passe",
+       "showLoginPasswordLabel": "Afficher le mot de passe",
+       "loginBtn": "Se connecter",
+       "A53": "Créer un compte",
+       "firstName": "Prénom",
+       "lastName": "Nom",
+       "signupEmail": "Email",
+       "signupPassword": "Mot de passe",
+       "showSignupPasswordLabel": "Afficher le mot de passe",
+       "signupBtn": "Créer compte",
+       // place disponible pour traduction de message
+       "A54": "Quitter",
+       // page moncompte.html
+       "A55": "Mon Compte",
+       "label-lastname" : "Nom",
+       "label-firstname": "Prénom",
+       "label-email": "Email",
+       "A56": "Historique des achats",
+       "logoutBtn": "Se déconnecter",
+       "deleteAccountBtn": "Supprimer mon compte",
+       "A57": "Quitter"
+
+
     },       
 
     en: {
@@ -139,7 +165,31 @@ document.addEventListener("DOMContentLoaded", function () {
       "A44": "Pack of 10 photos €50",
       "A45": "Confirm",
       "A46": "Order Summary",
-      "A47": "Total to Pay €50"
+      "A47": "Total to Pay €50",
+      // Page compte.html
+      "A52": "Login",
+      "email": "Email",
+      "password": "Password",
+      "showLoginPasswordLabel": "Show Password",
+      "loginBtn": "Log in",
+      "A53": "Create an Account",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "signupEmail": "Email",
+      "signupPassword": "Password",
+      "showSignupPasswordLabel": "Show Password",
+      "signupBtn": "Create Account",
+      // Space available for message translation
+      "A54": "Exit",
+      // page mon compte.html
+      "A55": "My Account",
+      "label-lastname": "Last Name",
+      "label-firstname": "First Name",
+      "label-email": "Email",
+      "A56": "Purchase History",
+      "logoutBtn": "Log Out",
+      "deleteAccountBtn": "Delete My Account",
+      "A57": "Exit"
 
     },  
 
@@ -210,7 +260,30 @@ document.addEventListener("DOMContentLoaded", function () {
        "A44": "Pacchetto di 10 foto €50",
        "A45": "Conferma",
        "A46": "Riepilogo ordine",
-       "A47": "Totale da pagare €50"
+       "A47": "Totale da pagare €50",
+       // page compte.html
+       "A52": "Accedi",
+       "email": "Email",
+       "password": "Password",
+       "showLoginPasswordLabel": "Mostra password",
+       "loginBtn": "Accedi",
+       "A53": "Crea un account",
+       "firstName": "Nome",
+       "lastName": "Cognome",
+       "signupEmail": "Email",
+       "signupPassword": "Password",
+       "showSignupPasswordLabel": "Mostra password",
+       "signupBtn": "Crea un account",
+       "A54": "Esci",
+       // page moncompte.html
+       "A55": "Il mio account",
+       "label-lastname": "Cognome",
+       "label-firstname": "Nome",
+       "label-email": "Email",
+       "A56": "Cronologia acquisti",
+       "logoutBtn": "Esci",
+       "deleteAccountBtn": "Elimina il mio account",
+       "A57": "Esci"
 
 
 
@@ -284,8 +357,29 @@ document.addEventListener("DOMContentLoaded", function () {
        "A44": "Paquete de 10 fotos 50 €",  
        "A45": "Confirmar",
        "A46": "Resumen del pedido",
-       "A47": "Total a pagar 50 €"
-
+       "A47": "Total a pagar 50 €",
+       // page compte.html
+       "A52": "Iniciar sesión",
+       "email": "Correo electrónico",
+       "password": "Contraseña",
+       "showLoginPasswordLabel": "Mostrar contraseña",
+       "loginBtn": "Iniciar sesión",
+       "A53": "Crear una cuenta",
+       "firstName": "Nombre",
+       "lastName": "Apellido",
+       "signupEmail": "Correo electrónico",
+       "signupPassword": "Contraseña",
+       "signupBtn": "Crear cuenta",
+       "A54": "Salir",
+       // page moncompte.html
+       "A55": "Mi cuenta",
+       "label-lastname": "Apellido",
+       "label-firstname": "Nombre",
+       "label-email": "Correo electrónico",
+       "A56": "Historial de compras",
+       "logoutBtn": "Cerrar sesión",
+       "deleteAccountBtn": "Eliminar mi cuenta",
+       "A57": "Salir"
 
     },
 
@@ -356,13 +450,38 @@ document.addEventListener("DOMContentLoaded", function () {
        "A44": "10 Fotos, 50 €",
        "A45": "Bestätigen",
        "A46": "Bestellübersicht",
-       "A47": "Gesamtbetrag: 50 €"
+       "A47": "Gesamtbetrag: 50 €",
+       // page compte.html
+       "A52": "Anmelden",
+       "email": "E-Mail",
+       "password": "Passwort",
+       "showLoginPasswordLabel": "Passwort anzeigen",
+       "loginBtn": "Anmelden",
+       "A53": "Konto erstellen",
+       "firstName": "Vorname",
+       "lastName": "Nachname",
+       "signupEmail": "E-Mail",
+       "signupPassword": "Passwort",
+       "showSignupPasswordLabel": "Passwort anzeigen",
+       "signupBtn": "Konto erstellen",
+       "A54": "Beenden",
+       // page moncompte.html
+       "A55": "Mein Konto",
+       "label-lastname": "Nachname",
+       "label-firstname": "Vorname",
+       "label-email": "E-Mail",
+       "A56": "Kaufhistorie",
+       "logoutBtn": "Abmelden",
+       "deleteAccountBtn": "Mein Konto löschen",
+       "A57": "Beenden"
     }
   };
 
   // 🔹 Fonction de traduction
   function setLanguage(lang) {
     localStorage.setItem("lang", lang);
+
+
 
     Object.keys(translations[lang]).forEach(key => {
       const el = document.getElementById(key);
@@ -403,6 +522,8 @@ document.addEventListener("DOMContentLoaded", function () {
       activeFlag.classList.add("active");
     }
   }
+
+  
 
   // 🔹 Langue sauvegardée
   const savedLang = localStorage.getItem("lang") || "fr";
