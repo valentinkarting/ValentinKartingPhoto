@@ -10,25 +10,17 @@
 
 <body>
     <div class="container">
-        <h2>Modifier mes données personnelles</h2>
-        <p class="rgpd-info">
-            Conformément au RGPD, vous pouvez consulter, modifier ou supprimer vos données personnelles.
+        <h2 id="A58" >Modifier mes données personnelles</h2>
+        <p id="A59" class="rgpd-info">
+            Conformément au RGPD, vous pouvez consulter, modifier ou supprimer vos données personnelles. Pour ce faire sur la page d'accueil connecter vous puis accéder à votre compte et modifier ou supprimer vos données.
 
         </p>
         <form id="data-form">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom" required>
-
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" placeholder="Votre email" required>
-
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" placeholder="Nouveau mot de passe">
-
-            <button type="submit">Enregistrer</button>
-            <button type="button" id="download-btn">Télécharger mes données</button>
-            <button type="button" class="delete" id="delete-btn">Supprimer mon compte</button>
-            <a href="confi.html">Politique de Confidentialité</a>
+            
+         <a href="index.html">
+         <button type="button" id="A60" class="delete">Quitter</button>
+         </a>
+            <a href="confi.html" id="A61" >Politique de Confidentialité</a>
         </form>
     </div>
 
@@ -39,6 +31,9 @@
             e.preventDefault();
         });   
     </script>
+
+    <!-- Nouvelle partie pour changement de langue -->
+    <script src="lang.js" defer></script>
 
     <script src="rgpd.js"></script>
 </body>

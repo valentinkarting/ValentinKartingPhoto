@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
        "firstName": "Prénom",
        "lastName": "Nom",
        "signupEmail": "Email",
+       "phone": "Numéro de téléphone",
        "signupPassword": "Mot de passe",
        "showSignupPasswordLabel": "Afficher le mot de passe",
        "signupBtn": "Créer compte",
@@ -90,11 +91,57 @@ document.addEventListener("DOMContentLoaded", function () {
        "label-lastname" : "Nom",
        "label-firstname": "Prénom",
        "label-email": "Email",
+       "label-phone": "Téléphone",
+       "editBtn": "Modifier",
        "A56": "Historique des achats",
        "logoutBtn": "Se déconnecter",
        "deleteAccountBtn": "Supprimer mon compte",
-       "A57": "Quitter"
+       "A57": "Quitter",
+       //  page RGPD
+       "A58": "Modifier mes données personnelles",
+       "A59": "Conformément au RGPD, vous pouvez consulter, modifier ou supprimer vos données personnelles. Pour ce faire sur la page d'accueil connecter vous puis accéder à votre compte et modifier ou supprimer vos données.",
+       "A60": "Quitter",
+       "A61": "Politique de Confidentialité",
+       // page confi.html  pour Confidentialité
+       "A62": "Politique de Confidentialité",
+       "A63": "Dernière mise à jour :",
+       "A64": "1. Introduction",
+       "A65": "Nous accordons une grande importance à la protection de vos données personnelles. Cette politique deconfidentialité explique comment nous collectons, utilisons et protégeons vos informations.",
+       "A66": "2. Données collectées",
+       "A67": "Nous pouvons collecter les informations suivantes :",
+       "A68": `<li>Nom et prénom</li>
+               <li>Adresse e-mail</li>
+               <li>Numéro de téléphone</li>
+               <li>Adresse IP et données de navigation</li>
+               <li>Préférences et interactions avec notre site</li>`,
+       "A69": "3. Finalités du traitement",
+       "A70": "Nous utilisons vos données pour :",
+       "A71": `<li>Gérer votre compte utilisateur</li>
+               <li>Vous envoyer des informations et newsletters</li>
+               <li>Améliorer nos services et votre expérience</li>
+               <li>Respecter nos obligations légales</li>`,
+       "A72": "4. Partage des données",
+       "A73": "Vos informations ne sont ni vendues ni échangées. Elles peuvent être partagées avec :",
+       "A74": `<li>Nos prestataires techniques (hébergement, emailing, analyse de trafic)</li>
+               <li>Les autorités en cas d'obligation légale</li>`,
+       "A75": "5. Durée de conservation",
+       "A76": "Vos données sont conservées aussi longtemps que nécessaire pour les finalités mentionnées ci-dessus.",
+       "A77": "6. Vos droits",
+       "A78": "Conformément au RGPD, vous avez les droits suivants :",
+       "A79": `<li>Accéder à vos données</li>
+               <li>Rectifier ou supprimer vos informations</li>`,
+       "A80": "Pour exercer ces droits, connectez vous et accédez à votre compte",
+       "A81": "7. Sécurité",
+       "A82": "Nous mettons en place des mesures de sécurité pour protéger vos informations.",
+       "A83": "8. Cookies",
+       "A84": "Nous n'utilisons pas des cookies sur notre site.",
+       "A85": "9. Modifications",
+       "A86": "Nous pouvons modifier cette politique. Toute mise à jour sera publiée sur cette page.",
+       "A87": "J'accepte",
+       //  page politique de cookies
 
+      
+       
 
     },       
 
@@ -176,6 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "firstName": "First Name",
       "lastName": "Last Name",
       "signupEmail": "Email",
+      "phone": "Phone number",
       "signupPassword": "Password",
       "showSignupPasswordLabel": "Show Password",
       "signupBtn": "Create Account",
@@ -183,13 +231,57 @@ document.addEventListener("DOMContentLoaded", function () {
       "A54": "Exit",
       // page mon compte.html
       "A55": "My Account",
-      "label-lastname": "Last Name",
+      "label-lastname" : "Last Name",
       "label-firstname": "First Name",
       "label-email": "Email",
+      "label-phone": "phone",
+      "editBtn": "Modify",
       "A56": "Purchase History",
       "logoutBtn": "Log Out",
       "deleteAccountBtn": "Delete My Account",
-      "A57": "Exit"
+      "A57": "Exit",
+      // page RGPD
+      "A58": "Edit my personal data",
+      "A59": "In accordance with the GDPR, you can view, modify, or delete your personal data. To do so, log in to your account on the homepage and modify or delete your data.",
+      "A60": "Exit",
+      "A61": "Privacy Policy",
+      // page confi.html  pour Confidentialité
+      "A62": "Privacy Policy",
+      "A63": "Last updated:",
+      "A64": "1. Introduction",
+      "A65": "We attach great importance to the protection of your personal data. This privacy policy explains how we collect, use, and protect your information.",
+      "A66": "2. Data Collected",
+      "A67": "We may collect the following information:",
+      "A68": `<li>First and last name</li>
+              <li>Email address</li>
+              <li>Phone number</li>
+              <li>IP address and browsing data</li>
+              <li>Preferences and interactions with our site</li>`,
+      "A69": "3. Purposes of Processing",
+      "A70": "We use your data to:",
+      "A71": `<li>Manage your user account</li>
+              <li>Send you information and newsletters</li>
+              <li>Improving our services and your experience</li>
+              <li>Complying with our legal obligations</li>`,
+      "A72": "4. Data Sharing",
+      "A73": "Your information is neither sold nor exchanged. It may be shared with:",
+      "A74": `<li>Our technical service providers (hosting, email marketing, traffic analysis)</li>
+              <li>The authorities in the event of a legal obligation</li>`,
+      "A75": "5. Data Retention Period",
+      "A76": "Your data is kept for as long as necessary for the purposes mentioned above.",
+      "A77": "6. Your Rights",
+      "A78": "In accordance with the GDPR, you have the following rights:",
+      "A79": `<li>Access your data</li>
+              <li>Rectify or delete your information</li>`,
+      "A80": "To exercise To access these rights, log in and access your account.",
+      "A81": "7. Security",
+      "A82": "We implement security measures to protect your information.",
+      "A83": "8. Cookies",
+      "A84": "We do not use cookies on our site.",
+      "A85": "9. Changes",
+      "A86": "We may change this policy. Any updates will be posted on this page.",
+      "A87": "I agree.",
+      //  page politique de cookies
 
     },  
 
@@ -271,21 +363,63 @@ document.addEventListener("DOMContentLoaded", function () {
        "firstName": "Nome",
        "lastName": "Cognome",
        "signupEmail": "Email",
+       "phone": "Numero di telefono",
        "signupPassword": "Password",
        "showSignupPasswordLabel": "Mostra password",
        "signupBtn": "Crea un account",
        "A54": "Esci",
        // page moncompte.html
        "A55": "Il mio account",
-       "label-lastname": "Cognome",
+       "label-lastname" : "Cognome",
        "label-firstname": "Nome",
        "label-email": "Email",
+       "label-phone": "telefono",
+       "editBtn": "Per modificare",
        "A56": "Cronologia acquisti",
        "logoutBtn": "Esci",
        "deleteAccountBtn": "Elimina il mio account",
-       "A57": "Esci"
-
-
+       "A57": "Esci",
+       //  page RGPD
+       "A58": "Modifica i miei dati personali",
+       "A59": "Ai sensi del GDPR, puoi visualizzare, modificare o eliminare i tuoi dati personali. Per farlo, accedi al tuo account sulla homepage e modifica o elimina i tuoi dati.",
+       "A60": "Esci",
+       "A61": "Informativa sulla privacy",
+       //  page conf.html pour Confidentialité
+      "A62": "Informativa sulla privacy",
+      "A63": "Ultimo aggiornamento:",
+      "A64": "1. Introduzione",
+      "A65": "Attribuiamo grande importanza alla protezione dei vostri dati personali. Questa informativa sulla privacy spiega come raccogliamo, utilizziamo e proteggiamo le vostre informazioni.",
+      "A66": "2. Dati raccolti",
+      "A67": "Potremmo raccogliere le seguenti informazioni:",
+      "A68": `<li>Nome e cognome</li>
+              <li>Indirizzo email</li>
+              <li>Numero di telefono</li>
+              <li>Indirizzo IP e dati di navigazione</li>
+              <li>Preferenze e interazioni con il nostro sito</li>`,
+      "A69": "3. Finalità del trattamento",   
+      "A70": "Utilizziamo i tuoi dati per:",
+      "A71": `<li>Gestire il tuo account utente</li>
+              <li>Inviarti informazioni e newsletter</li>
+              <li>Migliorare i nostri servizi e la tua esperienza</li>
+              <li>Adempiere ai nostri obblighi legali</li>`,
+      "A72": "4. Condivisione dei dati",
+      "A73": "Le tue informazioni non vengono vendute né scambiate. Possono essere condivise con:",
+      "A74": `<li>I nostri fornitori di servizi tecnici (hosting, email marketing, analisi del traffico)</li>
+              <li>Le autorità in caso di obbligo legale</li>`,
+      "A75": "5. Periodo di conservazione dei dati",
+      "A76": "I tuoi dati vengono conservati per il tempo necessario al raggiungimento delle finalità sopra indicate.",
+      "A77": "6. I tuoi diritti",
+      "A78": "Ai sensi del GDPR, hai i seguenti diritti:",
+      "A79": `<li>Accedere ai tuoi dati</li>
+              <li>Rettificare o cancellare le tue informazioni</li>`,
+      "A80": "Per esercitare questi diritti, accedi al tuo account.",
+      "A81": "7. Sicurezza",
+      "A82": "Adottiamo misure di sicurezza per proteggere le tue informazioni.",
+      "A83": "8. Cookie",
+      "A84": "Non utilizziamo cookie sul nostro sito.",
+      "A85": "9. Modifiche",
+      "A86": "Potremmo modificare la presente informativa. Eventuali aggiornamenti saranno pubblicati su questa pagina.",
+      "A87": "Accetto."
 
 
     },
@@ -368,18 +502,65 @@ document.addEventListener("DOMContentLoaded", function () {
        "firstName": "Nombre",
        "lastName": "Apellido",
        "signupEmail": "Correo electrónico",
+       "phone": "Número de teléfono",
        "signupPassword": "Contraseña",
+       "showSignupPasswordLabel": "Mostrar contraseña",
        "signupBtn": "Crear cuenta",
        "A54": "Salir",
        // page moncompte.html
        "A55": "Mi cuenta",
-       "label-lastname": "Apellido",
+       "label-lastname" : "Apellido",
        "label-firstname": "Nombre",
        "label-email": "Correo electrónico",
+       "label-phone": "teléfono",
+       "editBtn": "Per modificare",
        "A56": "Historial de compras",
        "logoutBtn": "Cerrar sesión",
        "deleteAccountBtn": "Eliminar mi cuenta",
-       "A57": "Salir"
+       "A57": "Salir",
+       //  page RGPD
+       "A58": "Editar mis datos personales.",
+       "A59": "De conformidad con el RGPD, puede consultar, modificar o eliminar sus datos personales. Para ello, inicie sesión en su cuenta en la página principal y modifique o elimine sus datos.",
+       "A60": "Salir.",
+       "A61": "Política de privacidad.",
+       //  page confi.html  pour Confidentialité
+       "A62": "Política de privacidad",
+       "A63": "Última actualización:",
+       "A64": "1. Introducción",
+       "A65": "Concedemos gran importancia a la protección de sus datos personales. Esta política de privacidad explica cómo recopilamos, utilizamos y protegemos su información.",
+       "A66": "2. Datos recopilados",
+       "A67": "Podemos recopilar la siguiente información:",
+       "A68": `<li>Nombre y apellidos</li>
+               <li>Dirección de correo electrónico</li>
+               <li>Número de teléfono</li>
+               <li>Dirección IP y datos de navegación</li>
+               <li>Preferencias e interacciones con nuestro sitio</li>`,
+       "A69": "3. Finalidades del tratamiento",
+       "A70": "Utilizamos sus datos para:",
+       "A71": `<li>Gestionar su cuenta de usuario</li>
+               <li>Enviarle información y boletines informativos</li>
+               <li>Mejorar nuestros servicios y su experiencia</li>
+               <li>Cumplir con nuestras obligaciones legales</li>`,
+       "A72": "4. Intercambio de datos",
+       "A73": "Su información no se vende ni se intercambia. Puede compartirse con:",
+       "A74": `<li>Nuestros proveedores de servicios técnicos (hosting, marketing por correo electrónico, análisis de tráfico)</li>
+              <li>Las autoridades en caso de obligación legal</li>`,
+       "A75": "5. Periodo de conservación de datos",
+       "A76": "Sus datos se conservan durante el tiempo necesario para las finalidades mencionadas anteriormente.",
+       "A77": "6. Sus derechos",
+       "A78": "«De conformidad con el RGPD, usted tiene los siguientes derechos:",
+       "A79": `<li>Acceder a sus datos</li>
+               <li>Rectificar o eliminar su información</li>`,
+       "A80": "«Para ejercer estos derechos, inicie sesión y acceda a su cuenta.",
+       "A81": "7. Seguridad",
+       "A82": "Implementamos medidas de seguridad para proteger su información.",
+       "A83": "8. Cookies",
+       "A84": "No utilizamos cookies en nuestro sitio web.",
+       "A85": "9. Cambios",
+       "A86": "Podemos modificar esta política. Cualquier actualización se publicará en esta página.",
+       "A87": "Acepto.",
+       //  page politique de cookies
+
 
     },
 
@@ -461,19 +642,67 @@ document.addEventListener("DOMContentLoaded", function () {
        "firstName": "Vorname",
        "lastName": "Nachname",
        "signupEmail": "E-Mail",
+       "phone": "Telefonnummer",
        "signupPassword": "Passwort",
        "showSignupPasswordLabel": "Passwort anzeigen",
        "signupBtn": "Konto erstellen",
        "A54": "Beenden",
        // page moncompte.html
        "A55": "Mein Konto",
-       "label-lastname": "Nachname",
+       "label-lastname" : "Nachname",
        "label-firstname": "Vorname",
        "label-email": "E-Mail",
+       "label-phone": "Telefon",
+       "editBtn": "Zum Ändern",
        "A56": "Kaufhistorie",
        "logoutBtn": "Abmelden",
        "deleteAccountBtn": "Mein Konto löschen",
-       "A57": "Beenden"
+       "A57": "Beenden",
+       //  page RGPD
+       "A58": "Meine persönlichen Daten bearbeiten",
+       "A59": "Gemäß der DSGVO können Sie Ihre personenbezogenen Daten einsehen, ändern oder löschen. Melden Sie sich dazu auf der Startseite in Ihrem Konto an und ändern oder löschen Sie Ihre Daten.",
+       "A60": "Abmelden",
+       "A61": "Datenschutzerklärung",
+       //  page confi.html pour Confidentialité
+       "A62": "Datenschutzrichtlinie",
+       "A63": "Letzte Aktualisierung:",
+       "A64": "1. Einleitung",
+       "A65": "Der Schutz Ihrer personenbezogenen Daten ist uns sehr wichtig. Diese Datenschutzrichtlinie erläutert, wie wir Ihre Daten erfassen, verwenden und schützen.",
+       "A66": "2. Erfasste Daten",
+       "A67": "Wir erfassen möglicherweise die folgenden Informationen:",
+       "A68": `<li>Vor- und Nachname</li>
+               <li>E-Mail-Adresse</li>
+               <li>Telefonnummer</li>
+               <li>IP-Adresse und Browserdaten</li>
+               <li>Präferenzen und Interaktionen mit unserer Website</li>`,
+       "A69": "3. Zwecke der Datenverarbeitung",
+       "A70": "Wir verwenden Ihre Daten für:",
+       "A71": `<li>Verwaltung Ihres Benutzerkontos</li>
+               <li>Versand von Informationen und Newslettern</li>
+               <li>Verbesserung unserer Dienste und Ihrer Nutzererfahrung</li>
+               <li>Erfüllung unserer rechtlichen Verpflichtungen</li>`,
+       "A72": "4. Datenweitergabe",
+       "A73": "Ihre Daten werden weder verkauft noch getauscht. Sie können weitergegeben werden an:",
+       "A74": `<li>Unsere technischen Dienstleister (Hosting, E-Mail-Marketing, Traffic-Analyse)</li>
+               <li>Die Behörden im Falle einer rechtlichen Verpflichtung</li>`,
+       "A75": "5. Speicherdauer",
+       "A76": "Ihre Daten werden so lange gespeichert, wie es für die oben genannten Zwecke erforderlich ist.",
+       "A77": "6. Ihre Rechte",
+       "A78": "Gemäß der DSGVO haben Sie folgende Rechte:",
+       "A79": `<li>Zugriff auf Ihre Daten</li>
+               <li>Recht auf Berichtigung oder Löschung Ihrer Daten</li>`,
+       "A80": "Um diese Rechte auszuüben, melden Sie sich an und greifen Sie auf Ihr Konto zu.",
+       "A81": "7. Sicherheit",
+       "A82": "Wir setzen Sicherheitsmaßnahmen zum Schutz Ihrer Daten ein.",
+       "A83": "8. Cookies",
+       "A84": "Wir verwenden keine Cookies auf unserer Website.",
+       "A85": "9. Änderungen",
+       "A86": "Wir behalten uns das Recht vor, diese Richtlinie zu ändern. Aktualisierungen werden auf dieser Seite veröffentlicht.",
+       "A87": "Ich stimme zu.",
+       //  page politique de cookies
+
+
+
     }
   };
 

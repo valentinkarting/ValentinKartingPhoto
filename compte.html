@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Compte</title>
+
+<!-- ✅ CSS intl-tel-input (version récente) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.3/build/css/intlTelInput.css">
+
 <link rel="stylesheet" href="compte.css">
+
 </head>
 <body>
 
@@ -19,6 +24,10 @@
     <input type="text" id="firstName" placeholder="Prénom">
     <input type="text" id="lastName" placeholder="Nom">
     <input type="email" id="signupEmail" placeholder="Email">
+
+    <!-- ✅ INPUT TELEPHONE SIMPLE -->
+    <input type="tel" id="phone" placeholder="Numéro de téléphone">
+
     <input type="password" id="signupPassword" placeholder="Mot de passe">
     <label id="showSignupPasswordLabel"><input type="checkbox" id="showSignupPassword"> Afficher le mot de passe</label>
     <button id="signupBtn">Créer compte</button>
@@ -27,10 +36,14 @@
     <button id="A54" class="quit-btn" onclick="window.location.href='index.html'">Quitter</button>
 </div>
 
+<!-- ✅ JS intl-tel-input -->
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.3/build/js/intlTelInput.min.js"></script>
 
-<script src="lang.js" defer></script>
+<!-- Ton script -->
 <script type="module" src="compte.js"></script>
 
+<!-- Nouvelle partie pour changement de langue -->
+<script src="lang.js" defer></script>
 
 </body>
 </html>

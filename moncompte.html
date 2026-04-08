@@ -12,12 +12,28 @@
     <h1 id="A55">Mon Compte</h1>
 
     <div id="user-info">
-        <p><strong id="label-lastname">Nom :</strong> <span id="user-lastname"></span></p>
-        <p><strong id="label-firstname">Prénom :</strong> <span id="user-firstname"></span></p>
-        <p><strong id="label-email">Email :</strong> <span id="user-email"></span></p>
+        <p><strong id="label-lastname">Nom :</strong>
+            <input type="text" id="edit-lastname" disabled>
+        </p>
+
+        <p><strong id="label-firstname">Prénom :</strong>
+            <input type="text" id="edit-firstname" disabled>
+        </p>
+
+        <p><strong id="label-email">Email :</strong>
+            <input type="email" id="edit-email" disabled>
+        </p>
+
+        <p><strong id="label-phone">Téléphone :</strong>
+            <input type="tel" id="edit-phone" disabled>
+        </p>
+
+        <button id="editBtn">Modifier</button>
+        <button id="saveBtn" style="display:none;">Enregistrer</button>
+        <p id="message"></p>
     </div>
 
-    <h2 id="A56">Historique des achats</h2>
+    <h2 id="A56" >Historique des achats</h2>
     <div id="purchase-history">Chargement...</div>
 
     <div class="user-actions">
@@ -29,76 +45,180 @@
 
 <script type="module">
 import { auth, db } from "./auth.js";
-import { signOut, onAuthStateChanged, deleteUser, EmailAuthProvider, reauthenticateWithCredential } 
-    from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
-import { doc, getDoc, collection, getDocs, deleteDoc } 
-    from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { 
+    signOut, 
+    onAuthStateChanged, 
+    deleteUser, 
+    EmailAuthProvider, 
+    reauthenticateWithCredential,
+    updateEmail
+} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+
+import { 
+    doc, 
+    getDoc, 
+    collection, 
+    getDocs, 
+    deleteDoc,
+    updateDoc 
+} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const lastnameEl = document.getElementById("user-lastname");
-    const firstnameEl = document.getElementById("user-firstname");
-    const emailEl = document.getElementById("user-email");
+
+    const editLastname = document.getElementById("edit-lastname");
+    const editFirstname = document.getElementById("edit-firstname");
+    const editEmail = document.getElementById("edit-email");
+    const editPhone = document.getElementById("edit-phone");
+
+    const editBtn = document.getElementById("editBtn");
+    const saveBtn = document.getElementById("saveBtn");
+    const message = document.getElementById("message");
+
     const historyDiv = document.getElementById("purchase-history");
     const logoutBtn = document.getElementById("logoutBtn");
     const deleteBtn = document.getElementById("deleteAccountBtn");
 
+    let userRef = null;
+    let currentUser = null;
+
+    // 🔹 Charger les données
     onAuthStateChanged(auth, async (user) => {
         if (!user) return window.location.replace("compte.html");
-        emailEl.textContent = user.email;
+
+        currentUser = user;
+        userRef = doc(db, "users", user.uid);
 
         try {
-            const userDoc = await getDoc(doc(db, "users", user.uid));
+            const userDoc = await getDoc(userRef);
             if (userDoc.exists()) {
                 const data = userDoc.data();
-                firstnameEl.textContent = data.firstName || "";
-                lastnameEl.textContent = data.lastName || "";
-            }
-        } catch (err) { console.error(err); }
 
+                editFirstname.value = data.firstName || "";
+                editLastname.value = data.lastName || "";
+                editEmail.value = data.email || user.email;
+                editPhone.value = data.phone || "";
+            }
+        } catch (err) {
+            console.error(err);
+        }
+
+        // 🔹 Historique
         try {
             const purchasesSnapshot = await getDocs(collection(db, "users", user.uid, "purchases"));
-            if (purchasesSnapshot.empty) historyDiv.textContent = "Aucun achat.";
-            else purchasesSnapshot.forEach(docSnap => {
-                const p = document.createElement("p");
-                const purchase = docSnap.data();
-                p.textContent = `Produit: ${purchase.item}, Date: ${purchase.date}, Prix: ${purchase.price}€`;
-                historyDiv.appendChild(p);
-            });
-        } catch (err) { console.error(err); }
+            historyDiv.innerHTML = "";
+
+            if (purchasesSnapshot.empty) {
+                historyDiv.textContent = "Aucun achat.";
+            } else {
+                purchasesSnapshot.forEach(docSnap => {
+                    const p = document.createElement("p");
+                    const purchase = docSnap.data();
+                    p.textContent = `Produit: ${purchase.item}, Date: ${purchase.date}, Prix: ${purchase.price}€`;
+                    historyDiv.appendChild(p);
+                });
+            }
+        } catch (err) {
+            console.error(err);
+        }
     });
 
+    // 🔹 Mode modification
+    editBtn.addEventListener("click", () => {
+        editFirstname.disabled = false;
+        editLastname.disabled = false;
+        editEmail.disabled = false;
+        editPhone.disabled = false;
+
+        editBtn.style.display = "none";
+        saveBtn.style.display = "block";
+    });
+
+    // 🔹 Enregistrer
+    saveBtn.addEventListener("click", async () => {
+        if (!userRef || !currentUser) return;
+
+        try {
+            // 🔥 Si email changé → mise à jour Firebase Auth
+            if (editEmail.value !== currentUser.email) {
+                try {
+                    await updateEmail(currentUser, editEmail.value);
+                } catch (error) {
+                    if (error.code === "auth/requires-recent-login") {
+                        const password = prompt("Confirmez votre mot de passe :");
+                        if (!password) return;
+
+                        const credential = EmailAuthProvider.credential(currentUser.email, password);
+                        await reauthenticateWithCredential(currentUser, credential);
+                        await updateEmail(currentUser, editEmail.value);
+                    } else {
+                        throw error;
+                    }
+                }
+            }
+
+            // 🔹 Mise à jour Firestore
+            await updateDoc(userRef, {
+                firstName: editFirstname.value,
+                lastName: editLastname.value,
+                email: editEmail.value,
+                phone: editPhone.value
+            });
+
+            message.textContent = "Modifications enregistrées";
+            message.style.color = "green";
+
+            editBtn.style.display = "block";
+            saveBtn.style.display = "none";
+
+        } catch (error) {
+            message.textContent = error.message;
+            message.style.color = "red";
+        }
+    });
+
+    // 🔹 Déconnexion
     logoutBtn.addEventListener("click", async () => {
         await signOut(auth);
         window.location.href = "index.html";
     });
 
-    if (deleteBtn) {
-        deleteBtn.addEventListener("click", async () => {
-            const user = auth.currentUser;
-            if (!user) return alert("Aucun utilisateur connecté.");
-            if (!confirm("⚠️ Supprimer votre compte ?")) return;
+    // 🔹 Suppression compte
+    deleteBtn.addEventListener("click", async () => {
+        const user = auth.currentUser;
+        if (!user) return;
 
-            try {
-                await deleteDoc(doc(db, "users", user.uid));
-                await deleteUser(user);
-                alert("Compte supprimé !");
-                window.location.href = "index.html";
-            } catch (error) {
-                if (error.code === "auth/requires-recent-login") {
-                    const password = prompt("Re-saisissez votre mot de passe :");
-                    if (!password) return;
-                    try {
-                        const credential = EmailAuthProvider.credential(user.email, password);
-                        await reauthenticateWithCredential(user, credential);
-                        await deleteDoc(doc(db, "users", user.uid));
-                        await deleteUser(user);
-                        alert("Compte supprimé !");
-                        window.location.href = "index.html";
-                    } catch (err) { alert("Erreur mot de passe ou suppression."); }
-                } else { alert("Erreur suppression compte."); }
+        if (!confirm("⚠️ Supprimer votre compte ?")) return;
+
+        try {
+            await deleteDoc(doc(db, "users", user.uid));
+            await deleteUser(user);
+            alert("Compte supprimé !");
+            window.location.href = "index.html";
+
+        } catch (error) {
+            if (error.code === "auth/requires-recent-login") {
+                const password = prompt("Re-saisissez votre mot de passe :");
+                if (!password) return;
+
+                try {
+                    const credential = EmailAuthProvider.credential(user.email, password);
+                    await reauthenticateWithCredential(user, credential);
+
+                    await deleteDoc(doc(db, "users", user.uid));
+                    await deleteUser(user);
+
+                    alert("Compte supprimé !");
+                    window.location.href = "index.html";
+
+                } catch {
+                    alert("Erreur mot de passe.");
+                }
+            } else {
+                alert("Erreur suppression.");
             }
-        });
-    }
+        }
+    });
+
 });
 </script>
 

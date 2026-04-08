@@ -5,7 +5,7 @@ body {
     padding: 0;
 }
 
-/* 🔥 fond fixe universel */
+/* fond fixe universel */
 body::before {
     content: "";
     position: fixed;
@@ -47,30 +47,103 @@ input {
     border: none;
     outline: none;
     font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Boutons principaux uniquement */
+#loginBtn,
+#signupBtn,
+.quit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#loginBtn,
+#signupBtn {
+    background: rgba(0, 0, 255, 0.363);
+}
+
+#loginBtn:hover,
+#signupBtn:hover {
+    background: blue;
 }
 
 .quit-btn {
-    background: rgba(255, 0, 0, 0.568); /* gris */
+    background: rgba(255, 0, 0, 0.568);
 }
 
 .quit-btn:hover {
     background: red;
 }
 
-/* Boutons */
-button {
+/* Champ téléphone */
+#phone {
     width: 100%;
+    box-sizing: border-box;
+    margin: 8px 0;
+}
+
+/* Plugin intl-tel-input */
+.iti {
+    width: 100% !important;
+    margin: 8px 0;
+    display: block;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Champ interne du plugin */
+.iti input {
+    width: 100% !important;
     padding: 12px;
-    margin-top: 10px;
+    font-size: 14px;
     border-radius: 6px;
-    border: none;
-    background: rgba(0, 0, 255, 0.363);
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
+    border: none !important;
+    outline: none !important;
+    color: #000;
+    background: #fff !important;
+    box-shadow: none !important;
+    box-sizing: border-box;
 }
 
-button:hover {
-    background: #cc0000;
+/* Drapeau + indicatif */
+.iti__selected-flag,
+.iti__flag-container {
+    background: #fff !important;
+    color: #000 !important;
 }
 
+.iti__selected-dial-code {
+    color: #000 !important;
+}
+
+/* Pas de rouge au survol / focus */
+.iti:hover,
+.iti:focus,
+.iti input:focus,
+.iti__selected-flag:hover,
+.iti__selected-flag:focus,
+.iti__flag-container:hover,
+.iti__flag-container:focus,
+.iti__selected-dial-code:hover,
+.iti__selected-dial-code:focus {
+    background: #fff !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Liste des pays */
+.iti__country-list {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}

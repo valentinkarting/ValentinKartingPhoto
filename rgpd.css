@@ -26,6 +26,7 @@ body {
     margin: 20px;
     box-sizing: border-box; /* Assure une meilleure gestion du padding et de la largeur */
     overflow: auto; /* Permet un défilement interne si le contenu dépasse */
+    max-height: 350px;
     min-height: 150px; /* Garantir que le container a toujours une hauteur suffisante */
     flex: 1; /* Permet au container de se redimensionner correctement */
     user-select: none;
@@ -101,7 +102,7 @@ button:hover {
 
 /* Media queries pour les écrans plus petits */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 468px) {
     /* Ajustement de la taille du container sur les petits écrans */
     .container {
         width: 90%;
