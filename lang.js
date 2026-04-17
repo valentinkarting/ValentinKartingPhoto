@@ -134,14 +134,45 @@ document.addEventListener("DOMContentLoaded", function () {
        "A81": "7. Sécurité",
        "A82": "Nous mettons en place des mesures de sécurité pour protéger vos informations.",
        "A83": "8. Cookies",
-       "A84": "Nous n'utilisons pas des cookies sur notre site.",
+       "A84": "Pour autoriser refuser ou gérer vos cookies accédez à la page Politique de cookie.",
        "A85": "9. Modifications",
        "A86": "Nous pouvons modifier cette politique. Toute mise à jour sera publiée sur cette page.",
        "A87": "J'accepte",
        //  page politique de cookies
-
-      
+       "A88": "Bienvenue",
+       "A89": "Ici vous pouvez gérer les cookies sur le site.",
+       "A90": "Politique de Cookies",
+       "A91": "Dernière mise à jour le : (06/03/2026)",
+       "A92": "1. Introduction",
+       "A93": "Le présent document a pour objectif de vous informer sur la gestion des cookies sur le site [https://valentin-karting-photo.fr]. Nous attachons une grande importance à la protection de votre vie privée et à la transparence de nos pratiques.",
+       "A94": "2. Qu'est-ce qu'un cookie ?",
+       "A95": "Un cookie est un petit fichier texte déposé sur votre appareil lors de la visite d'un site web. Il est généralement utilisé pour mémoriser des informations (comme vos préférences ou des données de suivi) afin d'améliorer votre expérience de navigation.",
+       "A96": "3. Les cookies sur notre site",
+       "A97": "Notre site utilise des cookies analytiques via Google Analytics afin de mesurer l’audience et améliorer l’expérience utilisateur.Ces cookies nous permettent de comprendre comment les visiteurs utilisent le site (pages consultées, durée de visite, etc.).",
+       "A97a": "Les données collectées sont anonymisées et ne permettent pas de vous identifier directement.",
+       "A97b": "Ces cookies ne sont déposés qu’après votre consentement explicite via la bannière de cookies. Vous pouvez à tout moment accepter, refuser ou modifier vos préférences en utilisant les outils mis à votre disposition sur le site.",
+       "A98": "4. Cookies de tiers",
+       "A99": "Notre site utilise des services fournis par des tiers, notamment Google Analytics, qui peuvent déposer des cookies sur votre appareil. Google Analytics peut transférer certaines données en dehors de l’Union européenne. Nous avons configuré ce service afin de limiter la collecte de données personnelles, notamment par l’anonymisation des adresses IP.",
+       "A99a": "Ces cookies sont utilisés afin d’analyser l’audience du site et d’améliorer nos services. Les informations collectées peuvent être transmises à ces tiers, notamment Google.",
+       "A99b": "Nous veillons à ce que ces services ne soient activés qu’après votre consentement explicite via la bannière de cookies.",
+       "A100": "5. Modification de la présente politique",
+       "A101": "Nous nous réservons le droit de mettre à jour cette Politique de cookies à tout moment. Toute modification sera publiée sur cette page. Nous vous invitons à consulter régulièrement cette page afin de vous tenir informé(e) des éventuelles mises à jour.",
+       "A102": "6. Contact",
+       "A103": "Si vous avez la moindre question concernant notre Politique de cookies ou notre engagement en matière de protection de la vie privée, vous pouvez nous contacter à l'adresse suivante : [valentinlonguet4@gmail.com]",
+       "A104": "En naviguant sur notre site, vous reconnaissez avoir pris connaissance de cette politique et acceptez que, dans le cas où nous serions amenés à utiliser des cookies à l'avenir, nous vous en informerons et nous solliciterons votre consentement conformément à la réglementation en vigueur.",
+       "A105": "Gérez vos préférences.",
+       "open-cookie-preferences": "Modifier mes préférences cookies",
+       "accept-all": "Accepter",
+       "refuse-all": "Refuser",
+       "open-settings": "Personnaliser",
+       "A106": "Préférences cookies",
+       "A107": "Cookies essentiels (obligatoires)",
+       "A108": "Cookies analytiques",
+       "A109": "Cookies marketing",
+       "save-preferences": "Enregistrer mes choix"
        
+       
+
 
     },       
 
@@ -277,11 +308,42 @@ document.addEventListener("DOMContentLoaded", function () {
       "A81": "7. Security",
       "A82": "We implement security measures to protect your information.",
       "A83": "8. Cookies",
-      "A84": "We do not use cookies on our site.",
+      "A84": "To allow, refuse or manage your cookies, go to the Cookie Policy page.",
       "A85": "9. Changes",
       "A86": "We may change this policy. Any updates will be posted on this page.",
       "A87": "I agree.",
       //  page politique de cookies
+      "A88": "Welcome",
+      "A89": "Here you can manage cookies on the site.",
+      "A90": "Cookie Policy",
+      "A91": "Last updated: (06/03/2026)",
+      "A92": "1. Introduction",
+      "A93": "This document aims to inform you about the management of cookies on the website [https://valentin-karting-photo.fr]. We attach great importance to the protection of your privacy and the transparency of our practices.",
+      "A94": "2. What is a cookie?",
+      "A95": "A cookie is a small text file placed on your device when you visit a website. It is generally used to remember information (such as your preferences or tracking data) in order to improve your browsing experience.",
+      "A96": "3. Cookies on our site",
+      "A97": "Our website uses analytics cookies via Google Analytics to measure audience and improve user experience. These cookies allow us to understand how visitors use the site (pages viewed, visit duration, etc.).",
+      "A97a": "The data collected is anonymized and does not allow you to be directly identified.",
+      "A97b": "These cookies are only placed after your explicit consent via the cookie banner. You can accept, refuse, or modify your preferences at any time using the tools available on the website.",
+      "A98": "4. Third-party cookies",
+      "A99": "Our website uses services provided by third parties, including Google Analytics, which may place cookies on your device. Google Analytics may transfer certain data outside the European Union. We have configured this service to limit the collection of personal data, notably by anonymizing IP addresses.",
+      "A99a": "These cookies are used to analyze website traffic and improve our services. The information collected may be shared with third parties, including Google.",
+      "A99b": "We ensure that these services are only activated after your explicit consent via the cookie banner.",
+      "A100": "5. Changes to this policy",
+      "A101": "We reserve the right to update this Cookie Policy at any time. Any changes will be published on this page. We encourage you to check this page regularly to stay informed of any updates.",
+      "A102": "6. Contact",
+      "A103": "If you have any questions regarding our Cookie Policy or our commitment to privacy, you can contact us at the following address: [valentinlonguet4@gmail.com] ",
+      "A104": "By browsing our site, you acknowledge that you have read this policy and agree that, should we use cookies in the future, we will inform you and request your consent in accordance with applicable regulations.",
+      "A105": "Manage your preferences.",
+      "open-cookie-preferences": "Modify my cookie preferences",
+      "accept-all": "Accept",
+      "refuse-all": "Refuse",
+      "open-settings": "Customize",
+      "A106": "Cookie preferences",
+      "A107": "Essential (required) cookies",
+      "A108": "Analytical cookies",
+      "A109": "Marketing cookies",
+      "save-preferences": "Save my choices"
 
     },  
 
@@ -416,11 +478,42 @@ document.addEventListener("DOMContentLoaded", function () {
       "A81": "7. Sicurezza",
       "A82": "Adottiamo misure di sicurezza per proteggere le tue informazioni.",
       "A83": "8. Cookie",
-      "A84": "Non utilizziamo cookie sul nostro sito.",
+      "A84": "Per consentire, rifiutare o gestire i cookie, consultare la pagina relativa alla Politica sui cookie.",
       "A85": "9. Modifiche",
       "A86": "Potremmo modificare la presente informativa. Eventuali aggiornamenti saranno pubblicati su questa pagina.",
-      "A87": "Accetto."
-
+      "A87": "Accetto.",
+      // page politique de cookies
+      "A88": "Benvenuto",
+      "A89": "Qui puoi gestire i cookie del sito.",
+      "A90": "Informativa sui cookie",
+      "A91": "Ultimo aggiornamento: (06/03/2026)",
+      "A92": "1. Introduzione",
+      "A93": "Questo documento ha lo scopo di informarti sulla gestione dei cookie sul sito web [https://valentin-karting-photo.fr]. Attribuiamo grande importanza alla protezione della tua privacy e alla trasparenza delle nostre pratiche.",
+      "A94": "2. Cos'è un cookie?",
+      "A95": "Un cookie è un piccolo file di testo che viene memorizzato sul tuo dispositivo quando visiti un sito web. Viene generalmente utilizzato per ricordare informazioni (come le tue preferenze o i dati di tracciamento) al fine di migliorare la tua esperienza di navigazione.",
+      "A96": "3. Cookie sul nostro sito",
+      "A97": "Il nostro sito web utilizza cookie analitici tramite Google Analytics per misurare il pubblico e migliorare l'esperienza utente. Questi cookie ci consentono di capire come i visitatori utilizzano il sito (pagine visualizzate, durata della visita, ecc.).",
+      "A97a": "I dati raccolti sono anonimizzati e non consentono di identificarti direttamente.",
+      "A97b": "Questi cookie vengono installati solo dopo il tuo esplicito consenso tramite il banner dei cookie. Puoi accettare, rifiutare o modificare le tue preferenze in qualsiasi momento utilizzando gli strumenti disponibili sul sito web.",
+      "A98": "4. Cookie di terze parti",
+      "A99": "Il nostro sito web utilizza servizi forniti da terze parti, tra cui Google Analytics, che potrebbero installare cookie sul tuo dispositivo. Google Analytics potrebbe trasferire alcuni dati al di fuori dell'Unione Europea. Abbiamo configurato questo servizio per limitare la raccolta di dati personali, in particolare anonimizzando gli indirizzi IP.",
+      "A99a": "Questi cookie vengono utilizzati per analizzare il traffico del sito web e migliorare i nostri servizi. Le informazioni raccolte potrebbero essere condivise con terze parti, incluso Google.",
+      "A99b": "Garantiamo che questi servizi vengano attivati ​​solo dopo il tuo esplicito consenso tramite il banner dei cookie.",
+      "A100": "5. Modifiche alla presente informativa",
+      "A101": "Ci riserviamo il diritto di aggiornare la presente Informativa sui cookie in qualsiasi momento. Eventuali modifiche saranno pubblicate su questa pagina. Ti invitiamo a consultare regolarmente questa pagina per rimanere informato su eventuali aggiornamenti.",
+      "A102": "6. Contatti",
+      "A103": "Per qualsiasi domanda relativa alla nostra Informativa sui cookie o al nostro impegno per la privacy, puoi contattarci al seguente indirizzo: [valentinlonguet4@gmail.com]",
+      "A104": "Navigando sul nostro sito, dichiari di aver letto la presente informativa e accetti che, qualora dovessimo utilizzare cookie in futuro, ti informeremo e richiederemo il tuo consenso in conformità con le normative vigenti.",
+      "A105": "Gestisci le tue preferenze.",
+      "open-cookie-preferences": "Modifica le mie preferenze sui cookie",
+      "accept-all": "Accetta",
+      "refuse-all": "Rifiuta",
+      "open-settings": "Personalizza",
+      "A106": "Preferenze sui cookie",
+      "A107": "Cookie essenziali (necessari)",
+      "A108": "Cookie analitici",
+      "A109": "Cookie di marketing",
+      "save-preferences": "Salva le mie scelte"
 
     },
 
@@ -555,11 +648,42 @@ document.addEventListener("DOMContentLoaded", function () {
        "A81": "7. Seguridad",
        "A82": "Implementamos medidas de seguridad para proteger su información.",
        "A83": "8. Cookies",
-       "A84": "No utilizamos cookies en nuestro sitio web.",
+       "A84": "Para permitir, rechazar o gestionar las cookies, visite la página de Política de cookies.",
        "A85": "9. Cambios",
        "A86": "Podemos modificar esta política. Cualquier actualización se publicará en esta página.",
        "A87": "Acepto.",
        //  page politique de cookies
+       "A88": "Bienvenido",
+       "A89": "Aquí puedes gestionar las cookies del sitio.",
+       "A90": "Política de cookies",
+       "A91": "Última actualización: (06/03/2026)",
+       "A92": "1. Introducción",
+       "A93": "Este documento tiene como objetivo informarle sobre la gestión de cookies en el sitio web [https://valentin-karting-photo.fr]. Damos gran importancia a la protección de su privacidad y a la transparencia de nuestras prácticas.",
+       "A94": "2. ¿Qué es una cookie?",
+       "A95": "Una cookie es un pequeño archivo de texto que se coloca en su dispositivo cuando visita un sitio web. Generalmente se utiliza para recordar información (como sus preferencias o datos de seguimiento) con el fin de mejorar su experiencia de navegación.",
+       "A96": "3. Cookies en nuestro sitio",
+       "A97": "Nuestro sitio web utiliza cookies analíticas de Google Analytics para medir la audiencia y mejorar la experiencia del usuario. Estas cookies nos permiten comprender cómo los visitantes utilizan el sitio (páginas visitadas, duración de la visita, etc.).",
+       "A97a": "Los datos recopilados son anónimos y no permiten su identificación directa.",
+       "A97b": "Estas cookies solo se instalan tras su consentimiento explícito a través del banner de cookies. Puede aceptarlas, rechazarlas o modificar sus preferencias en cualquier momento utilizando las herramientas disponibles en el sitio web.",
+       "A98": "4. Cookies de terceros",
+       "A99": "Nuestro sitio web utiliza servicios de terceros, incluido Google Analytics, que puede instalar cookies en su dispositivo. Google Analytics puede transferir ciertos datos fuera de la Unión Europea. Hemos configurado este servicio para limitar la recopilación de datos personales, principalmente mediante la anonimización de las direcciones IP.",
+       "A99a": "Estas cookies se utilizan para analizar el tráfico del sitio web y mejorar nuestros servicios. La información recopilada puede compartirse con terceros, incluido Google.",
+       "A99b": "Garantizamos que estos servicios solo se activarán tras su consentimiento explícito a través del banner de cookies.",
+       "A100": "5. Cambios en esta política",
+       "A101": "Nos reservamos el derecho de actualizar esta Política de Cookies en cualquier momento. Cualquier cambio se publicará en esta página. Le recomendamos que consulte esta página periódicamente para estar al tanto de las actualizaciones.",
+       "A102": "6. Contacto",
+       "A103": "Si tiene alguna pregunta sobre nuestra Política de Cookies o nuestro compromiso con la privacidad, puede contactarnos en la siguiente dirección: [valentinlonguet4@gmail.com]",
+       "A104": "Al navegar por nuestro sitio, usted reconoce haber leído esta política y acepta que, si utilizamos cookies en el futuro, le informaremos y solicitaremos su consentimiento de acuerdo con la normativa aplicable.",
+       "A105": "Gestiona tus preferencias.",
+       "open-cookie-preferences": "Modificar mis preferencias de cookies",
+       "accept-all": "Aceptar",
+       "refuse-all": "Rechazar",
+       "open-settings": "Personalizar",
+       "A106": "Preferencias de cookies",
+       "A107": "Cookies esenciales (obligatorias)",
+       "A108": "Cookies analíticas",
+       "A109": "Cookies de marketing",
+       "save-preferences": "Guardar mis preferencias"
 
 
     },
@@ -695,74 +819,103 @@ document.addEventListener("DOMContentLoaded", function () {
        "A81": "7. Sicherheit",
        "A82": "Wir setzen Sicherheitsmaßnahmen zum Schutz Ihrer Daten ein.",
        "A83": "8. Cookies",
-       "A84": "Wir verwenden keine Cookies auf unserer Website.",
+       "A84": "Um Ihre Cookies zuzulassen, abzulehnen oder zu verwalten, besuchen Sie die Seite „Cookie-Richtlinien“.",
        "A85": "9. Änderungen",
        "A86": "Wir behalten uns das Recht vor, diese Richtlinie zu ändern. Aktualisierungen werden auf dieser Seite veröffentlicht.",
        "A87": "Ich stimme zu.",
        //  page politique de cookies
-
+       "A88": "Willkommen",
+       "A89": "Hier können Sie die Cookies auf der Website verwalten.",
+       "A90": "Cookie-Richtlinie",
+       "A91": "Letzte Aktualisierung: (06.03.2026)",
+       "A92": "1. Einleitung",
+       "A93": "Dieses Dokument informiert Sie über die Verwendung von Cookies auf der Website [https://valentin-karting-photo.fr]. Der Schutz Ihrer Privatsphäre und die Transparenz unserer Vorgehensweise sind uns sehr wichtig.",
+       "A94": "2. Was ist ein Cookie?",
+       "A95": "Ein Cookie ist eine kleine Textdatei, die beim Besuch einer Website auf Ihrem Gerät gespeichert wird. Sie dient in der Regel dazu, Informationen (wie Ihre Präferenzen oder Tracking-Daten) zu speichern, um Ihr Surferlebnis zu verbessern.",
+       "A96": "3. Cookies auf unserer Website",
+       "A97": "Unsere Website verwendet Analyse-Cookies von Google Analytics, um die Reichweite zu messen und die Benutzerfreundlichkeit zu verbessern. Diese Cookies ermöglichen es uns, zu verstehen, wie Besucher die Website nutzen (z. B. aufgerufene Seiten, Besuchsdauer).",
+       "A97a": "Die erhobenen Daten werden anonymisiert und ermöglichen keine direkte Identifizierung Ihrer Person.",
+       "A97b": "Diese Cookies werden nur nach Ihrer ausdrücklichen Einwilligung über das Cookie-Banner gesetzt. Sie können Ihre Einstellungen jederzeit über die auf der Website verfügbaren Tools akzeptieren, ablehnen oder ändern.",
+       "A98": "4. Cookies von Drittanbietern",
+       "A99": "Unsere Website nutzt Dienste von Drittanbietern, darunter Google Analytics, die möglicherweise Cookies auf Ihrem Gerät speichern. Google Analytics kann bestimmte Daten außerhalb der Europäischen Union übertragen. Wir haben diesen Dienst so konfiguriert, dass die Erfassung personenbezogener Daten eingeschränkt wird, insbesondere durch die Anonymisierung von IP-Adressen.",
+       "A99a": "Diese Cookies werden verwendet, um den Website-Traffic zu analysieren und unsere Dienste zu verbessern. Die gesammelten Informationen können an Dritte, einschließlich Google, weitergegeben werden.",
+       "A99b": "Wir stellen sicher, dass diese Dienste erst nach Ihrer ausdrücklichen Zustimmung über das Cookie-Banner aktiviert werden.",
+       "A100": "5. Änderungen dieser Richtlinie",
+       "A101": "Wir behalten uns das Recht vor, diese Cookie-Richtlinie jederzeit zu aktualisieren. Änderungen werden auf dieser Seite veröffentlicht. Wir empfehlen Ihnen, diese Seite regelmäßig zu besuchen, um über Aktualisierungen informiert zu bleiben.",
+       "A102": "6. Kontakt",
+       "A103": "Bei Fragen zu unserer Cookie-Richtlinie oder unserem Datenschutz können Sie uns unter folgender Adresse kontaktieren: valentinlonguet4@gmail.com",
+       "A104": "Durch die Nutzung unserer Website bestätigen Sie, dass Sie diese Richtlinie gelesen haben und damit einverstanden sind, dass wir Sie im Falle der zukünftigen Verwendung von Cookies gemäß den geltenden Bestimmungen informieren und Ihre Einwilligung einholen.",
+       "A105": "Verwalten Sie Ihre Einstellungen.",
+       "open-cookie-preferences": "Meine Cookie-Einstellungen ändern",         
+       "accept-all": "Akzeptieren",
+       "refuse-all": "Ablehnen",
+       "open-settings": "Anpassen",
+       "A106": "Cookie-Einstellungen",
+       "A107": "Essenzielle (erforderliche) Cookies",
+       "A108": "Analyse-Cookies",
+       "A109": "Marketing-Cookies",
+       "save-preferences": "Meine Auswahl speichern"
 
 
     }
   };
 
   // 🔹 Fonction de traduction
-  function setLanguage(lang) {
-    localStorage.setItem("lang", lang);
+function setLanguage(lang) {
+  localStorage.setItem("lang", lang);
 
+  Object.keys(translations[lang]).forEach(key => {
+    const el = document.getElementById(key);
+    if (el) {
 
-
-    Object.keys(translations[lang]).forEach(key => {
-      const el = document.getElementById(key);
-      if (el) {
-
-        // 🔥 INPUT → placeholder
-        if (el.tagName === "INPUT") {
-          el.placeholder = translations[lang][key];
-        }
-
-        // 🔥 LABEL → garder le radio
-        else if (el.tagName === "LABEL") {
-          const input = el.querySelector("input");
-          el.innerHTML = "";
-          if (input) {
-            el.appendChild(input);
-          }
-          el.append(" " + translations[lang][key]);
-        }
-
-        // 🔥 AUTRES
-        else {
-          el.innerHTML = translations[lang][key];
-        }
+      // 🔥 INPUT → placeholder
+      if (el.tagName === "INPUT") {
+        el.placeholder = translations[lang][key];
       }
-    });
 
-    // 🔹 SEO
-    document.documentElement.lang = lang;
+      // 🔥 LABEL → garder le radio
+      else if (el.tagName === "LABEL") {
+        const input = el.querySelector("input");
+        el.innerHTML = "";
+        if (input) {
+          el.appendChild(input);
+        }
+        el.append(" " + translations[lang][key]);
+      }
 
-    // 🔹 Drapeau actif
-    document.querySelectorAll(".flag").forEach(flag => {
-      flag.classList.remove("active");
-    });
-
-    const activeFlag = document.getElementById("lang-" + lang);
-    if (activeFlag) {
-      activeFlag.classList.add("active");
+      // 🔥 AUTRES
+      else {
+        el.innerHTML = translations[lang][key];
+      }
     }
+  });
+
+  // 🔹 SEO
+  document.documentElement.lang = lang;
+
+  // 🔹 Drapeau actif
+  document.querySelectorAll(".flag").forEach(flag => {
+    flag.classList.remove("active");
+  });
+
+  const activeFlag = document.getElementById("lang-" + lang);
+  if (activeFlag) {
+    activeFlag.classList.add("active");
   }
+}
 
-  
 
-  // 🔹 Langue sauvegardée
-  const savedLang = localStorage.getItem("lang") || "fr";
-  setLanguage(savedLang);
+// 🔹 Langue sauvegardée
+const savedLang = localStorage.getItem("lang") || "fr";
+setLanguage(savedLang);
 
-  // 🔹 Events drapeaux
-  document.getElementById("lang-fr").addEventListener("click", () => setLanguage("fr"));
-  document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
-  document.getElementById("lang-it").addEventListener("click", () => setLanguage("it"));
-  document.getElementById("lang-es").addEventListener("click", () => setLanguage("es"));
-  document.getElementById("lang-al").addEventListener("click", () => setLanguage("al"));
+
+// 🔹 Events drapeaux
+document.getElementById("lang-fr").addEventListener("click", () => setLanguage("fr"));
+document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
+document.getElementById("lang-it").addEventListener("click", () => setLanguage("it"));
+document.getElementById("lang-es").addEventListener("click", () => setLanguage("es"));
+document.getElementById("lang-al").addEventListener("click", () => setLanguage("al"));
+
 
 });

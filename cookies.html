@@ -5,15 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Politique de Cookies</title>
+
+    <!-- 1. Consentement pour google analytics (très tôt) -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied'
+    });
+    </script>
+
     <link rel="stylesheet" href="cookies.css">
+
 </head>
 
 <body>
 
     <!-- En-tête du site -->
     <header>
-        <h1 id="A88">Bienvenue</h1>
-        <p id="A89">Nous n'utilisons pas de cookies sur le site.</p>
+        <h1 id="A88"></h1>
+        <p id="A89">Ici vous pouvez gérer les cookies sur le site.</p>
     </header>
 
     <!-- Contenu principal -->
@@ -30,13 +43,18 @@
             généralement utilisé pour mémoriser des informations (comme vos préférences ou des données de suivi) afin
             d'améliorer votre expérience de navigation.</p>
         <h2 id="A96">3. Les cookies sur notre site</h2>
-        <p id="A97">Nous tenons à vous informer que [https://valentin-karting-photo.fr] n'utilise aucun cookie. Aucune
-            information n'est collectée
-            automatiquement lors de votre navigation, et aucune technologie de suivi n'est mise en œuvre sur notre site.
+        <p id="A97">Notre site utilise des cookies analytiques via Google Analytics afin de mesurer l’audience et améliorer l’expérience utilisateur.
+            Ces cookies nous permettent de comprendre comment les visiteurs utilisent le site (pages consultées, durée de visite, etc.).
+        </p>
+        <p id="A97a">Les données collectées sont anonymisées et ne permettent pas de vous identifier directement.</p>
+        <p id="A97b">Ces cookies ne sont déposés qu’après votre consentement explicite via la bannière de cookies.
+           Vous pouvez à tout moment accepter, refuser ou modifier vos préférences en utilisant les outils mis à votre disposition sur le site.
         </p>
         <h2 id="A98">4. Cookies de tiers</h2>
-        <p id="A99">Nous n'utilisons aucun service tiers susceptible de déposer des cookies sur votre appareil. Ainsi, aucune
-            donnée n'est collectée par des partenaires extérieurs via notre site.</p>
+        <p id="A99">Notre site utilise des services fournis par des tiers, notamment Google Analytics, qui peuvent déposer des cookies sur votre appareil.
+            Google Analytics peut transférer certaines données en dehors de l’Union européenne. Nous avons configuré ce service afin de limiter la collecte de données personnelles, notamment par l’anonymisation des adresses IP. </p>
+        <p id="A99a">Ces cookies sont utilisés afin d’analyser l’audience du site et d’améliorer nos services. Les informations collectées peuvent être transmises à ces tiers, notamment Google.</p>
+        <p id="A99b">Nous veillons à ce que ces services ne soient activés qu’après votre consentement explicite via la bannière de cookies.</p>
         <h2 id="A100">5. Modification de la présente politique</h2>
         <p id="A101">Nous nous réservons le droit de mettre à jour cette Politique de cookies à tout moment. Toute modification
             sera publiée sur cette page. Nous vous invitons à consulter régulièrement cette page afin de vous tenir
@@ -47,18 +65,73 @@
             [valentinlonguet4@gmail.com]</p>
 
 
-    </section>
-
-    <!-- Bannière des cookies -->
-    <div class="cookie-banner" id="cookie-banner">
         <p id="A104">En naviguant sur notre site, vous reconnaissez avoir pris connaissance de cette politique et acceptez que,
             dans le cas où nous serions amenés à utiliser des cookies à l'avenir, nous vous en informerons et nous
-            solliciterons votre consentement conformément à la réglementation en vigueur.</p>
-        <button id="accept-cookies">Accepter</button>
+            solliciterons votre consentement conformément à la réglementation en vigueur.</p>   
+
+        <!-- 🔥 BOUTON ICI -->
+        <button id="open-cookie-preferences" class="cookie-pref-btn">
+        Modifier mes préférences cookies
+        </button>    
+
+
+
+</section>
+
+    <!-- Bannière des cookies -->
+<!-- Bannière des cookies -->
+<div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-content">
+        <p id="A105">Gérez vos préférences.</p>
+        
+        <div class="cookie-buttons">
+            <button id="accept-all">Accepter</button>
+            <button id="refuse-all">Refuser</button>
+            <button id="open-settings">Personnaliser</button>
+        </div>
     </div>
+</div>
 
-    <script src="lang.js" defer></script>
+<!-- Panneau de préférences -->
+<div class="cookie-modal" id="cookie-modal">
+    <div class="cookie-modal-content">
+        <h2 id="A106" >Préférences cookies</h2>
 
+        <!-- Cookies essentiels -->
+        <div class="cookie-option">
+            <span id="A107" >Cookies essentiels (obligatoires)</span>
+            <span class="status">YES</span>
+        </div>
+
+        <!-- Cookies analytiques -->
+        <div class="cookie-option">
+            <span id="A108" >Cookies analytiques</span>
+            <label class="switch">
+                <input type="checkbox" id="analytics-cookies">
+                <span class="slider"></span>
+            </label>
+            <span class="status" id="analytics-status">NO</span>
+        </div>
+
+        <!-- Cookies marketing -->
+        <div class="cookie-option">
+            <span id="A109" >Cookies marketing</span>
+            <label class="switch">
+                <input type="checkbox" id="marketing-cookies">
+                <span class="slider"></span>
+            </label>
+            <span class="status" id="marketing-status">NO</span>
+        </div>
+
+        <div class="cookie-actions">
+            <button id="save-preferences">Enregistrer mes choix</button>
+        </div>
+    </div>
+</div>
+
+
+   <!-- Nouvelle partie pour changement de langue -->
+    <script src="lang.js" defer></script> 
 
     <script src="cookies.js"></script>
 </body>
