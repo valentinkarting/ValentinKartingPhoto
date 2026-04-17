@@ -6,17 +6,21 @@
     <title>regionales2025</title>
 
     <!-- 1. Consentement pour google analytics (très tôt) -->
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+   <script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
 
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied'
-    });
-    </script>
+// 🔥 Consentement par défaut (AVANT choix utilisateur)
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied'
+});
+</script>
 
     <link rel="stylesheet" href="Cdf2025.css">
+    <link rel="stylesheet" href="cookies.css">
 </head>
 
 <body>
@@ -54,6 +58,67 @@
             </div>
         </div>
     </div>
+
+
+    <!-- ===================== -->
+<!-- 🍪 BANNIÈRE COOKIES -->
+<!-- ===================== -->
+<div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-content">
+        <p id="A105">Gérez vos préférences. </p>
+        
+        <div class="cookie-buttons">
+            <button id="accept-all">Accepter</button>
+            <button id="refuse-all">Refuser</button>
+            <button id="open-settings">Personnaliser</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== -->
+<!-- ⚙️ MODAL PRÉFÉRENCES -->
+<!-- ===================== -->
+<div class="cookie-modal" id="cookie-modal">
+    <div class="cookie-modal-content">
+        <h2>Préférences cookies</h2>
+
+        <!-- Cookies essentiels -->
+        <div class="cookie-option">
+            <span>Cookies essentiels (obligatoires)</span>
+            <span class="status">YES</span>
+        </div>
+
+        <!-- Cookies analytiques -->
+        <div class="cookie-option">
+            <span>Cookies analytiques</span>
+            <label class="switch">
+                <input type="checkbox" id="analytics-cookies">
+                <span class="slider"></span>
+            </label>
+            <span class="status" id="analytics-status">NO</span>
+        </div>
+
+        <!-- Cookies marketing -->
+        <div class="cookie-option">
+            <span>Cookies marketing</span>
+            <label class="switch">
+                <input type="checkbox" id="marketing-cookies">
+                <span class="slider"></span>
+            </label>
+            <span class="status" id="marketing-status">NO</span>
+        </div>
+
+        <div class="cookie-actions">
+            <button id="save-preferences">Enregistrer mes choix</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== -->
+<!-- 📜 SCRIPT COOKIES -->
+<!-- ===================== -->
+<script src="cookies.js"></script>
+
 
 </body>
 

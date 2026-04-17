@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const CONSENT_DURATION = 180; // jours
 
     // 🔧 MODE DEV (mettre false en production)
-    const DEV_MODE = true;
+    const DEV_MODE = false;
     if (DEV_MODE) localStorage.removeItem("cookieConsent");
 
     // 🔍 Lire consentement
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return (Date.now() - consent.date) < (CONSENT_DURATION * 86400000);
     }
 
-    // 🎯 AFFICHAGE BANNIÈRE (corrigé)
+    // 🎯 AFFICHAGE BANNIÈRE
     if (!isConsentValid()) {
-        banner.classList.add("show"); // ✅ utilise le CSS
+        banner.classList.add("show");
     } else {
         applyConsent(consent);
     }
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateStatus(marketingCheckbox, marketingStatus)
     );
 
-    // 💾 Sauvegarde consentement (corrigé animation)
+    // 💾 Sauvegarde consentement
     function saveConsent(data) {
         consent = {
             ...data,
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem("cookieConsent", JSON.stringify(consent));
 
-        // 🔥 animation de fermeture propre
+        // animation fermeture
         banner.classList.remove("show");
         setTimeout(() => {
             banner.style.display = "none";
@@ -76,18 +76,48 @@ document.addEventListener("DOMContentLoaded", function () {
         applyConsent(consent);
     }
 
-    // 🎯 Appliquer consentement
-    function applyConsent(consent) {
+    // 🎯 APPLIQUER CONSENTEMENT (🔥 VERSION PRO)
+   function applyConsent(consent) {
 
-        if (consent.analytics) {
-            console.log("Analytics autorisé");
-            // 👉 charger Google Analytics ici
-        }
+    // 🔥 GOOGLE CONSENT MODE UPDATE
+    if (typeof gtag === "function") {
 
-        if (consent.marketing) {
-            console.log("Marketing autorisé");
+        gtag('consent', 'update', {
+            analytics_storage: consent.analytics ? 'granted' : 'denied',
+            ad_storage: consent.marketing ? 'granted' : 'denied',
+            ad_user_data: consent.marketing ? 'granted' : 'denied',
+            ad_personalization: consent.marketing ? 'granted' : 'denied'
+        });
+    }
+
+    // 🔥 GOOGLE ANALYTICS (chargement conditionnel)
+    if (consent.analytics) {
+
+        console.log("Analytics autorisé");
+
+        if (!window.gaLoaded) {
+
+            window.gaLoaded = true;
+
+            const script = document.createElement("script");
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z3M5C7671B";
+            script.async = true;
+            document.head.appendChild(script);
+
+            script.onload = () => {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+
+                gtag('js', new Date());
+                gtag('config', 'G-Z3M5C7671B');
+            };
         }
     }
+
+    if (consent.marketing) {
+        console.log("Marketing autorisé");
+    }
+}
 
     // 🎯 Boutons
     acceptAll.onclick = () => {

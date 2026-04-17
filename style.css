@@ -1776,7 +1776,7 @@ footer {
     align-items: center; /* Centre les éléments verticalement */
     /* flex-wrap: nowrap;   */
     /* Évite les retours à la ligne */
-    height: 20px;
+    height: 30px;
 }
 
 .footer-logo {

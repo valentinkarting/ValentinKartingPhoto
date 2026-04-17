@@ -7,15 +7,19 @@
     <title>Politique de Cookies</title>
 
     <!-- 1. Consentement pour google analytics (très tôt) -->
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+   <script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
 
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied'
-    });
-    </script>
+// 🔥 Consentement par défaut (AVANT choix utilisateur)
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied'
+});
+</script>
+
 
     <link rel="stylesheet" href="cookies.css">
 
