@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const saveBtn = document.getElementById("save-preferences");
     const manageBtn = document.getElementById("manage-cookies");
     const openPrefBtn = document.getElementById("open-cookie-preferences");
+    const resetBtn = document.getElementById("reset-cookies"); // 🔥 nouveau
 
     const analyticsCheckbox = document.getElementById("analytics-cookies");
     const marketingCheckbox = document.getElementById("marketing-cookies");
@@ -19,12 +20,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const CONSENT_DURATION = 180; // jours
 
-    // 🔧 MODE DEV (mettre false en production)
+    // =========================
+    // 🔥 GESTION COOKIES
+    // =========================
+
+    function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 86400000).toUTCString();
+        document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + expires + "; path=/; SameSite=Lax";
+    }
+
+    function getCookie(name) {
+        const cookies = document.cookie.split("; ");
+        for (let c of cookies) {
+            const [key, val] = c.split("=");
+            if (key === name) return decodeURIComponent(val);
+        }
+        return null;
+    }
+
+    function deleteAllCookies() {
+        document.cookie.split(";").forEach(cookie => {
+            const name = cookie.split("=")[0].trim();
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+        });
+    }
+
+    // 🔧 MODE DEV
     const DEV_MODE = false;
-    if (DEV_MODE) localStorage.removeItem("cookieConsent");
+    if (DEV_MODE) {
+        setCookie("cookieConsent", "", -1);
+    }
 
     // 🔍 Lire consentement
-    let consent = JSON.parse(localStorage.getItem("cookieConsent"));
+    let consent = JSON.parse(getCookie("cookieConsent"));
 
     function isConsentValid() {
         if (!consent) return false;
@@ -33,12 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 🎯 AFFICHAGE BANNIÈRE
     if (!isConsentValid()) {
-        banner.classList.add("show");
+        banner.style.display = "block";
+        setTimeout(() => banner.classList.add("show"), 50);
     } else {
         applyConsent(consent);
     }
 
-    // 🔥 Mise à jour YES / NO
+    // =========================
+    // 🔥 SWITCH UI
+    // =========================
+
     function updateStatus(checkbox, label) {
         label.textContent = checkbox.checked ? "YES" : "NO";
     }
@@ -56,16 +88,18 @@ document.addEventListener("DOMContentLoaded", function () {
         updateStatus(marketingCheckbox, marketingStatus)
     );
 
-    // 💾 Sauvegarde consentement
+    // =========================
+    // 💾 SAUVEGARDE CONSENTEMENT
+    // =========================
+
     function saveConsent(data) {
         consent = {
             ...data,
             date: Date.now()
         };
 
-        localStorage.setItem("cookieConsent", JSON.stringify(consent));
+        setCookie("cookieConsent", JSON.stringify(consent), CONSENT_DURATION);
 
-        // animation fermeture
         banner.classList.remove("show");
         setTimeout(() => {
             banner.style.display = "none";
@@ -76,55 +110,57 @@ document.addEventListener("DOMContentLoaded", function () {
         applyConsent(consent);
     }
 
-    // 🎯 APPLIQUER CONSENTEMENT (🔥 VERSION PRO)
-   function applyConsent(consent) {
+    // =========================
+    // 🎯 APPLICATION CONSENTEMENT
+    // =========================
 
-    // 🔥 GOOGLE CONSENT MODE UPDATE
-    if (typeof gtag === "function") {
+    function applyConsent(consent) {
 
-        gtag('consent', 'update', {
-            analytics_storage: consent.analytics ? 'granted' : 'denied',
-            ad_storage: consent.marketing ? 'granted' : 'denied',
-            ad_user_data: consent.marketing ? 'granted' : 'denied',
-            ad_personalization: consent.marketing ? 'granted' : 'denied'
-        });
-    }
+        if (typeof gtag === "function") {
+            gtag('consent', 'update', {
+                analytics_storage: consent.analytics ? 'granted' : 'denied',
+                ad_storage: consent.marketing ? 'granted' : 'denied',
+                ad_user_data: consent.marketing ? 'granted' : 'denied',
+                ad_personalization: consent.marketing ? 'granted' : 'denied'
+            });
+        }
 
-    // 🔥 GOOGLE ANALYTICS (chargement conditionnel)
-    if (consent.analytics) {
+        if (consent.analytics) {
 
-        console.log("Analytics autorisé");
+            console.log("Analytics autorisé");
 
-        if (!window.gaLoaded) {
+            if (!window.gaLoaded) {
 
-            window.gaLoaded = true;
+                window.gaLoaded = true;
 
-            const script = document.createElement("script");
-            script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z3M5C7671B";
-            script.async = true;
-            document.head.appendChild(script);
+                const script = document.createElement("script");
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z3M5C7671B";
+                script.async = true;
+                document.head.appendChild(script);
 
-            script.onload = () => {
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
+                script.onload = () => {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
 
-                gtag('js', new Date());
-                gtag('config', 'G-Z3M5C7671B');
-            };
+                    gtag('js', new Date());
+                    gtag('config', 'G-Z3M5C7671B');
+                };
+            }
+        }
+
+        if (consent.marketing) {
+            console.log("Marketing autorisé");
         }
     }
 
-    if (consent.marketing) {
-        console.log("Marketing autorisé");
-    }
-}
+    // =========================
+    // 🎯 BOUTONS
+    // =========================
 
-    // 🎯 Boutons
     acceptAll.onclick = () => {
         analyticsCheckbox.checked = true;
         marketingCheckbox.checked = true;
         initSwitches();
-
         saveConsent({ analytics: true, marketing: true });
     };
 
@@ -132,7 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
         analyticsCheckbox.checked = false;
         marketingCheckbox.checked = false;
         initSwitches();
-
         saveConsent({ analytics: false, marketing: false });
     };
 
@@ -147,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     };
 
-    // 🔁 Boutons accès préférences
     if (manageBtn) {
         manageBtn.onclick = () => modal.style.display = "flex";
     }
@@ -156,7 +190,25 @@ document.addEventListener("DOMContentLoaded", function () {
         openPrefBtn.onclick = () => modal.style.display = "flex";
     }
 
-    // ❌ Fermer modal en cliquant dehors
+    // 🔥 RESET COOKIES (NOUVEAU)
+    if (resetBtn) {
+        resetBtn.onclick = () => {
+
+            deleteAllCookies();                 // supprime tous les cookies
+            setCookie("cookieConsent", "", -1); // supprime consentement
+            consent = null;
+
+            console.log("Cookies réinitialisés");
+
+            // réaffiche bannière
+            banner.style.display = "block";
+            setTimeout(() => banner.classList.add("show"), 50);
+
+            setTimeout(() => location.reload(), 500);
+        };
+    }
+
+    // ❌ Fermer modal
     modal.addEventListener("click", (e) => {
         if (e.target === modal) {
             modal.style.display = "none";
