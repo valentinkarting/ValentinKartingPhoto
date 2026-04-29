@@ -169,7 +169,8 @@ document.addEventListener("DOMContentLoaded", function () {
        "A107": "Cookies essentiels (obligatoires)",
        "A108": "Cookies analytiques",
        "A109": "Cookies marketing",
-       "save-preferences": "Enregistrer mes choix"
+       "save-preferences": "Enregistrer mes choix",
+       "reset-cookies": "Réinitialiser mes cookies"
        
        
 
@@ -343,7 +344,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "A107": "Essential (required) cookies",
       "A108": "Analytical cookies",
       "A109": "Marketing cookies",
-      "save-preferences": "Save my choices"
+      "save-preferences": "Save my choices",
+      "reset-cookies": "Reset my cookies"
 
     },  
 
@@ -513,7 +515,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "A107": "Cookie essenziali (necessari)",
       "A108": "Cookie analitici",
       "A109": "Cookie di marketing",
-      "save-preferences": "Salva le mie scelte"
+      "save-preferences": "Salva le mie scelte",
+      "reset-cookies": "Reimposta i miei cookie"
 
     },
 
@@ -683,7 +686,8 @@ document.addEventListener("DOMContentLoaded", function () {
        "A107": "Cookies esenciales (obligatorias)",
        "A108": "Cookies analíticas",
        "A109": "Cookies de marketing",
-       "save-preferences": "Guardar mis preferencias"
+       "save-preferences": "Guardar mis preferencias",
+       "reset-cookies": "Restablecer mis cookies"
 
 
     },
@@ -854,7 +858,8 @@ document.addEventListener("DOMContentLoaded", function () {
        "A107": "Essenzielle (erforderliche) Cookies",
        "A108": "Analyse-Cookies",
        "A109": "Marketing-Cookies",
-       "save-preferences": "Meine Auswahl speichern"
+       "save-preferences": "Meine Auswahl speichern",
+       "reset-cookies": "Meine Cookies zurücksetzen"
 
 
     }
